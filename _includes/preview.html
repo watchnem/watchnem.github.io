@@ -1,0 +1,9 @@
+{%- assign sorted_posts = site.posts | sort: "index" | reverse -%}
+{%- assign visible = '' | split: '' -%}
+{%- for post in sorted_posts -%}
+  {%- unless post.categories contains '히든' -%}
+    {%- assign visible = visible | push: post -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{% include raw_preview.html posts=visible %}

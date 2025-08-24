@@ -1,0 +1,13 @@
+_site
+.sass-cache
+.jekyll-cache
+
+/img/goal
+/img/*.png
+oldposts
+*.py
+*.zip
+blog_*.json
+client*.json
+token.json
+ing

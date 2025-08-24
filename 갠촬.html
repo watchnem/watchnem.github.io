@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+{%- assign all_personal_posts = site.posts | where: "categories", "갠촬" -%}
+{%- assign personal_posts = '' | split: ',' -%}
+{%- for post in all_personal_posts -%}
+  {%- assign personal_posts = personal_posts | push: post -%}
+{%- endfor -%}
+
+{%- assign unique_filtered_posts = personal_posts | uniq -%}
+{%- assign sorted_posts = unique_filtered_posts | sort: 'index' | reverse -%}
+{%- assign visible = '' | split: '' -%}
+{%- for post in sorted_posts -%}
+  {%- unless post.categories contains '히든' -%}
+    {%- assign visible = visible | push: post -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<p class="archive_type">갠촬 ({{ visible | size }})</p>
+
+{% include raw_preview.html posts=visible %}
