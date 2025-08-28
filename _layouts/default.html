@@ -10,7 +10,24 @@
       <div class="container">
         {% include header.html %}
 
-        {{ content }}
+
+        {%- capture _c -%}{{ content }}{%- endcapture -%}
+
+        {%- comment -%}
+        <img ... src/srcset> → 후보로만 바꿔두기:
+          - <img → <img class="lz-candidate"
+          - src → data-src
+          - srcset → data-srcset
+        {%- endcomment -%}
+        {%- assign _c = _c
+          | replace: '<img', '<img class="lz-candidate"'
+          | replace: ' srcset="', ' data-srcset="'
+          | replace: " srcset='", " data-srcset='"
+          | replace: ' src="', ' data-src="'
+          | replace: " src='", " data-src='"
+        -%}
+        {{ _c }}
+        
 
         {% include footer.html %}
       </div>

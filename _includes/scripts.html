@@ -3,7 +3,7 @@
 
 <script>
 // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
-const themePreference = () => {
+    const themePreference = () => {
         const hasLocalStorage = localStorage.getItem('theme');
         let supports = false;
         let theme = undefined;
@@ -56,11 +56,7 @@ const themePreference = () => {
             }
         }
         setTheme();
-        console.log("toggle.checked");
-        console.log(toggle.checked);
         toggle.addEventListener('click', e => {
-            console.log("toggle.checked");
-            console.log(toggle.checked);
             if (toggle.checked) {
                 document.body.classList.add('dark');
                 document.body.classList.remove('light');

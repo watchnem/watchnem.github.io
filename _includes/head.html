@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    
+
     {% include styles.html %}
 
     {% include meta.html %}
@@ -10,5 +10,55 @@
     {% seo title=false %}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap">
-    <style>body { visibility: hidden; }</style>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const INITIAL = 10;
+            const candidates = Array.from(document.querySelectorAll('img.lz-candidate'));
+            const rest = candidates.slice(INITIAL);
+            
+            // 초기 10장은 즉시 승격
+            candidates.slice(0, INITIAL).forEach(el => {
+                el.classList.remove('lz-candidate');
+                el.classList.add('lozad', 'lz-initial');
+            });
+            
+            // 뷰포트 진입 시 승격할 대상 감시용 observer
+            const ioLater = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                    const el = entry.target;
+                    obs.unobserve(el);
+                    el.classList.remove('lz-candidate');
+                    el.classList.add('lozad');
+                    lozadObs.observe(el);
+                }
+                });
+            }, { rootMargin: '0px', threshold: 0.01 });
+            
+            rest.forEach(el => ioLater.observe(el));
+            
+            // 실제 hello 로딩은 아래 lozad observer 에서
+            const lozadObs = lozad('.lozad', {
+                rootMargin: '0px',
+                threshold: 0.01,
+                loaded: el => {
+                el.classList.add('is-loaded');
+                el.style.removeProperty('aspect-ratio');
+                }
+            });
+            lozadObs.observe(); // 초기 `.lozad` 관찰 시작
+        });
+    </script>
+    
+    <style>
+        img.lz-candidate, img.lozad {
+            display:block; width:100%; height:auto;
+            aspect-ratio: 675 / 1200;
+            background:#f2f3f5;
+            opacity:0;
+        }
+        img.is-loaded { opacity:1; transition:opacity .25s ease; aspect-ratio: auto; }
+    </style>
 </head>
