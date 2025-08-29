@@ -1,0 +1,7 @@
+---
+layout: default
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name %}

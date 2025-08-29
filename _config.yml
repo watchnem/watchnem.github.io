@@ -14,22 +14,6 @@ markdown: kramdown
 permalink: /:year-:month-:day-:title
 # https://github.com/midzer/urban-theme?tab=readme-ov-file
 
-
-
-
-
-
-plugins:
-  - jekyll-archives
-
-jekyll-archives:
-  enabled:
-    - categories
-  layouts:
-    category: models  # 사용하고 싶은 레이아웃
-  permalinks:
-    category: "/models/:name/"
-
 permitted_categories:
   - 로아
   - 베르뷰
