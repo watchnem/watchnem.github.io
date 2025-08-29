@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% assign allowed = site.permitted_categories | default: [] %}
+
+{% unless allowed contains page.title %}
+  {% include 404.html %}
+{% else %}
+  <p class="archive_type">{{ page.title }} ({{ page.posts | size }})</p>
+
+  {% include model_preview.html posts=page.posts %}
+{% endunless %}

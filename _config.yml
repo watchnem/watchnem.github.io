@@ -12,5 +12,90 @@ twitter_username: watch_nn
 # Build settings
 markdown: kramdown
 permalink: /:year-:month-:day-:title
-
 # https://github.com/midzer/urban-theme?tab=readme-ov-file
+
+
+
+
+
+
+plugins:
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+  layouts:
+    category: models  # 사용하고 싶은 레이아웃
+  permalinks:
+    category: "/models/:name/"
+
+permitted_categories:
+  - 로아
+  - 베르뷰
+  - 자림
+  - 니린
+  - 버니버니
+  - 제제
+  - 호나수
+  - 메뭄
+  - 아포
+  - 밀키웨이
+  - 모코
+  - 김도아
+  - 입력됴
+  - 요소밍
+  - 미코
+  - 류뻔뻔
+  - 레몬
+  - 말차당고
+  - 수정
+  - 고냥어
+  - 빙빙수
+  - 사월
+  - 로_압생트
+  - 시니
+  - 플샤
+  - 애망애망
+  - 유메
+  - 파카
+  - 뱅
+  - 하람
+  - 프리이
+  - 라쿤씨
+  - 하내린
+  - 우주의 먼지
+  - 카소
+  - 에커
+  - 펄
+  - Non
+  - 순후추
+  - 탄
+  - 레임
+  - 아츠
+  - 창꼬
+  - 영태
+  - 애커
+  - F
+  - 댕님
+  - 지은
+  - 희세
+  - 기묭묭지
+  - 토깅
+  - 세빛
+  - 미천용사
+  - 로라
+  - 개멍이
+  - 산설아
+  - 루화
+  - 령라떼
+  - 안절부절
+  - 감자
+  - 히메
+  - 낑깡
+  - 원콩
+  - 곽효인
+  - 카에
+  - 군생님
+  - 홍률푸딩
+  - kimleon1991

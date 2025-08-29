@@ -770,9 +770,18 @@ a.site-title {
     margin-bottom: 1.7rem;
 }
 
+.archive_type-sub {
+    text-align: center;
+    font-size: smaller;
+    margin-top: -1.9rem;
+}
+
 @media (max-width: 40rem) {
     .archive_type {
         margin-bottom: 1rem;
+    }
+    .archive_type-sub {
+        margin-top: -1.1rem;
     }
 }
 

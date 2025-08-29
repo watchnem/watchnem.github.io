@@ -1,0 +1,59 @@
+---
+layout: default
+title: Models
+permalink: /models/
+render_with_liquid: true
+---
+
+{%- comment -%}
+1) 각 허용 카테고리별로 최신 글 하나를 추출해 배열 latest_posts에 담는다
+2) 그 후 배열 latest_posts를 순회하며 링크와 제목, 날짜를 출력한다
+{%- endcomment -%}
+
+{%- assign latest_posts = "" | split: "" -%}
+
+{% for category in site.permitted_categories %}
+  {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
+  {% assign sorted = posts_in_cat | sort: "date" | reverse %}
+  {% assign latest = nil %}
+  {% for p in sorted %}
+    {% unless p.categories contains "히든" or p.categories contains "행사장" %}
+      {% assign latest = p %}
+      {% break %}
+    {% endunless %}
+  {% endfor %}
+
+  {% if latest %}
+    {% capture info %}{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% assign latest_posts = latest_posts | push: info %}
+  {% endif %}
+{% endfor %}
+
+<p class="archive_type">모델별 ({{ latest_posts | size }})</p>
+<p class="archive_type-sub">갠촬 하신분만 표기됩니다.</p>
+
+{% for item in latest_posts %}
+  {% assign parts = item | split: "|" %}
+  {% assign url = parts[0] %}
+  {% assign title = parts[1] %}
+  {% assign preview = parts[2] %}
+
+  {%- assign i = forloop.index0 | modulo: 2 -%}
+
+  {% if forloop.first or i == 0 %}
+    <div class="row">
+  {% endif %}
+
+  <div class="column column-50">
+    <div class="preview-panel">
+      <a href="{{ url }}">
+        <img src="{{ preview }}">
+      </a>
+      <div class="post-title">{{ url }}</div>
+    </div>
+  </div>
+
+  {% if i == 1 or forloop.last %}
+    </div>
+  {% endif %}
+{% endfor %}
