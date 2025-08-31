@@ -34,7 +34,7 @@ render_with_liquid: true
 
 {% for item in latest_posts %}
   {% assign parts = item | split: "|" %}
-  {% assign url = parts[0] %}
+  {% assign nickname = parts[0] %}
   {% assign title = parts[1] %}
   {% assign preview = parts[2] %}
 
@@ -46,10 +46,10 @@ render_with_liquid: true
 
   <div class="column column-50">
     <div class="preview-panel">
-      <a href="{{ url }}">
+      <a href="{{ nickname }}">
         <img src="{{ preview }}">
       </a>
-      <div class="post-title">{{ url }}</div>
+      <div class="post-title">{{ nickname }} 님</div>
     </div>
   </div>
 
