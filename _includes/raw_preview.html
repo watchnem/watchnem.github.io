@@ -2,8 +2,9 @@
     {% cycle 'add-row' : '<div class="row">', '' %}
         <div class="column column-50">
             <div class="preview-panel">
-                <a href="{{ post.url | prepend: site.baseurl }}">
+                <a href="{{ post.url | prepend: site.baseurl }}" style="position: relative;">
                     <img src="{{ post.preview }}">
+                    <!-- <div class="thumbnail_title"><div class="thumbnail_title_inner">행사장</div></div> -->
                 </a>
                 <div class="post-title">{{ post.title }}</div>
             </div>
