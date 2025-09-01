@@ -5,19 +5,13 @@ permalink: /models/
 render_with_liquid: true
 ---
 
-{%- comment -%}
-1) 각 허용 카테고리별로 최신 글 하나를 추출해 배열 latest_posts에 담는다
-2) 그 후 배열 latest_posts를 순회하며 링크와 제목, 날짜를 출력한다
-{%- endcomment -%}
-
 {%- assign latest_posts = "" | split: "" -%}
-
 {% for category in site.permitted_categories %}
   {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
   {% assign sorted = posts_in_cat | sort: "date" | reverse %}
   {% assign latest = nil %}
   {% for p in sorted %}
-    {% unless p.categories contains "히든" or p.categories contains "행사장" %}
+    {% unless p.categories contains "히든" or p.categories contains "행사장" or p.categories contains "트윈" %}
       {% assign latest = p %}
       {% break %}
     {% endunless %}
@@ -29,10 +23,46 @@ render_with_liquid: true
   {% endif %}
 {% endfor %}
 
-<p class="archive_type">모델별 ({{ latest_posts | size }})</p>
-<p class="archive_type-sub">갠촬 하신분만 표기됩니다.</p>
+{%- assign event_posts = "" | split: "" -%}
+{% for category in site.permitted_categories %}
+  {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
+  {% assign sorted = posts_in_cat | sort: "date" | reverse %}
+  {% assign latest = nil %}
+  {% for p in sorted %}
+    {% unless p.categories contains "히든" or p.categories contains "트윈" %}
+      {% assign latest = p %}
+      {% break %}
+    {% endunless %}
+  {% endfor %}
 
-{% for item in latest_posts %}
+  {% if latest %}
+    {% capture info %}{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% assign event_posts = event_posts | push: info %}
+  {% endif %}
+{% endfor %}
+
+{%- assign event_only = "" | split: "" -%}
+{% for e in event_posts %}
+  {% assign e_nickname = e | split:"|" | first %}
+  {% assign duplicate = false %}
+  {% for l in latest_posts %}
+    {% assign l_nickname = l | split:"|" | first %}
+    {% if e_nickname == l_nickname %}
+      {% assign duplicate = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% unless duplicate %}
+    {% assign event_only = event_only | push: e %}
+  {% endunless %}
+{% endfor %}
+
+{%- assign latest_posts_sorted = latest_posts | concat: event_only -%}
+
+
+<p class="archive_type">모델별 ({{ latest_posts_sorted | size }})</p>
+
+{% for item in latest_posts_sorted %}
   {% assign parts = item | split: "|" %}
   {% assign nickname = parts[0] %}
   {% assign title = parts[1] %}
