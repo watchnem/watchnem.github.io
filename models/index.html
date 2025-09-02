@@ -10,8 +10,14 @@ render_with_liquid: true
 {% for category in site.permitted_categories %}
   {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
   {% assign sorted = posts_in_cat | sort: "date" | reverse %}
+  {% assign category_count = 0 %}
+  {% for p in sorted %}
+    {% unless p.categories contains "히든" %}
+      {% assign category_count = category_count | plus: 1 %}
+    {% endunless %}
+  {% endfor %}
+
   {% assign latest = nil %}
-  {% assign category_count = sorted | size %}
 
   {% for p in sorted %}
     {% unless p.categories contains "히든" or p.categories contains "행사장" or p.categories contains "트윈" %}
@@ -33,8 +39,14 @@ render_with_liquid: true
 {% for category in site.permitted_categories %}
   {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
   {% assign sorted = posts_in_cat | sort: "date" | reverse %}
+  {% assign category_count = 0 %}
+  {% for p in sorted %}
+    {% unless p.categories contains "히든" %}
+      {% assign category_count = category_count | plus: 1 %}
+    {% endunless %}
+  {% endfor %}
+
   {% assign latest = nil %}
-  {% assign category_count = sorted | size %}
 
   {% for p in sorted %}
     {% unless p.categories contains "히든" or p.categories contains "트윈" %}
