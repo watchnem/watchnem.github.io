@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 우주의 먼지 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiJ4F_cRl_UORfc_EE3L3E8DDlYGSqR6utE7gNlWs8XYA-QjrAsUfo3rJIe_QX1PWKEGOVfPtW2_PHbGwNexr_PAZtfwmYB0LrCJy4pUSkBzKKtU9DX4TamC1pbVpfE-t1W7vCQukg_RudVS-uEcdhDi47-Hdd7sC9x2sZcs8xXu3bvjYYka_JuImk6gTs7
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEj2sVJ0aPZidromxrRGH6MVTizqHz6f8KWkbLkHnoxhOX7IXff-q3wJOx0ZBsk_3ure9pYWG9M2GLowQupkBQOCwSpzuKYcdpRmMJcQDxmWREisjtXDDPnnos_r6UMEhJhYtnUwdPYR_ot1Q1ppUScXHQuvevFbzvW6BKpPPjW1OiEeRwWUrzZ2CTtcnyxp
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
