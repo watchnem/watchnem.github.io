@@ -10,6 +10,8 @@ render_with_liquid: true
   {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
   {% assign sorted = posts_in_cat | sort: "date" | reverse %}
   {% assign latest = nil %}
+  {% assign category_count = sorted | size %}
+
   {% for p in sorted %}
     {% unless p.categories contains "히든" or p.categories contains "행사장" or p.categories contains "트윈" %}
       {% assign latest = p %}
@@ -18,16 +20,21 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
-    {% capture info %}{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
     {% assign latest_posts = latest_posts | push: info %}
   {% endif %}
 {% endfor %}
+
+{%- assign latest_posts_sorted = latest_posts | sort | reverse -%}
 
 {%- assign event_posts = "" | split: "" -%}
 {% for category in site.permitted_categories %}
   {% assign posts_in_cat = site.posts | where_exp:"p","p.categories contains category" %}
   {% assign sorted = posts_in_cat | sort: "date" | reverse %}
   {% assign latest = nil %}
+  {% assign category_count = sorted | size %}
+
   {% for p in sorted %}
     {% unless p.categories contains "히든" or p.categories contains "트윈" %}
       {% assign latest = p %}
@@ -36,17 +43,22 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
-    {% capture info %}{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
     {% assign event_posts = event_posts | push: info %}
   {% endif %}
 {% endfor %}
 
+{%- assign event_posts_sorted = event_posts | sort | reverse -%}
+
 {%- assign event_only = "" | split: "" -%}
-{% for e in event_posts %}
-  {% assign e_nickname = e | split:"|" | first %}
+{% for e in event_posts_sorted %}
+  {% assign e_parts = e | split:"|" %}
+  {% assign e_nickname = e_parts[1] %}
   {% assign duplicate = false %}
-  {% for l in latest_posts %}
-    {% assign l_nickname = l | split:"|" | first %}
+  {% for l in latest_posts_sorted %}
+    {% assign l_parts = l | split:"|" %}
+    {% assign l_nickname = l_parts[1] %}
     {% if e_nickname == l_nickname %}
       {% assign duplicate = true %}
       {% break %}
@@ -57,16 +69,17 @@ render_with_liquid: true
   {% endunless %}
 {% endfor %}
 
-{%- assign latest_posts_sorted = latest_posts | concat: event_only -%}
+{%- assign latest_posts_sorted2 = latest_posts_sorted | concat: event_only -%}
 
 
-<p class="archive_type">모델별 ({{ latest_posts_sorted | size }})</p>
+<p class="archive_type">모델별 ({{ latest_posts_sorted2 | size }})</p>
 
 {% for item in latest_posts_sorted %}
   {% assign parts = item | split: "|" %}
-  {% assign nickname = parts[0] %}
-  {% assign title = parts[1] %}
-  {% assign preview = parts[2] %}
+  {% assign count = parts[0] | plus: 0 %}
+  {% assign nickname = parts[1] %}
+  {% assign title = parts[2] %}
+  {% assign preview = parts[3] %}
 
   {%- assign i = forloop.index0 | modulo: 2 -%}
 
@@ -79,7 +92,34 @@ render_with_liquid: true
       <a href="{{ nickname }}">
         <img src="{{ preview }}">
       </a>
-      <div class="post-title">{{ nickname }} 님</div>
+      <div class="post-title">{{ nickname }} 님 ({{ count }})</div>
+    </div>
+  </div>
+
+  {% if i == 1 or forloop.last %}
+    </div>
+  {% endif %}
+{% endfor %}
+
+{% for item in event_only %}
+  {% assign parts = item | split: "|" %}
+  {% assign count = parts[0] | plus: 0 %}
+  {% assign nickname = parts[1] %}
+  {% assign title = parts[2] %}
+  {% assign preview = parts[3] %}
+
+  {%- assign i = forloop.index0 | modulo: 2 -%}
+
+  {% if forloop.first or i == 0 %}
+    <div class="row">
+  {% endif %}
+
+  <div class="column column-50">
+    <div class="preview-panel">
+      <a href="{{ nickname }}">
+        <img src="{{ preview }}">
+      </a>
+      <div class="post-title">{{ nickname }} 님 ({{ count }})</div>
     </div>
   </div>
 
