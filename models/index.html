@@ -90,6 +90,15 @@ render_with_liquid: true
   {% assign preview = parts[3] %}
   {% assign blur = parts[4] %}
 
+  {% assign target_path = "models/" | append: nickname | append: ".html" %}
+  {% assign model_page = site.pages | where: "path", target_path | first %}  
+  {% if model_page and model_page.preview %}
+    {% assign final_preview = model_page.preview %}
+    {% assign blur = model_page.blur %}
+  {% else %}
+    {% assign final_preview = preview %}
+  {% endif %}
+
   {%- assign i = forloop.index0 | modulo: 2 -%}
 
   {% if forloop.first or i == 0 %}
@@ -99,7 +108,7 @@ render_with_liquid: true
   <div class="column column-50">
     <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
       <a href="{{ nickname }}">
-        <img src="{{ preview }}">
+        <img src="{{ final_preview }}">
       </a>
       <div class="post-title">{{ nickname }} 님 ({{ count }})</div>
     </div>
@@ -118,6 +127,14 @@ render_with_liquid: true
   {% assign preview = parts[3] %}
   {% assign blur = parts[4] %}
 
+  {% assign target_path = "models/" | append: nickname | append: ".html" %}
+  {% assign model_page = site.pages | where: "path", target_path | first %}  
+  {% if model_page and model_page.preview %}
+    {% assign final_preview = model_page.preview %}
+  {% else %}
+    {% assign final_preview = preview %}
+  {% endif %}
+
   {%- assign i = forloop.index0 | modulo: 2 -%}
 
   {% if forloop.first or i == 0 %}
@@ -127,7 +144,7 @@ render_with_liquid: true
   <div class="column column-50">
     <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
       <a href="{{ nickname }}">
-        <img src="{{ preview }}">
+        <img src="{{ final_preview }}">
       </a>
       <div class="post-title">{{ nickname }} 님 ({{ count }})</div>
     </div>
