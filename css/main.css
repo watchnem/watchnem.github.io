@@ -905,11 +905,14 @@ a.site-title {
 }
 
 .pre a {
-    text-decoration: none;
     color: #CFBCA6;
+    text-decoration: underline;
 }
 
-
+.pre p:nth-child(3) a {
+    color: #ff8e0b;
+    text-decoration: underline;
+}
 
 
 

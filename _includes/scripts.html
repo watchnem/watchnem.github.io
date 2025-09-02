@@ -71,3 +71,36 @@
     }, false);
 // @license-end
 </script>
+
+{% if page.layout == "post" %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // 모든 .pre 블록 순회
+  document.querySelectorAll('.pre').forEach(function(pre) {
+    // 이미 '게시물 더보기' 링크가 있으면 스킵
+    if (pre.querySelector('a[data-more-link="true"]')) return;
+
+    // 닉네임 추출: 첫 번째 <p>의 텍스트에서 '(' 이전까지
+    const firstP = pre.querySelector('p');
+    if (!firstP) return;
+
+    const raw = (firstP.textContent || '').trim();
+    if (!raw) return;
+
+    // '말차당고(@MalchaDango_cos)' → '말차당고'
+    const nickname = raw.split('(')[0].trim();
+    if (!nickname) return;
+
+    // 링크 요소 생성 (/models/닉네임) — 한글 안전하게 인코딩
+    const moreP = document.createElement('p');
+    const a = document.createElement('a');
+    a.href = "/models/" + encodeURIComponent(nickname);
+    a.textContent = nickname + " 님 게시물 더보기";
+    a.setAttribute('data-more-link', 'true');
+
+    moreP.appendChild(a);
+    pre.appendChild(moreP);
+  });
+});
+</script>
+{% endif %}
