@@ -1,7 +1,11 @@
 {% for post in include.posts %}
+    {% assign blur = true %}
+    {% unless post.categories contains "성인" %}
+        {% assign blur = false %}
+    {% endunless %}
     {% cycle 'add-row' : '<div class="row">', '' %}
         <div class="column column-50">
-            <div class="preview-panel">
+            <div class="preview-panel {% if blur %}blur{% endif %}">
                 <a href="{{ post.url | prepend: site.baseurl }}" style="position: relative;">
                     <img src="{{ post.preview }}">
                     <!-- <div class="thumbnail_title"><div class="thumbnail_title_inner">행사장</div></div> -->

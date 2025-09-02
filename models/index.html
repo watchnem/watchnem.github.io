@@ -20,8 +20,12 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
+    {% assign blur = true %}
+    {% unless latest.categories contains "성인" %}
+        {% assign blur = false %}
+    {% endunless %}
     {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
-    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}|{{ blur }}{% endcapture %}
     {% assign latest_posts = latest_posts | push: info %}
   {% endif %}
 {% endfor %}
@@ -43,8 +47,12 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
+    {% assign blur = true %}
+    {% unless latest.categories contains "성인" %}
+        {% assign blur = false %}
+    {% endunless %}
     {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
-    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}|{{ blur }}{% endcapture %}
     {% assign event_posts = event_posts | push: info %}
   {% endif %}
 {% endfor %}
@@ -80,6 +88,7 @@ render_with_liquid: true
   {% assign nickname = parts[1] %}
   {% assign title = parts[2] %}
   {% assign preview = parts[3] %}
+  {% assign blur = parts[4] %}
 
   {%- assign i = forloop.index0 | modulo: 2 -%}
 
@@ -88,7 +97,7 @@ render_with_liquid: true
   {% endif %}
 
   <div class="column column-50">
-    <div class="preview-panel">
+    <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
       <a href="{{ nickname }}">
         <img src="{{ preview }}">
       </a>
@@ -107,6 +116,7 @@ render_with_liquid: true
   {% assign nickname = parts[1] %}
   {% assign title = parts[2] %}
   {% assign preview = parts[3] %}
+  {% assign blur = parts[4] %}
 
   {%- assign i = forloop.index0 | modulo: 2 -%}
 
@@ -115,7 +125,7 @@ render_with_liquid: true
   {% endif %}
 
   <div class="column column-50">
-    <div class="preview-panel">
+    <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
       <a href="{{ nickname }}">
         <img src="{{ preview }}">
       </a>

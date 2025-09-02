@@ -637,12 +637,14 @@ h6 {
     line-height: 1.4;
 }
 
-
 img {
     max-width: 100%;
     min-height: 200px;
 }
 
+.preview-panel.blur img {
+    filter: blur(4px);
+}
 
 .clearfix:after {
     clear: both;
