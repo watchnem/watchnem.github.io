@@ -1,3 +1,31 @@
+<meta name="author" content="{{ site.user.name }}">
+<meta name="keywords" content="와치,©watchnem,코스프레,コスプレ,cosplay,twitter">
+<meta name="description" content="{{ title | escape }}">
+
+<!-- og -->
+<meta property="og:title" content="{{ title | escape }}">
+<meta property="og:description" content="{{ title | escape }}">
+{% if page.ogthumb %}
+<meta property="og:image" content="{{ page.ogthumb }}">
+{% endif %}
+<meta property="og:url" content="{{ page.url | prepend: site.url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+
+<!-- twitter -->
+<meta name="twitter:title" content="{{ title | escape }}">
+<meta name="twitter:description" content="{{ title | escape }}">
+{% if page.ogthumb %}
+<meta name="twitter:image" content="{{ page.ogthumb }}">
+<meta name="twitter:image:alt" content="{{ page.ogthumb }}">
+{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page.url | prepend: site.url }}">
+<meta name="twitter:site" content="@watch_nn">
+<meta name="twitter:domain" content="https://watchnem.github.io">
+<meta name="robots" content="noarchive">
+<meta name="copyright" content="Copyright ©watchnem All rights reserved.">
+
 <link rel="shortcut icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl }}" type="image/x-icon">
 <link rel="icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl }}" type="image/x-icon">
 <meta name="referrer" content="no-referrer">
