@@ -3,8 +3,12 @@
 <meta name="description" content="{{ title | escape }}">
 
 <!-- og -->
-<meta property="og:title" content="{{ title | escape }}">
-<meta property="og:description" content="{{ title | escape }}">
+<meta property="og:title" content="{{ page.title | escape }}">
+{% if page.categories %}
+<meta property="og:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+{% else %}
+<meta property="og:description" content="{{ page.title | escape }}">
+{% endif %}
 {% if page.ogthumb %}
 <meta property="og:image" content="{{ page.ogthumb }}">
 {% endif %}
@@ -13,8 +17,12 @@
 <meta property="og:site_name" content="{{ site.title | escape }}">
 
 <!-- twitter -->
-<meta name="twitter:title" content="{{ title | escape }}">
-<meta name="twitter:description" content="{{ title | escape }}">
+<meta name="twitter:title" content="{{ page.title | escape }}">
+{% if page.categories %}
+<meta property="twitter:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+{% else %}
+<meta property="twitter:description" content="{{ page.title | escape }}">
+{% endif %}
 {% if page.ogthumb %}
 <meta name="twitter:image" content="{{ page.ogthumb }}">
 <meta name="twitter:image:alt" content="{{ page.ogthumb }}">
