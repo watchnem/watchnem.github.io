@@ -104,3 +104,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 {% endif %}
+
+
+{% if page.layout == "post" %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 토스트 노드 생성 및 추가
+  const toast = document.createElement('div');
+  toast.id = 'copy-toast';
+  toast.textContent = '주소가 복사되었습니다';
+  document.body.appendChild(toast);
+
+  // 클릭 대상을 .post-title로 지정 (or post-header h1 등)
+  const title = document.querySelector('.post-title');
+  if (title) {
+    title.style.cursor = 'pointer';
+    title.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 1000); // 1초 후 사라짐
+      } catch (e) {
+        console.error('클립보드 복사 실패:', e);
+      }
+    });
+  }
+});
+</script>
+{% endif %}
