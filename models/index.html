@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 모델별
 permalink: /models/
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgLeFA66nPAhUA0HdDH1CJLqTENYdpkZfxQZWFCtcNWYE3ayoRIW2NQls3V2VtbIuTKxqMbzsYGkmCh3ihNBWGaH1xyy0SGQGZExVtFzmzILWLIdkJnxkEZ8Lc7ifnLr_Tb5mgM3bIuoL7mGloHCjgc8B7NYGA30XvyG8JFsIlynS39PDghWQHm50RGOdG8
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEguK0bGSE2wBf-6D-YRMLfsRtTPNmQCRUHemb7yzobPAKz-cdkHkDuXPpQpDgBwDSGcovkWRJpmlRHeBqC5jd3X8RCZ6Xlc2Xh08YYH8GIIjRA84AR21YyfIhZlxP7iHiEEukV39AJHdvUvTtzSpfLzythuxtBzgUMHEVikevzRVH0wgekrx6UQ4vnfMHKj
 render_with_liquid: true
 ---
 
@@ -20,12 +21,8 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
-    {% assign blur = true %}
-    {% unless latest.categories contains "성인" %}
-        {% assign blur = false %}
-    {% endunless %}
     {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
-    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}|{{ blur }}{% endcapture %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
     {% assign latest_posts = latest_posts | push: info %}
   {% endif %}
 {% endfor %}
@@ -47,12 +44,8 @@ render_with_liquid: true
   {% endfor %}
 
   {% if latest %}
-    {% assign blur = true %}
-    {% unless latest.categories contains "성인" %}
-        {% assign blur = false %}
-    {% endunless %}
     {% assign padded = category_count | prepend: "0000" | slice: -4, 4 %}
-    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}|{{ blur }}{% endcapture %}
+    {% capture info %}{{ padded }}|{{ category }}|{{ latest.title }}|{{ latest.preview }}{% endcapture %}
     {% assign event_posts = event_posts | push: info %}
   {% endif %}
 {% endfor %}
@@ -88,7 +81,7 @@ render_with_liquid: true
   {% assign nickname = parts[1] %}
   {% assign title = parts[2] %}
   {% assign preview = parts[3] %}
-  {% assign blur = parts[4] %}
+  {% assign blur = false %}
 
   {% assign target_path = "models/" | append: nickname | append: ".html" %}
   {% assign model_page = site.pages | where: "path", target_path | first %}  
@@ -106,7 +99,7 @@ render_with_liquid: true
   {% endif %}
 
   <div class="column column-50">
-    <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
+    <div class="preview-panel {% if blur %}blur{% endif %}">
       <a href="{{ nickname }}">
         <img src="{{ final_preview }}">
       </a>
@@ -125,7 +118,6 @@ render_with_liquid: true
   {% assign nickname = parts[1] %}
   {% assign title = parts[2] %}
   {% assign preview = parts[3] %}
-  {% assign blur = parts[4] %}
 
   {% assign target_path = "models/" | append: nickname | append: ".html" %}
   {% assign model_page = site.pages | where: "path", target_path | first %}  
@@ -142,7 +134,7 @@ render_with_liquid: true
   {% endif %}
 
   <div class="column column-50">
-    <div class="preview-panel {% if blur == 'true' %}blur{% endif %}">
+    <div class="preview-panel {% if blur %}blur{% endif %}">
       <a href="{{ nickname }}">
         <img src="{{ final_preview }}">
       </a>

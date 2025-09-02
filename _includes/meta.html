@@ -2,35 +2,103 @@
 <meta name="keywords" content="와치,©watchnem,코스프레,コスプレ,cosplay,twitter">
 <meta name="description" content="{{ title | escape }}">
 
-<!-- og -->
-<meta property="og:title" content="{{ page.title | escape }}">
-{% if page.categories %}
-<meta property="og:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+<!-- get thumb start -->
+{%- comment -%} 1) 렌더된 본문에서 첫 번째 링크 href 추출 (레이아웃에서는 {{ content }}가 렌더 결과) {%- endcomment -%}
+{% capture rendered %}{{ content }}{% endcapture %}
+{% assign first_href = nil %}
+{% assign a_parts = rendered | split:'<a ' %}
+{% for part in a_parts %}
+  {% if part contains 'href="' and first_href == nil %}
+    {% assign first_href = part | split:'href="' | last | split:'"' | first %}
+  {% endif %}
+{% endfor %}
+
+{%- comment -%} 2) 내부 링크로 한정: site.url/baseurl 제거해 정규화된 경로로 변환 {%- endcomment -%}
+{% assign href_path = first_href %}
+{% if href_path %}
+  {% if href_path contains site.url %}
+    {% assign href_path = href_path | remove: site.url %}
+  {% endif %}
+  {% if site.baseurl and href_path contains site.baseurl %}
+    {% assign href_path = href_path | remove_first: site.baseurl %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} 3) 경로가 일치하는 문서(포스트/페이지) 찾아오기 {%- endcomment -%}
+{% assign linked_doc = nil %}
+{% if href_path %}
+  {% for p in site.posts %}
+    {% if p.url == href_path %}
+      {% assign linked_doc = p %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if linked_doc == nil %}
+    {% for p in site.pages %}
+      {% if p.url == href_path %}
+        {% assign linked_doc = p %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} 4) 우선순위: linked_doc.ogthumb > linked_doc.image > (없으면 출력 안 함) {%- endcomment -%}
+{% assign ogimg = nil %}
+{% if linked_doc and linked_doc.ogthumb %}
+  {% assign ogimg = linked_doc.ogthumb | absolute_url %}
+{% elsif linked_doc and linked_doc.image %}
+  {% assign ogimg = linked_doc.image | absolute_url %}
+{% endif %}
+<!-- get thumb end -->
+
+<!-- og start -->
+{% if page.title %}
+    <meta property="og:title" content="{{ page.title | escape }}">
+    {% if page.categories %}
+        <meta property="og:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+    {% else %}
+        <meta property="og:description" content="{{ page.title | escape }}">
+    {% endif %}
 {% else %}
-<meta property="og:description" content="{{ page.title | escape }}">
+<meta property="og:title" content="@watch_nn">
+<meta property="og:description" content="@watch_nn">
 {% endif %}
 {% if page.ogthumb %}
-<meta property="og:image" content="{{ page.ogthumb }}">
+    <meta property="og:image" content="{{ page.ogthumb }}">
+{% else %}
+    <meta property="og:image" content="{{ ogimg }}">
 {% endif %}
 <meta property="og:url" content="{{ page.url | prepend: site.url }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.title | escape }}">
+<!-- og end -->
 
-<!-- twitter -->
-<meta name="twitter:title" content="{{ page.title | escape }}">
-{% if page.categories %}
-<meta property="twitter:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+<!-- twitter start -->
+{% if page.title %}
+    <meta property="twitter:title" content="{{ page.title | escape }}">
+    {% if page.categories %}
+        <meta property="twitter:description" content="{{ page.title | escape }} – 카테고리: {{ page.categories | join: ", " }}">
+    {% else %}
+        <meta property="twitter:description" content="{{ page.title | escape }}">
+    {% endif %}
 {% else %}
-<meta property="twitter:description" content="{{ page.title | escape }}">
+    <meta property="twitter:title" content="@watch_nn">
+    <meta property="twitter:description" content="@watch_nn">
 {% endif %}
 {% if page.ogthumb %}
-<meta name="twitter:image" content="{{ page.ogthumb }}">
-<meta name="twitter:image:alt" content="{{ page.ogthumb }}">
+    <meta name="twitter:image" content="{{ page.ogthumb }}">
+    <meta name="twitter:image:alt" content="{{ page.ogthumb }}">
+{% else %}
+    <meta name="twitter:image" content="{{ ogimg }}">
+    <meta name="twitter:image:alt" content="{{ ogimg }}">
 {% endif %}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ page.url | prepend: site.url }}">
 <meta name="twitter:site" content="@watch_nn">
 <meta name="twitter:domain" content="https://watchnem.github.io">
+<!-- twitter end -->
+
 <meta name="robots" content="noarchive">
 <meta name="copyright" content="Copyright ©watchnem All rights reserved.">
 
