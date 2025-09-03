@@ -737,11 +737,20 @@ a.site-title {
     right: 0;
     height: 3px; /* 선의 두께 */
     background-color: var(--main);
-  }
+}
 
 .nav-item a {
     color: var(--main);
     text-decoration: none;
+}
+
+/* .nav-item.active::after {
+    background-color: rgb(2 141 117)
+} */
+
+.nav-item.active a {
+    /* color: rgb(2 141 117) */
+    text-decoration: underline;
 }
 
 .post-nav {

@@ -134,3 +134,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {% endif %}
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const current = decodeURIComponent(window.location.pathname);
+    if (current.includes("/갠촬")) {
+      document.querySelector('.nav-item.ganchal')?.classList.add('active');
+    } else if (current.includes("/행사장")) {
+      document.querySelector('.nav-item.event')?.classList.add('active');
+    } else if (current.includes("/models")) {
+      document.querySelector('.nav-item.models')?.classList.add('active');
+    } else if (current === "/") {
+    } else {
+      let ref = document.referrer;
+      ref = decodeURIComponent(ref);
+      console.log("이전 페이지:", ref);
+  
+      if (ref.includes("/갠촬")) {
+        document.querySelector('.nav-item.ganchal')?.classList.add('active');
+      } else if (ref.includes("/행사장")) {
+        document.querySelector('.nav-item.event')?.classList.add('active');
+      } else if (ref.includes("/models")) {
+        document.querySelector('.nav-item.models')?.classList.add('active');
+      }
+    }
+  });
+</script>
