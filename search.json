@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{% assign posts = site.posts | where_exp: "p", "p.published != false" %}
+{% assign first = true %}
+{% for p in posts %}
+  {% unless p.categories contains "히든" %}
+    {% unless first %},{% endunless %}
+    {
+      "title": {{ p.title | jsonify }},
+      "url": {{ p.url | absolute_url | jsonify }},
+      "date": "{{ p.date | date: "%Y-%m-%d" }}",
+      "categories": {{ p.categories | jsonify }},
+      "tags": {{ p.tags | jsonify }},
+      "content": {{ p.content | strip_html | normalize_whitespace | jsonify }}
+    }
+    {% assign first = false %}
+  {% endunless %}
+{% endfor %}
+]

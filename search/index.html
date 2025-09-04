@@ -1,0 +1,87 @@
+---
+layout: default
+title: 검색
+---
+
+<h1>검색</h1>
+<input id="search-input" type="search" placeholder="검색어를 입력하세요" />
+<p id="search-count"></p>
+<ul id="search-results"></ul>
+
+<script>
+(async function(){
+  // 데이터 불러오기
+  const res = await fetch('{{ "/search.json" | relative_url }}');
+  const docs = await res.json();
+
+  // 한국어/일본어 등 비공백 언어 대비: 공백 기준 분리가 어려우므로 기본 파이프라인 제거
+  // (정확한 형태소 검색이 필요하면 n-gram 전처리를 고려)
+  const idx = lunr(function () {
+    this.pipeline.reset();
+    this.searchPipeline.reset();
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    this.field('categories');
+    this.field('tags');
+
+    docs.forEach(doc => this.add(doc));
+  });
+
+  const $input = document.getElementById('search-input');
+  const $list  = document.getElementById('search-results');
+  const $count = document.getElementById('search-count');
+
+  function render(results){
+    $list.innerHTML = '';
+    if(!results.length){
+      $count.textContent = '검색 결과 없음';
+      return;
+    }
+    $count.textContent = `${results.length}건`;
+
+    results.slice(0, 50).forEach(r => {
+      const doc = docs.find(d => d.url === r.ref);
+      const content = doc.content || '';
+      const lastIndex = content.lastIndexOf(')'); // 마지막 ) 위치
+      let preview = lastIndex !== -1 ? content.substring(0, lastIndex) : content;
+      const li = document.createElement('li');
+      
+      // "Twitter" 문자열 제거
+      preview = preview.replace(/Twitter/g, '');
+
+      li.innerHTML = `
+        <a href="${doc.url}" style="color: var(--main);text-decoration: underline;">${doc.title}</a>
+        <div style="display:inline-block;font-size: 1.3rem;color: #979797;"> — ${preview})</div>
+      `;
+      $list.appendChild(li);
+    });
+  }
+
+  // 간단한 contains 보조: 공백 없는 한글 검색 방어
+  function fallbackContains(q){
+    const qn = q.trim();
+    if(!qn) return [];
+    const results = [];
+    docs.forEach(d=>{
+      const blob = `${d.title} ${d.categories} ${d.tags} ${d.content}`;
+      if(blob && blob.indexOf(qn) !== -1){
+        results.push({ref: d.url, score: 1});
+      }
+    });
+    return results;
+  }
+
+  $input.addEventListener('input', e=>{
+    const q = e.target.value.trim();
+    if(!q){ render([]); return; }
+
+    // lunr 검색 → 결과 없으면 contains fallback
+    let results = idx.search(q);
+    if(results.length === 0){
+      results = fallbackContains(q);
+    }
+    render(results);
+  });
+})();
+</script>
