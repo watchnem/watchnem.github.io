@@ -257,6 +257,7 @@ select {
     height: 3.8rem;
     padding: 0.6rem 1rem;
     width: 100%;
+    color: var(--main);
 }
 
 input[type=email]:focus,
