@@ -1,0 +1,51 @@
+{%- assign _h = include.height | default: 300 -%}
+{%- assign _gap = include.gap    | default: 8   -%}
+{%- assign _fit = include.contain | default: true -%}
+
+<div class="splide threads-splide" role="group" aria-label="{{ include.label | default: '이미지 스레드' }}">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {%- for it in include.images -%}
+        {%- assign src = it.src | default: it -%}
+        {%- assign alt = it.alt | default: '' -%}
+        <li class="splide__slide">
+          <img src="{{ src }}" alt="{{ alt | escape }}" loading="lazy" />
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+<style>
+.threads-splide { --thumb-h: {{ _h }}px; --gap: {{ _gap }}px; }
+.threads-splide .splide__list { gap: var(--gap); }            /* v4는 gap 옵션 + CSS 모두 OK */
+.threads-splide .splide__slide { width: auto; }               /* autoWidth와 궁합 */
+.threads-splide img{
+  height: var(--thumb-h); width:auto; display:block;
+  object-fit: {{ _fit | default: true | replace: 'true','contain' | replace: 'false','cover' }};
+  border-radius: 8px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // 여러 개가 있을 수 있으니 모두 초기화
+  document.querySelectorAll('.threads-splide').forEach(function(el){
+    new Splide(el, {
+      // PC 마우스 드래그 + 모바일 터치 드래그 모두 기본 지원
+      drag: true,                               // 드래그 활성화
+      pagination: false, arrows: true,          // 점 네비 비활성, 좌우 화살표
+      gap: '{{ _gap }}px',
+      autoWidth: true,                          // 각 슬라이드가 이미지 폭에 맞게
+      // 세로 높이는 CSS에서 고정, 가로는 비율대로 자동
+      snap: true,                               // 드래그 종료 시 가까운 슬라이드로 스냅
+      flickPower: 500,                          // 드래그 관성(더 부드럽게)
+      speed: 400,                               // 트랜지션 속도
+      // 반응형 옵션 예시
+      breakpoints: {
+        640: { arrows: false }                  // 모바일에서 화살표 숨김(제스처 위주)
+      }
+    }).mount();
+  });
+});
+</script>

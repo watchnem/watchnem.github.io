@@ -1,0 +1,11 @@
+#### 바위, 카우보이 캐릭터
+
+{% assign imgs = "
+https://blogger.googleusercontent.com/img/a/AVvXsEgh-46WE6cY_1KZXfIz7Wvo0X_aPp_mZPyhqLWu1RtJrMWot4F77oj0KhDE1NVrosDhrYwMzGZ-rPJZbOJ0oqEqV1rgft13F-FuKJafnVqGbPVaH25aQladOWn4lm9LKwuuQ3ZzAhprknDbp3NIKqtk_onti9s2cutmmzTdz83iRRpRv5SFxWdWEciovzro
+https://blogger.googleusercontent.com/img/a/AVvXsEhbcr_GBu9deF4iXVE6zmy0LEgAFQbpwmrpCdVyFwXcLodDYezQtCqYHj3fDdtmO3Q-E7u2Cgn2hyaCHRV2oYy3y8UMbGsCvm3K0cc5qjUamBxRQrEzuCfZ1_5RVHMGvnHxL1fErY-lSv7EjkVG57GYYGAi8d01eh1U-ipP2uI1_nuyQor4t9ZEk41GeTRh
+https://blogger.googleusercontent.com/img/a/AVvXsEjLL1YSukElrHArKiQ1MPhCdZudZ61wUD6os9kQ3ZVceHj4S4W4vBJImRglik8RnYpN4Tw-_WxHsVWm5jK7UdVxeHQXwsP_9MwnXtosiK6X_q4DoGBdEdOxTHmt63R1DT0RaCxTV8OuQb35yh5d_bPujyRVzis9MGtj91lfA1LXTseViP23y6pJ0eYpwQ9C
+" | split: " " %}
+
+{% include thread_view.html images=imgs %}
+
+출처 : 불명

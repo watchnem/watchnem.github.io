@@ -1072,3 +1072,14 @@ a.site-title {
     opacity: 1;
     bottom: 60px;
 }
+
+
+
+
+
+
+
+
+.page-content p {
+    word-break: break-all;
+}
