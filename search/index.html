@@ -11,22 +11,32 @@ title: 검색
 <script>
 (async function(){
   // 데이터 불러오기
-  const res = await fetch('{{ "/search.json" | relative_url }}');
+  const res  = await fetch('{{ "/search.json" | relative_url }}');
   const docs = await res.json();
 
-  // 한국어/일본어 등 비공백 언어 대비: 공백 기준 분리가 어려우므로 기본 파이프라인 제거
-  // (정확한 형태소 검색이 필요하면 n-gram 전처리를 고려)
+  // lunr 인덱싱: content 제외 (title/tags/categories/date만)
   const idx = lunr(function () {
     this.pipeline.reset();
     this.searchPipeline.reset();
+
     this.ref('url');
     this.field('title', { boost: 10 });
-    this.field('content');
-    this.field('categories');
-    this.field('tags');
+    this.field('cats',  { boost: 3  });
+    this.field('tags',  { boost: 3  });
+    this.field('date',  { boost: 15 });
 
-    docs.forEach(doc => this.add(doc));
+    docs.forEach(d => {
+      this.add({
+        url: d.url,
+        title: d.title || '',
+        cats: (d.categories || []).join(' '),
+        tags: (d.tags || []).join(' '),
+        date: d.date || ''
+      });
+    });
   });
+
+  const map = new Map(docs.map(d => [d.url, d]));
 
   const $input = document.getElementById('search-input');
   const $list  = document.getElementById('search-results');
@@ -41,43 +51,73 @@ title: 검색
     $count.textContent = `${results.length}건`;
 
     results.slice(0, 50).forEach(r => {
-      const doc = docs.find(d => d.url === r.ref);
-      const content = doc.content || '';
-      const lastIndex = content.lastIndexOf(')'); // 마지막 ) 위치
-      let preview = lastIndex !== -1 ? content.substring(0, lastIndex) : content;
-      const li = document.createElement('li');
-      
-      // "Twitter" 문자열 제거
+      const doc = map.get(r.ref);
+      let preview = doc.excerpt || '';
+
+      // 마지막 ')' 이전까지만 보여주고, 'Twitter' 제거
+      const lastIndex = preview.lastIndexOf(')');
+      if (lastIndex !== -1) preview = preview.substring(0, lastIndex);
       preview = preview.replace(/Twitter/g, '');
 
+      const li = document.createElement('li');
       li.innerHTML = `
-        <a href="${doc.url}" style="color: var(--main);text-decoration: underline;">${doc.title}</a>
-        <div style="display:inline-block;font-size: 1.3rem;color: #979797;"> — ${preview})</div>
+        <a href="${doc.url}" style="color: var(--main); text-decoration: underline;">${doc.title}</a>
+        <div style="display:inline-block;font-size:1.3rem;color:#979797;"> — ${preview})</div>
       `;
       $list.appendChild(li);
     });
   }
 
-  // 간단한 contains 보조: 공백 없는 한글 검색 방어
+  // fallback: title/tags/categories/date 안에서만 부분 포함(AND)
   function fallbackContains(q){
-    const qn = q.trim();
-    if(!qn) return [];
-    const results = [];
-    docs.forEach(d=>{
-      const blob = `${d.title} ${d.categories} ${d.tags} ${d.content}`;
-      if(blob && blob.indexOf(qn) !== -1){
-        results.push({ref: d.url, score: 1});
+    const terms = q.trim().split(/\s+/).filter(Boolean).map(s => s.toLowerCase());
+    if(!terms.length) return [];
+    const out = [];
+    docs.forEach(d => {
+      const blob = [
+        d.title || '',
+        (d.categories || []).join(' '),
+        (d.tags || []).join(' '),
+        d.date || ''
+      ].join(' ').toLowerCase();
+      if (terms.every(t => blob.includes(t))) {
+        out.push({ ref: d.url, score: 1 });
       }
     });
-    return results;
+    return out;
   }
 
   $input.addEventListener('input', e=>{
     const q = e.target.value.trim();
     if(!q){ render([]); return; }
 
-    // lunr 검색 → 결과 없으면 contains fallback
-    let results = idx.search(q);
+    // 날짜(YYYY-MM-DD) 완전일치 + 나머지 키워드는 AND
+    const dateRe = /\b\d{4}-\d{2}-\d{2}\b/;
+    const date = (q.match(dateRe) || [])[0];
+    const rest = q.replace(dateRe, ' ').trim();
+    const terms = rest.split(/\s+/).filter(Boolean);
+
+    let results = [];
+    try {
+      results = idx.search(function (qb) {
+        if (date) {
+          qb.term(date, {
+            fields: ['date'],
+            presence: lunr.Query.presence.REQUIRED
+          });
+        }
+        terms.forEach(t => {
+          // title/cats/tags 모두 AND로 요구
+          qb.term(t, { fields: ['title'], presence: lunr.Query.presence.REQUIRED, boost: 10 });
+          qb.term(t, { fields: ['cats'],  presence: lunr.Query.presence.REQUIRED, boost: 3  });
+          qb.term(t, { fields: ['tags'],  presence: lunr.Query.presence.REQUIRED, boost: 3  });
+        });
+      });
+    } catch(_) {
+      // lunr 구문 오류 시 fallback
+      results = [];
+    }
+
     if(results.length === 0){
       results = fallbackContains(q);
     }

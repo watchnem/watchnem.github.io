@@ -14,7 +14,7 @@ permalink: /search.json
       "date": "{{ p.date | date: "%Y-%m-%d" }}",
       "categories": {{ p.categories | jsonify }},
       "tags": {{ p.tags | jsonify }},
-      "content": {{ p.content | strip_html | normalize_whitespace | jsonify }}
+      "excerpt": {{ p.content | strip_html | normalize_whitespace | truncatewords: 40 | jsonify }}
     }
     {% assign first = false %}
   {% endunless %}
