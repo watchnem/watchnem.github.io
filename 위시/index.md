@@ -24,6 +24,10 @@ layout: page
 
 {% include_relative kimono.md %}
 
+---
+
+{% include_relative kimono-street.md %}
+
 <div style="border: solid 7px var(--main);margin-bottom: 2.5rem;"></div>
 
 ### 장소
