@@ -9,9 +9,3 @@ https://blogger.googleusercontent.com/img/a/AVvXsEgynhQWZsuPuU__j2Q79S56B3qJSAig
 {% include thread_view.html images=imgs %}
 
 출처 : [x @01215_yuri](https://x.com/01215_yuri/status/1692142911943844290)
-
-
-
-
-
-
