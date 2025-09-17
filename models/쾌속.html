@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 쾌속 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgnfZPz9QV_GuaeILV8DRS1sVeIsp4fXMiDcKH6mMNFYyXV5np8Jlk3EqCV6bwepInhq9QjIGgzHEWYUcUvs_TB7f0g61joKJGbdyhLcvWLjYOn3nEF9bjTqRIhbvRdLcvEhS3J4Dc4yA1wU1kAcwWXKqaUZgtWvM6PS8Kgo-2rQ2CD7mhbBGNF04j4MO0v
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgnfZPz9QV_GuaeILV8DRS1sVeIsp4fXMiDcKH6mMNFYyXV5np8Jlk3EqCV6bwepInhq9QjIGgzHEWYUcUvs_TB7f0g61joKJGbdyhLcvWLjYOn3nEF9bjTqRIhbvRdLcvEhS3J4Dc4yA1wU1kAcwWXKqaUZgtWvM6PS8Kgo-2rQ2CD7mhbBGNF04j4MO0v
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
