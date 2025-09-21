@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 양말 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhI9MRk_hw05wsndLQH_1SW4e8mS-H3eUXLfRNmXzYMjXOakLKPo7CZLcErptbxIo6m7SFExyDnBe6iz1a8m_aSlqEOhpbH4apmJFuIA_HOh8wH7dFJcM-41mTGxx9oj76_8lLoX96t7-433_8OOKL9bcM7tev9SGcf5SBcUQbSPdKIK8m708MTHK0y6jPA
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhI9MRk_hw05wsndLQH_1SW4e8mS-H3eUXLfRNmXzYMjXOakLKPo7CZLcErptbxIo6m7SFExyDnBe6iz1a8m_aSlqEOhpbH4apmJFuIA_HOh8wH7dFJcM-41mTGxx9oj76_8lLoX96t7-433_8OOKL9bcM7tev9SGcf5SBcUQbSPdKIK8m708MTHK0y6jPA
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
