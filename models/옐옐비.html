@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 옐옐비 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEi1A3Vv75VM9R751Wuz0qXo1P2XsP-hxhaO4iwSNLo-otO7nM1wXyJB0pVCem1lmZHS17Hsz1EtZ42iGmTqLW-BbkCAJJk48M-MpNzdwX_KqhOUc4v3iyNtCbAVrY0ukYvkH1UkrqoF3CFpCPuChV_QMo63Z-iJEvtwbraCqvd0-2PU9vl4V0yPSMp2wfHj
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEi1A3Vv75VM9R751Wuz0qXo1P2XsP-hxhaO4iwSNLo-otO7nM1wXyJB0pVCem1lmZHS17Hsz1EtZ42iGmTqLW-BbkCAJJk48M-MpNzdwX_KqhOUc4v3iyNtCbAVrY0ukYvkH1UkrqoF3CFpCPuChV_QMo63Z-iJEvtwbraCqvd0-2PU9vl4V0yPSMp2wfHj
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
