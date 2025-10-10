@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 히츄 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjpssdRTFZt4udQTgyx5JqJYs0KpoTBlkVPqkWkzeKFZeJYpGb16ylW9kzEmo5CBwPNw51toeyw3ZzrFs5CcixdpmEgbGe4cNQHgc2jHQnYJVAHiE9OM6RF-jN-5AQcdjWcvZTNuKxLIhUji6uuyks89lyeXGGkRxzlnpV7dtg5g1UastmGq7nvfmnY-4yP
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjpssdRTFZt4udQTgyx5JqJYs0KpoTBlkVPqkWkzeKFZeJYpGb16ylW9kzEmo5CBwPNw51toeyw3ZzrFs5CcixdpmEgbGe4cNQHgc2jHQnYJVAHiE9OM6RF-jN-5AQcdjWcvZTNuKxLIhUji6uuyks89lyeXGGkRxzlnpV7dtg5g1UastmGq7nvfmnY-4yP
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

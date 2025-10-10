@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 이사야 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEji50OtDuy1moxS0QslRgNACIRsVZc-NtETct8Hf8g1BR14QHp0QdD_Y00h8eUN7hgBKAhgiTj9iC5CC6xDfmdPi-0A0DuPJc9xJW0a--yHJaEALOE9BqAp_ZXvJFi7i1zk1-oGt60QT8nhvUd95Jz8B20VztPsAnxxNnWpPZDz8jeHU0ahVK_OXr_EoGQa
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEji50OtDuy1moxS0QslRgNACIRsVZc-NtETct8Hf8g1BR14QHp0QdD_Y00h8eUN7hgBKAhgiTj9iC5CC6xDfmdPi-0A0DuPJc9xJW0a--yHJaEALOE9BqAp_ZXvJFi7i1zk1-oGt60QT8nhvUd95Jz8B20VztPsAnxxNnWpPZDz8jeHU0ahVK_OXr_EoGQa
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
