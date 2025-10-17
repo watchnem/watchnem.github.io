@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 젤리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgiTPWPI4CjGCK28WzDg8z045N2W4I1nyl4J-d-VAJM33be1sEd8MRZXp3xiydGJlvTNTCT249jUDK-kEDwJfs9ssMe7KntaiEmIO6udTWPvkIZVOjE0dMz3JhE4wWKK6wEDApMm5RNcsTFq4wwPFBNfYxHNNDrWKqmcZfXsVw6WDVx3QfpX6ys4kyL1cOT
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgiTPWPI4CjGCK28WzDg8z045N2W4I1nyl4J-d-VAJM33be1sEd8MRZXp3xiydGJlvTNTCT249jUDK-kEDwJfs9ssMe7KntaiEmIO6udTWPvkIZVOjE0dMz3JhE4wWKK6wEDApMm5RNcsTFq4wwPFBNfYxHNNDrWKqmcZfXsVw6WDVx3QfpX6ys4kyL1cOT
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

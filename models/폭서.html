@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 폭서 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgo-tujsda1LUE7PrW7KIV6lOLHZlK8a4weLg5z19FM7gAqANsSWQZLuZfVf_acICV0pSk6aTP6r7CeaiAjEa57iWIK5emeKCymKNbCXk6qMGQ5Tmv0Xz61_BBnYiZ9iOiel6zAeHevwCcrlXbcFPtWV2gEVKDQ6adSUsZKnAYNc8C2TOIeAlBgm-vvaHLz
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgo-tujsda1LUE7PrW7KIV6lOLHZlK8a4weLg5z19FM7gAqANsSWQZLuZfVf_acICV0pSk6aTP6r7CeaiAjEa57iWIK5emeKCymKNbCXk6qMGQ5Tmv0Xz61_BBnYiZ9iOiel6zAeHevwCcrlXbcFPtWV2gEVKDQ6adSUsZKnAYNc8C2TOIeAlBgm-vvaHLz
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

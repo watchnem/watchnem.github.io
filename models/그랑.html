@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 그랑 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEipEqtfrsR2JUnrMnIu43MDtLlJelg1WX2u7PNgBl7qpv1IoTRDUxFuZo9ozFShJOrHgOHdP-HECMhSF2uzM9HHupkyikh80FjKt1yenM5T6uZ5xnhbbYOKYdvvaVbK4_JwlRE05vN4uAXkZu_owhrx2l2Xt_9FsuljLUxCkXrQdBZkSAq1aEQYSUz2RfGr
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEipEqtfrsR2JUnrMnIu43MDtLlJelg1WX2u7PNgBl7qpv1IoTRDUxFuZo9ozFShJOrHgOHdP-HECMhSF2uzM9HHupkyikh80FjKt1yenM5T6uZ5xnhbbYOKYdvvaVbK4_JwlRE05vN4uAXkZu_owhrx2l2Xt_9FsuljLUxCkXrQdBZkSAq1aEQYSUz2RfGr
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
