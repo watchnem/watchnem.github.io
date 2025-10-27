@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 공늠 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgp6oPuCvHpRz8JrET7TSZPayY1Ymrm1BjeMyvoj51oAW0mkCZfvNylq_8F4zMsdMeAfaxcJUB8OEmmt43iToEKjAPf4v9CuCUCUcFETYR3fOzPEz939fML0jbZfOvs6L__5j0Zl583UiWS4C4TKmXon7xcvUYqACPTBUBizjzJQkIRdKLRRYWD3up0iIhX
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgp6oPuCvHpRz8JrET7TSZPayY1Ymrm1BjeMyvoj51oAW0mkCZfvNylq_8F4zMsdMeAfaxcJUB8OEmmt43iToEKjAPf4v9CuCUCUcFETYR3fOzPEz939fML0jbZfOvs6L__5j0Zl583UiWS4C4TKmXon7xcvUYqACPTBUBizjzJQkIRdKLRRYWD3up0iIhX
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
