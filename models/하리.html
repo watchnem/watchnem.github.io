@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 하리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEj72ej9yDho2HwbtwMBaEJBNwIo7fJ4NO-STI_PvGYceg7X3xeRzdkgF0mAq17kUQ_3xKWIxZPImri-ZFUlzCdhgNfVjyitnoFDoprKCAK2HddmPLDtEGMMv9qEmr-jZPQbU_7OYCjQTIT_gJEWvd1brSfjLoWV5q7dE600vU-DFy0QiQDHfQVXKoad1ft_
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEj72ej9yDho2HwbtwMBaEJBNwIo7fJ4NO-STI_PvGYceg7X3xeRzdkgF0mAq17kUQ_3xKWIxZPImri-ZFUlzCdhgNfVjyitnoFDoprKCAK2HddmPLDtEGMMv9qEmr-jZPQbU_7OYCjQTIT_gJEWvd1brSfjLoWV5q7dE600vU-DFy0QiQDHfQVXKoad1ft_
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

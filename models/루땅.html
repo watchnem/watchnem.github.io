@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 루땅 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEi3NLJA8yA5Ap8ofyB3gS_cLVMkscJx0fHryATFa7nVmOdS6_fdZXv5c8WUvKy5x3Ip8sSzJyPhqXHDnZGvKMjs89gn8OeC8QBwXwWX9GpZCWrPD5IP9Lj9NVWaGSsHQUTL8_M_MtIYoFKKjNxFdxV4a5DT-E-DGd-s3n0Z-8lV6siF0twaRbngCzpdz0FL
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEi3NLJA8yA5Ap8ofyB3gS_cLVMkscJx0fHryATFa7nVmOdS6_fdZXv5c8WUvKy5x3Ip8sSzJyPhqXHDnZGvKMjs89gn8OeC8QBwXwWX9GpZCWrPD5IP9Lj9NVWaGSsHQUTL8_M_MtIYoFKKjNxFdxV4a5DT-E-DGd-s3n0Z-8lV6siF0twaRbngCzpdz0FL
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

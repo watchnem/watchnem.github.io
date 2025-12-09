@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 히토리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgERT3RDdFDaMx0IBeOkMiBU4eXSOOwdLICF6FGND32XvknBknbnFTaztVI2RKRfHOXTCe7FppvYZ0sziqdwPYVc2kP9jYEwfN0Hg5-kQxOWTDdPMDkQ5HBr87mtyqltKK1djX3LcuW9oXZWEY2fvZ6tdR-VJik5PstulKDKSEniv83z1RcS55egyq6ScbL
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgERT3RDdFDaMx0IBeOkMiBU4eXSOOwdLICF6FGND32XvknBknbnFTaztVI2RKRfHOXTCe7FppvYZ0sziqdwPYVc2kP9jYEwfN0Hg5-kQxOWTDdPMDkQ5HBr87mtyqltKK1djX3LcuW9oXZWEY2fvZ6tdR-VJik5PstulKDKSEniv83z1RcS55egyq6ScbL
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

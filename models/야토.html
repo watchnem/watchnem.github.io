@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 야토 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEitcdCs5PJeSR_B_NUNIOEdplugzRrpy33uWSWzzIE2JQwkxNLbGSEuZRJNGFz6ce9RY2qUdJ9Z4HQg9pXIsjQxvf78R1VrH6_wi3ztar8wqR0TANKIS_RsMFjR0BF6kGFK-cgxRdQURxdxJconaGGfK1PfRrExKaZrwACpGfM5rtEDJ3agLZEMGVcgD2-B
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEitcdCs5PJeSR_B_NUNIOEdplugzRrpy33uWSWzzIE2JQwkxNLbGSEuZRJNGFz6ce9RY2qUdJ9Z4HQg9pXIsjQxvf78R1VrH6_wi3ztar8wqR0TANKIS_RsMFjR0BF6kGFK-cgxRdQURxdxJconaGGfK1PfRrExKaZrwACpGfM5rtEDJ3agLZEMGVcgD2-B
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

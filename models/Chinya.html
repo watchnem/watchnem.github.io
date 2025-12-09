@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - Chinya 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhmPqIyUKkv5NebDmaXOQV7Y1JbW_IMayYLSeiaR7M900EGXwhbEXHQ-aD57q_R9BoATKvXtrvYA7QOrpecEmFJrJ4JfNGsgpgqa81SVL-OAWmJETwZy67LHCth8NL5mL2jq5e4MBZL9Bt6e3eX6HBqxYhwyUOIfqOx95KtS5T2H9so0LUpPdCRFYhLS3oF
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhmPqIyUKkv5NebDmaXOQV7Y1JbW_IMayYLSeiaR7M900EGXwhbEXHQ-aD57q_R9BoATKvXtrvYA7QOrpecEmFJrJ4JfNGsgpgqa81SVL-OAWmJETwZy67LHCth8NL5mL2jq5e4MBZL9Bt6e3eX6HBqxYhwyUOIfqOx95KtS5T2H9so0LUpPdCRFYhLS3oF
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 고연희 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEi56U_JyXN3KklZ3Ip1whu-zZjIyFOOS4TvEkvhc_Nk_ubAhfnOYzqlXY5U8CSbGQtarfGkUHq7CkGrQ7iY3nEi5fmBwWfWz5MFnODEmdmISbajIQEDKHTaVkag3w8SsqvA154UxzfwfKj6yp5qEdJ2a-oz64nH08PNQnT2hE1VpgfxTp9jLCCouEVw_Byl
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEi56U_JyXN3KklZ3Ip1whu-zZjIyFOOS4TvEkvhc_Nk_ubAhfnOYzqlXY5U8CSbGQtarfGkUHq7CkGrQ7iY3nEi5fmBwWfWz5MFnODEmdmISbajIQEDKHTaVkag3w8SsqvA154UxzfwfKj6yp5qEdJ2a-oz64nH08PNQnT2hE1VpgfxTp9jLCCouEVw_Byl
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
