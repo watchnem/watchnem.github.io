@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 보민 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjEsazONLUxhCbcAzwvZvry_M8L4SQTASxZHdZyIpOL1UfWWXqs70qxON6BcyvNEr20_aCCD4dOLaHOXA4uYbPjm_lTTLwGNmkUN64qx3DfSOEuz4-y8RVN7KNglBcFVbQhtX9XutvvL7HNuA4fqh14EvFnos4RLEkKeItrKjsHT899WiMRRoZO7TQ7KrHe
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjEsazONLUxhCbcAzwvZvry_M8L4SQTASxZHdZyIpOL1UfWWXqs70qxON6BcyvNEr20_aCCD4dOLaHOXA4uYbPjm_lTTLwGNmkUN64qx3DfSOEuz4-y8RVN7KNglBcFVbQhtX9XutvvL7HNuA4fqh14EvFnos4RLEkKeItrKjsHT899WiMRRoZO7TQ7KrHe
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

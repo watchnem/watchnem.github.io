@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - luniie 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEh9ZigBd73j0QDXEANSldw-BkTHi85c7vJotyxTspQIpeGb9gry0Ipw3_c4chtbgemsEH5oa1lk08relqjjzod8aE89VNvpeTnlrhVKR5ZsPZaTz3PNjzL4kALg6g1NLZFFbaH8srQTWrmmti-TAZk7WSTGuKW4NLnu05yV8URK2svWj-dL_nxe2NFsZikO
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEh9ZigBd73j0QDXEANSldw-BkTHi85c7vJotyxTspQIpeGb9gry0Ipw3_c4chtbgemsEH5oa1lk08relqjjzod8aE89VNvpeTnlrhVKR5ZsPZaTz3PNjzL4kALg6g1NLZFFbaH8srQTWrmmti-TAZk7WSTGuKW4NLnu05yV8URK2svWj-dL_nxe2NFsZikO
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

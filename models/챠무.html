@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 챠무 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgWBj4iv2nkJyy3pilQm_Qsv-8F-XjKr_sH3Gt23lR6GguPAw7_2R-Jf1Lnb81zWM_qebaqrAr0C68_dVlKUfDLsGkBfUVcyHMAd4kOwRIftqB_CcM_I0fdiVdiNKpuJnVcQZ5VUKSah3sObCwTeL6J1bKTW53Fbox1zPkOpnZVRfjwjlSQzXnBQ-gDSSE0
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiTjISVdj9__WfosR-C8bT2BsGS9pqWOCLSAD4IuSeTzJnsBNO2yIjAi_uMddCEgmpQ8w8IS6vMgzIQ5Sm0xDXnWuqNg9_azLtPr7efETKlTEsu7977bICHfdXYiup82LXqbOMUt3RpJd3JWDsELRs41W2JSpyNG_bNm4eIavhn-65dtPCZ5Jf3nAjAWrbm
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

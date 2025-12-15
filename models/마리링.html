@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 마리링 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEj6FVcUQQ-mr6or-3t2UfPzSi6AeYrjrRPAeKezURczubF3Am8X515qSBzgD-mSf-Co-qa04L_XDYr7Sch7KPcnnYJeNpieizSnS7vvTDWsqEFlWmTL2VkyAfPfMTeD5P-qTA3aojstvXf9HgrBESkHUJKOIqUW5rjH7MZ9mo-DmcrQP4Q4STHsbeT8eiSV
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEj6FVcUQQ-mr6or-3t2UfPzSi6AeYrjrRPAeKezURczubF3Am8X515qSBzgD-mSf-Co-qa04L_XDYr7Sch7KPcnnYJeNpieizSnS7vvTDWsqEFlWmTL2VkyAfPfMTeD5P-qTA3aojstvXf9HgrBESkHUJKOIqUW5rjH7MZ9mo-DmcrQP4Q4STHsbeT8eiSV
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
