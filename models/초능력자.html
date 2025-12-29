@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 초능력자 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgKYbyr26ZL534pK0bbLwTL0hHgpugEn78nOqgOsJ7pHizhR1q7YSLAl2vThagP8UY-Noo97dkoBpgt0KWtR57R-P2dK40667gxSEHxsBdCNjZL3nRxs12Lzc6LS5xFF2f9i-nnCHQoPXfjpxb3PINwCKbDfhgcNORf_kcW3gavjIAL02ZUu5JDr0wywBiy
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgKYbyr26ZL534pK0bbLwTL0hHgpugEn78nOqgOsJ7pHizhR1q7YSLAl2vThagP8UY-Noo97dkoBpgt0KWtR57R-P2dK40667gxSEHxsBdCNjZL3nRxs12Lzc6LS5xFF2f9i-nnCHQoPXfjpxb3PINwCKbDfhgcNORf_kcW3gavjIAL02ZUu5JDr0wywBiy
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

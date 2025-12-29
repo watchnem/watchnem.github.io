@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 마늘 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEj3UDXt_tl8bZywgDyZKB8jYuU35wsi3H9x50TEfZc9CmW1CQuvUd5RHf8Cg-lKUAwjjXJiwCptlIikru5GCckM1CVFcKwMfnosymiMApcWLvUIwN7alUiI1lIarwASVxABHHz70Hs7XWJqJGE8gBLqI99_jREEU_TBsUmOIAVAo4_0v1ryyqbL95v-0PU_
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjj_3j1zeIXUwaSyNTx0po8CDkkY5Jq5VOYY6FQYq5INwGaaMXeSC2mQPneEn_pLebs8oWdAIzDYmydzSpyVsqDBRc2KsiXD8xVgLEXIWPZqClbPnpwZ-bF3TmbJ7Blfg0tVhDHoCyqFgAzEr37WA-GrcLK6RXpsbPyWCEeu19n2mRfr2xMHCX42aE6o5pV
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

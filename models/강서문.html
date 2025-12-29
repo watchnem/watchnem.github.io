@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 강서문 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEi6lXHqkzBXJL0BG9Gmjkkqqo3EJtMqo0gT6Xi9g0Qd2p3w1TTPdOYC0Itmpxlw5gCYkJsownh_KD1N2fbX_O5g7SuXn48boxLyMkczA1gh_NkFycSD28KsRVgbqvKGuQuFosehe1EnvQwRaiPM06tYuewDDqiNl9_CbLWF_uVTt5qRLB_nkZ4NFPas6l7M
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEi6lXHqkzBXJL0BG9Gmjkkqqo3EJtMqo0gT6Xi9g0Qd2p3w1TTPdOYC0Itmpxlw5gCYkJsownh_KD1N2fbX_O5g7SuXn48boxLyMkczA1gh_NkFycSD28KsRVgbqvKGuQuFosehe1EnvQwRaiPM06tYuewDDqiNl9_CbLWF_uVTt5qRLB_nkZ4NFPas6l7M
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 고리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgx_fYhiPrkvDTJQJraWboCBXCWEHdgaWzp17gCopH3inCPRVUY5BXOjCrVV9IGcwgnt8k2sz4tQktvEOAYEo6IP0PRWZC7anB12SCbhBKhJix9-LJwMG5dqAnXcQhiV3-zxKIkOYmV15puoGC_zJeLjCxYkx5dihe4xKm1DYU9TS5ja565s8JAeWO7hdSJ
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiaK8REB2OXpxJ1oAU1Gf8cDvTr_IqQ4zN41-rLmOHjEUYIy2Bxc5h4EHwkFCVLuv0LwE0J-Uf7ktadhvgF66Qpfw0q7oo9V3X1xJutcBd2FEBRflRJfE1DyeZa4wvfqxZ7XJxd-ZvjacegmiaxBxLb46BdPxKGh1ABp13kGKbGnZACx4EXKPJYRExjs7tf
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

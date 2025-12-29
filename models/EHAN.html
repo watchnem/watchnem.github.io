@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - EHAN 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhv4MfQm1SuDzwBa1kkTE5Cdon3TyMYWUc8mwxLDj3WxTIBY-FKoMws9K6hh72CnLMxdiiPg1EIWoyKA9pzCsRRqJokVOu9rHbJospDGucvt_b53w0mANbI_Me4ssdw-PdXmxNqSa6FPlTPHQrVubp58_mZxWHubDUEwC5s8H0EJj35Ekik4Fsy--eY4FRA
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhv4MfQm1SuDzwBa1kkTE5Cdon3TyMYWUc8mwxLDj3WxTIBY-FKoMws9K6hh72CnLMxdiiPg1EIWoyKA9pzCsRRqJokVOu9rHbJospDGucvt_b53w0mANbI_Me4ssdw-PdXmxNqSa6FPlTPHQrVubp58_mZxWHubDUEwC5s8H0EJj35Ekik4Fsy--eY4FRA
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

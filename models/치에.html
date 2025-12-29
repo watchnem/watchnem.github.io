@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 치에 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEj5ItbEVDDwjHXHwEg-m5Ltx1Uhv8ahyipL_jbFORohnSuIcd1U7gvu6XAo5jBKxX0VY26qzxlMBYPQGu_ooQcvkHdJd7CNiDRns_tKrriVJIiyGJK_EeIcC59kZEiE49W-e3HLCdwkeOjbWiTFvTLsnOY6Z5aMltNNdaEt769Q3vrdB4OtDOqymM5FfbUy
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjDGNsUmr6cRiZqqbMp0fpiCKYjxcot5Wk2re7vhVDLnezb0sCsx_EhXfABH-XZ6FH24mIyTMCoBlRGvSnz5x2h-94i21XVzniOnyDjMIefRusjL48XGsuRtPv0ZuXYBnmKilXrWw7gKGTgaIgkeIXuSbUROWH0zcssh6qhXC6w8nSGAC9tAS2ODVAEpzY3
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

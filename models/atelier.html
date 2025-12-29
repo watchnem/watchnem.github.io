@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - atelier 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjkmjrxwhOKarW9wVtGECirZeksSAYE0w5eZ2rnhaCHlDDvmvh7PlyDIT3yz54inDUEcbOxbgTN8klD_U4Hfi4dH9vpSwT0uFc2d6-UjIySTVpTy18TFGJKULpZ4x7NuKwrdUNfIkgdkMHzjMNNEhDqJUbikjk9C_FddYCRFGBoD6lMK_5pI33mGWh8bKM0
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjkmjrxwhOKarW9wVtGECirZeksSAYE0w5eZ2rnhaCHlDDvmvh7PlyDIT3yz54inDUEcbOxbgTN8klD_U4Hfi4dH9vpSwT0uFc2d6-UjIySTVpTy18TFGJKULpZ4x7NuKwrdUNfIkgdkMHzjMNNEhDqJUbikjk9C_FddYCRFGBoD6lMK_5pI33mGWh8bKM0
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

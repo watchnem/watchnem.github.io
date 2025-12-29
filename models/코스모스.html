@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 코스모스 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhwxhl23cpmC63-psLzegezp3xfxl8Oae-U7SIeo9HGXHCRxLbWNZjWNjm12uoFI_7XXuyRlF_w-xV08JmlMFkMyI2KFt28_w4ZHxymmiqoco9h0bb0_sBY-vfIlP3yGMg9RQqtndMCBz38H4gspva9Ga6840IZyK0z_cwcuTIBnj8AsBiHrwSHeLHNwsQM
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhwxhl23cpmC63-psLzegezp3xfxl8Oae-U7SIeo9HGXHCRxLbWNZjWNjm12uoFI_7XXuyRlF_w-xV08JmlMFkMyI2KFt28_w4ZHxymmiqoco9h0bb0_sBY-vfIlP3yGMg9RQqtndMCBz38H4gspva9Ga6840IZyK0z_cwcuTIBnj8AsBiHrwSHeLHNwsQM
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

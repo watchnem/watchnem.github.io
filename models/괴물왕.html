@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 괴물왕 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgf8_QAYxgh_ydaaz2y_zpUqHk1tXAdamio_dUh-IsWstF-ehV2HypOsFR39cUDhVqRCENgGg81rYRD7DqhQlXZWRzn00vXZ8GXhnS3801M7k4wCN3Rff3CFpWX15eBuWrsXjo17ZH81hlp4tghq20QYQzQJKBfAqcmufIpfPAKatvBanxiPhzrHjWbRFok
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgf8_QAYxgh_ydaaz2y_zpUqHk1tXAdamio_dUh-IsWstF-ehV2HypOsFR39cUDhVqRCENgGg81rYRD7DqhQlXZWRzn00vXZ8GXhnS3801M7k4wCN3Rff3CFpWX15eBuWrsXjo17ZH81hlp4tghq20QYQzQJKBfAqcmufIpfPAKatvBanxiPhzrHjWbRFok
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

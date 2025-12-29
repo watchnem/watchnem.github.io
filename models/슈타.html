@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 슈타 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgGSus-GKSWS1WZkVkuqJ1sStAnDoG7szHo_rv3M36Eqd69cCH9WhyC6QytcE5hzcnCDdce2GXxtLOODEHzn9_O5UTuB0m1CZIkxgKwLKA6QO3Rf_Sy-y7odXfmQMLStFOEag1Yrdb5brnnSHSL_Q7SK4muhbFO5A3Zl32uemiFZD9CTO7sS8tX62605Nqb
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgGSus-GKSWS1WZkVkuqJ1sStAnDoG7szHo_rv3M36Eqd69cCH9WhyC6QytcE5hzcnCDdce2GXxtLOODEHzn9_O5UTuB0m1CZIkxgKwLKA6QO3Rf_Sy-y7odXfmQMLStFOEag1Yrdb5brnnSHSL_Q7SK4muhbFO5A3Zl32uemiFZD9CTO7sS8tX62605Nqb
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

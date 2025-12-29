@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 푸들들 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEh4vCvqaknhQuwjFnDvs160hgh1_17t91XPz8agGhuFNjmbWIfZRtVUsw5tzmJzRwHRw85ZhW8zKxdpDjABcyjRDgPGecrFD9JqkmrtCSa50Mc99fTp6KvYQZsPqofInvCqXgy6PnVtA3LCvwwd-mUs4O3vF9oWjGKxArFeBuxoJnJZqEMs_kKE_mT7Yqml
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEh4vCvqaknhQuwjFnDvs160hgh1_17t91XPz8agGhuFNjmbWIfZRtVUsw5tzmJzRwHRw85ZhW8zKxdpDjABcyjRDgPGecrFD9JqkmrtCSa50Mc99fTp6KvYQZsPqofInvCqXgy6PnVtA3LCvwwd-mUs4O3vF9oWjGKxArFeBuxoJnJZqEMs_kKE_mT7Yqml
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

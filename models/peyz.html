@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - peyz 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgfc1sMqf-onZrmmPkC8ocmULJRo9ic5CaYpyIjVkAmpU8vaLOs2YCclfxxNgTACVomrUx8qqWFetOvaEOiH3H-6w0iwz_G7NdV8VfXK6bl76AbkRlYMiEDVxwYg_r32JSRdxhy0Sg9yVH20yi_erW8n_nJOUIlW65RWpm0i7Qn6ET3bjVU0-KW80Iys5y7
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgyeYa1nCtlrfj_ot7vzJnbxxRvUbRiVlZTw-jPfQLLK6WEx3lIxtwTi1MAIvih_ieHJ6c-JROrPp5qKhDhv1aeOXGCzUD2hdxi3ezs8W_mVBN3iKYLeoZmTT7KsqI0oxOitWte9GOSR6OITeCM5_Dz0RS8KzlG14YLmz8yhNqNUFbodQm6Q93ex5UcTXc-
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

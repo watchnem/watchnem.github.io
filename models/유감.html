@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 유감 님
+preview: ttps://blogger.googleusercontent.com/img/a/AVvXsEiRTt5IVZ6GTeXkWIK7gq2cYRTiiX7CaxYUCP9KegyAWmhy8VHiD-F8mAobAlejCib27h9kC8WhbqQGfOgVhubDMgDkXAFX_PibzUOK1vr9QdQvcyuHhQyBi00Z2qhnH8s0sVWU7nJlN6YjAD9RCYtdCPTdzMGOjxPgUo00E-HkOtYj-NrkqaBqNkwnnsfo
+ogthumb: ttps://blogger.googleusercontent.com/img/a/AVvXsEiRTt5IVZ6GTeXkWIK7gq2cYRTiiX7CaxYUCP9KegyAWmhy8VHiD-F8mAobAlejCib27h9kC8WhbqQGfOgVhubDMgDkXAFX_PibzUOK1vr9QdQvcyuHhQyBi00Z2qhnH8s0sVWU7nJlN6YjAD9RCYtdCPTdzMGOjxPgUo00E-HkOtYj-NrkqaBqNkwnnsfo
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

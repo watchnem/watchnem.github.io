@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 포치 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiPr63HJBOyPhBaLsZQ-m2VUaJLE7gAavcBbZQfmFL93ourm7X5N6vFfJ6xqL_oMINCbJ-zYrdW3rWVRhxoAvm_ceD-HmVtoCpKeegC8Yn5-Ztam3YJmLEVyrH1cVkXyA89FbHtJ0AsOuFscyDQoEqrdYaVZyxTuSwwNyef8FM3RjW8RI7H0uzJ6r5hojxw
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiPr63HJBOyPhBaLsZQ-m2VUaJLE7gAavcBbZQfmFL93ourm7X5N6vFfJ6xqL_oMINCbJ-zYrdW3rWVRhxoAvm_ceD-HmVtoCpKeegC8Yn5-Ztam3YJmLEVyrH1cVkXyA89FbHtJ0AsOuFscyDQoEqrdYaVZyxTuSwwNyef8FM3RjW8RI7H0uzJ6r5hojxw
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
