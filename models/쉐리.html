@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 쉐리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgfVBa_350tXty-My31nu2Pj3-YGB9nSL3EoOscr6_pdpobuyiMaHA9AQdBzPPYDM1uHWilSPkqRLyPYIkcjcskDESQzNQucleKcZG3zoU1WAk4TMXxIdUWT-ZJHUBPKim3R-87vHDwTLM2jEJdu4Cnb2OGDSR3TsawjQOfePt-gSENzHWfLtc-Zni9PYoU
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgfVBa_350tXty-My31nu2Pj3-YGB9nSL3EoOscr6_pdpobuyiMaHA9AQdBzPPYDM1uHWilSPkqRLyPYIkcjcskDESQzNQucleKcZG3zoU1WAk4TMXxIdUWT-ZJHUBPKim3R-87vHDwTLM2jEJdu4Cnb2OGDSR3TsawjQOfePt-gSENzHWfLtc-Zni9PYoU
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
