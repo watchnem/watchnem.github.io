@@ -1,5 +1,85 @@
 ---
 layout: default
+include_posts:
+  - _posts/2025-12-21-서코-일-24-블리치-쿠로사키-이치고.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-6-블리치-1번대-대장-야마모토-겐류사이-시게쿠니.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-10-블리치-2번대-대장-소이퐁.md
+  - _posts/2025-12-21-서코-일-11-블리치-2번대-부대장-오마에다-마레치요.md
+  - _posts/2025-12-21-서코-일-12-블리치-2번대-소이퐁-오마에다-마레치요.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-7-블리치-3번대-대장-오오토리바시-로쥬로.md
+  - _posts/2025-12-21-서코-일-8-블리치-3번대-부대장-키라-이즈루.md
+  - _posts/2025-12-21-서코-일-9-블리치-3번대-오오토리바시-로쥬로-키라-이즈루.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-18-블리치-4번대-부대장-코테츠-이사네.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-20-블리치-6번대-부대장-아바라이-렌지.md
+  - _posts/2025-12-21-서코-일-19-블리치-6번대-쿠치키-뱌쿠야-아바라이-렌지.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-15-블리치-7번대-대장-코마무라-사진.md
+  - _posts/2025-12-21-서코-일-14-블리치-7번대-부대장-이바-테츠자에몽.md
+  - _posts/2025-12-21-서코-일-13-블리치-7번대-코마무라-사진-이바-테츠자에몽.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-22-블리치-10번대-부대장-란기쿠.md
+  - __ROW_BREAK__
+  - _posts/2025-12-21-서코-일-23-블리치-11번대-대장-자라키-켄파치.md
+  - _posts/2025-12-21-서코-일-21-블리치-11번대-부대장-쿠사지시-야치루.md
 ---
 
-{% include model_view.html title="2025_12서코일_블리치팀코" %}
+<p class="archive_type">2025년 12서코 일요일 블리치 팀코 ({{ page.include_posts | size }})</p>
+
+{% assign col = 0 %}
+{% assign row_open = false %}
+
+{% for p in page.include_posts %}
+
+  {%- if p == "__ROW_BREAK__" -%}
+    {%- if row_open -%}
+      </div>
+      {% assign row_open = false %}
+      {% assign col = 0 %}
+    {%- endif -%}
+    {% continue %}
+  {%- endif -%}
+
+  {%- assign post = site.pages | where: "path", p | first -%}
+  {%- if post == nil -%}
+    {%- assign post = site.posts | where: "path", p | first -%}
+  {%- endif -%}
+
+  {%- if post == nil -%}
+    <!-- Not found: {{ p }} -->
+    {% continue %}
+  {%- endif -%}
+
+  {%- if col == 0 -%}
+    <div class="row">
+    {% assign row_open = true %}
+  {%- endif -%}
+
+  <div class="column column-50">
+    <div class="preview-panel">
+      <a href="{{ post.url | prepend: site.baseurl }}" style="position: relative;">
+        <img src="{{ post.preview }}">
+      </a>
+      <div class="post-title">
+        {{ post.title | remove: "2025-12-21 서코 일 - 블리치" }}
+      </div>
+    </div>
+  </div>
+
+  {%- if col == 1 or forloop.last -%}
+    </div>
+    {% assign row_open = false %}
+    {% assign col = 0 %}
+  {%- else -%}
+    {% assign col = 1 %}
+  {%- endif -%}
+
+{% endfor %}
+
+{%- if row_open -%}
+  </div>
+{%- endif -%}
