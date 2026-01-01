@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 윤슬 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgM3mSwPYQhk5Lqr20ZgG_pKDblzpL0GBK5z8LnPdY-YwWs48DYnVDtO7VbXGHEXOz_Ma1ciz2N_paqpfWFGie2Pk7Tp7rORY50h0IdhBjFhSY4Nkzd3tihfCiaZi6Sn1uXbjWmgB6wsTwC0C4K703AN5KOaGBlyxHyamOuswlJmGJmOYECUrL0LOE-KIng
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgM3mSwPYQhk5Lqr20ZgG_pKDblzpL0GBK5z8LnPdY-YwWs48DYnVDtO7VbXGHEXOz_Ma1ciz2N_paqpfWFGie2Pk7Tp7rORY50h0IdhBjFhSY4Nkzd3tihfCiaZi6Sn1uXbjWmgB6wsTwC0C4K703AN5KOaGBlyxHyamOuswlJmGJmOYECUrL0LOE-KIng
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
