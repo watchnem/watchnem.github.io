@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 미잉 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjQP1108OMo2a845jasnps90BCaHXPIdOvlwJ684s4wQSfZzf9zvqXZ-qNAu7mgliAxuSUAY2IEFHFOnW_Zf96OhDs6S5u1YmEJm7x3yI3FPYVFnaV0GqiuYorDcP7plRXgMv_6pH8PSoa5UHv8xuFM6b8itmOHpRbC_bO93NJAZCM_eL3gyfQifCYwrR4t
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjQP1108OMo2a845jasnps90BCaHXPIdOvlwJ684s4wQSfZzf9zvqXZ-qNAu7mgliAxuSUAY2IEFHFOnW_Zf96OhDs6S5u1YmEJm7x3yI3FPYVFnaV0GqiuYorDcP7plRXgMv_6pH8PSoa5UHv8xuFM6b8itmOHpRbC_bO93NJAZCM_eL3gyfQifCYwrR4t
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

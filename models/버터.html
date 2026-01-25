@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 버터 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhRIY-7zsjs35BK2ASunhWyTq10SxqmSHm102kAKagi5XuBhwZH5av5MY9Df88hFUbaYusW-Cgyfe-QLaZDMV1IMpjoPArv6W99dj1zfh-GVCrRpsZfcP1DNQbMLVX6DNiOSlGhuI7jMK2zLhC9hiDNnBGaTN6dUC0r1GAy-jVHx3PZqtW2MNEQbN23G2wB
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhRIY-7zsjs35BK2ASunhWyTq10SxqmSHm102kAKagi5XuBhwZH5av5MY9Df88hFUbaYusW-Cgyfe-QLaZDMV1IMpjoPArv6W99dj1zfh-GVCrRpsZfcP1DNQbMLVX6DNiOSlGhuI7jMK2zLhC9hiDNnBGaTN6dUC0r1GAy-jVHx3PZqtW2MNEQbN23G2wB
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

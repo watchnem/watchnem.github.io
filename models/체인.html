@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 체인 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhuq5HrtOUbn-46Ju02SQW-28Zgwrq0j4ITurJEOl3GKIe91aiYX5WFUwkbTTZACZtn_B80Hoe2zeAjaWk4lp5wkVF6n4V9FqShPAJshc43M9ydvk1h4GdgdBESSs54wSSKZVzQy_hWNWVIjCONHmVredAB3LCMgVTC_pM1OORg9T4Ya5pxpWsZXWbGZFbY
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhuq5HrtOUbn-46Ju02SQW-28Zgwrq0j4ITurJEOl3GKIe91aiYX5WFUwkbTTZACZtn_B80Hoe2zeAjaWk4lp5wkVF6n4V9FqShPAJshc43M9ydvk1h4GdgdBESSs54wSSKZVzQy_hWNWVIjCONHmVredAB3LCMgVTC_pM1OORg9T4Ya5pxpWsZXWbGZFbY
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

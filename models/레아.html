@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 레아 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiwIIBLliNRFMaASSI8qGpJBsofe39LZ6vIg0hIwFLQ8OZoLnngM3R9hdznf9PifSOQ8brHC6yLSkw80IvuMl1wb8Bz5hGvF-hvLaerFDZpdi795otll--tGyJJB0ltw1UqIKD0OMRRh1pzd5VI9ZduYT0D99Sfy8--pokaiz-9Afig772L9VyP59cluvuh
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiwIIBLliNRFMaASSI8qGpJBsofe39LZ6vIg0hIwFLQ8OZoLnngM3R9hdznf9PifSOQ8brHC6yLSkw80IvuMl1wb8Bz5hGvF-hvLaerFDZpdi795otll--tGyJJB0ltw1UqIKD0OMRRh1pzd5VI9ZduYT0D99Sfy8--pokaiz-9Afig772L9VyP59cluvuh
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
