@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 치하루 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiY-czRQQM5QVBV7LgAxxDUkkwaBkYEfH_fmOKNf8qxgD6WuChW-0GjpBzxZJALdezYSoxr13e_b10vVz-cH3umpGt3xRM5Msf_hHMtZ2WXqhUrjSsRaXrT2PYDx2WiP_qQW74ecVSI-ISjNoEeFmwPMmFX_wKFqfSnm9Z-SNS7hlc38SJ_UPfH2LBl_PXf
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhkL3sLhQvfDMdiIQ3oGEey4jdNfk-oYtmKLPubac7psygHif6Afar_5hak-w4YPHrwHXL1ILXWGok2BUJ3Qs-7JNRHwxG337hhkbENHpeVNRZc343rre7EWrVptg6mnHrrKS_iPk3_u06PTmmBvc28Ng9UVQXu3EuRgO_qdjo06tHKf-DYyvVnBrbPLBzQ
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

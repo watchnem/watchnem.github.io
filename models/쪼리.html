@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 쪼리 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiqrco3i9j6O4US3P_QI43v2TudUji3wH51TrZIHQ8LDo5xRl7QYUEJmmqD4n59wNx1QiyJ-zCVViKP35ZFWBmF-a52SX_JFsaAoHg-wPI6tEI4gBc4jeI-6PKeaxXQjSfy6GkI8qMe7ZQEBPXPn4JqAGUIwIFY-QJ_uDbO1mUgsX5ubILpYA_GDTvYsEaz
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiWjnlYjt9L9XRKXTOy1gLjI_0LIcHN6uY_bwAcmK00i4t2HvGOQAiURQIjWM-AYJMPrXNXUScWcUH1sF8FHwKmYVgV8GwBBTdE7cZ7pMahEmbuQW2M3TUYBGxqF4BmU_e9_txFA9i1GRwyRhLBID4poZ_jdC0iGiSczXZTyPOgcCjOPxTXOUR9cUmWZMbW
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

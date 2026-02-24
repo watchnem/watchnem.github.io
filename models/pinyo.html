@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - pinyo 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEg_GHnr9JQMmIU7wsS-Zp_O2f4nQXMNCQu8BKMP3yJkepeVfkxESrST8Kkh0D0GfSfiGsBw0HZAf2wjIiLqe58QKWnyhX-ihUcVFADC76_eh_Na4S0IH7CbThbOqN02VAHWjMEfczYyN8Cwwn6MFg93MhVjxW1f8PV3TXdZkxwY8dJTFO-nMRSme6Up1rpj
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEg_GHnr9JQMmIU7wsS-Zp_O2f4nQXMNCQu8BKMP3yJkepeVfkxESrST8Kkh0D0GfSfiGsBw0HZAf2wjIiLqe58QKWnyhX-ihUcVFADC76_eh_Na4S0IH7CbThbOqN02VAHWjMEfczYyN8Cwwn6MFg93MhVjxW1f8PV3TXdZkxwY8dJTFO-nMRSme6Up1rpj
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
