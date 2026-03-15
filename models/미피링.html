@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 미피링 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgRi2Qe8h7p-GYh9ecMJDpaLngX_c8lae55CSwghH4v90A0-ttfrQbNNS7ukfw1z2qaU7_TeoPhqSNjCuiV85MQIWMBSnRa_n7vfewoLY9pjH0IHq9SCPJAciuREf_KWBSsLSwPtGQwpL9zCzgfyvjbAMWmdcymu3AsAGodAnfufultq6KyDo8n8j2uyPIG
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgRi2Qe8h7p-GYh9ecMJDpaLngX_c8lae55CSwghH4v90A0-ttfrQbNNS7ukfw1z2qaU7_TeoPhqSNjCuiV85MQIWMBSnRa_n7vfewoLY9pjH0IHq9SCPJAciuREf_KWBSsLSwPtGQwpL9zCzgfyvjbAMWmdcymu3AsAGodAnfufultq6KyDo8n8j2uyPIG
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

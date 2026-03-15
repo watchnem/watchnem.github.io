@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 강끼룩 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEivHTskiFmadJ7dSuHKtbiYw0pJVvUu-zmVgozolXZQzPVm5j2fo4F2-uSY_0lYurAVKU1WP6qC9SPT2XJ7MEe1xNRRAJbLOoH_5wRpLMnSsre3LjxCHudqFNIG7gveuqq0XtvnZAQ1P4w5XKrRfeoCjnfoWlHHP2HvD1bkHWMwWlfSztGieGOy9PyzbbNI
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEivHTskiFmadJ7dSuHKtbiYw0pJVvUu-zmVgozolXZQzPVm5j2fo4F2-uSY_0lYurAVKU1WP6qC9SPT2XJ7MEe1xNRRAJbLOoH_5wRpLMnSsre3LjxCHudqFNIG7gveuqq0XtvnZAQ1P4w5XKrRfeoCjnfoWlHHP2HvD1bkHWMwWlfSztGieGOy9PyzbbNI
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

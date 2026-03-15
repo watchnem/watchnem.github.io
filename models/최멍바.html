@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 최멍바 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiieHcakTpx8dzcBEWZmCx4pUwKFwLOooo4oqgN5JP-9XhqqOoC_gpA7ry3LxoocrPfDdIgrqRX84T0luXVpaesEgiNMrwZgscvoRMPDIPm0zSznVhAVht6AjdRhQ8PAqB4rV-DkkaAc44VhCu4ZFlQVZFtO__JfWImga1ZC1vyW_AsczQ6ncJnDmLT8oEy
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiieHcakTpx8dzcBEWZmCx4pUwKFwLOooo4oqgN5JP-9XhqqOoC_gpA7ry3LxoocrPfDdIgrqRX84T0luXVpaesEgiNMrwZgscvoRMPDIPm0zSznVhAVht6AjdRhQ8PAqB4rV-DkkaAc44VhCu4ZFlQVZFtO__JfWImga1ZC1vyW_AsczQ6ncJnDmLT8oEy
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
