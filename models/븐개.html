@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 븐개 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgmFdlY6nEhvciS8mbvzz0gYnmRLHy8cjaruPp8SfvHp6off4Ole3h3YJU4qCZKzTDF_vVCPayll9Wgsf8zeq2hMFxpoPw2UMF8z5pGnZrJjvfvX1QTC_tBolVKpmwyFg_lAVjSW_W9YjjeUF6dMEPik9vbAMB_yvggkosRlMUVqS0LDIPIKOFyfeWUxJh2
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEivOsgCv_gC9ln1ls5Y0x3SNQs8Wmb3cWjgjE8pUme_WGOwYijKau-6O1SvP3GC7aDhpigN--7GOw5IcH5EPHEKkXoxlO4E5md9NDFbCMXh6oKJyj_ZowRW9_ukiMUVqS4o2OIpxey--vxv0aSOTVdbwuhaD112xc7drAZgWHnaqwRKwjnHgk2LGTIA_Lm2
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - Dominala 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhnA0GVvBu32jc3gKjVB5BHiyF70K6rv1wn2lXoUmyrr5i9jYQB6LnbPkp5gNvGVTCcELtFVV9NGErzBv71oKsdlFgyKlppyC9Xyco0O_AYEGF-DeD315zS1wpc0MhEmsYVZkkBiWDj7aLhpVuYHN7Z5bm4w4nJUvJVZpZmY_XebFbFMoZVRA2HBRDAWTHf
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhnA0GVvBu32jc3gKjVB5BHiyF70K6rv1wn2lXoUmyrr5i9jYQB6LnbPkp5gNvGVTCcELtFVV9NGErzBv71oKsdlFgyKlppyC9Xyco0O_AYEGF-DeD315zS1wpc0MhEmsYVZkkBiWDj7aLhpVuYHN7Z5bm4w4nJUvJVZpZmY_XebFbFMoZVRA2HBRDAWTHf
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
