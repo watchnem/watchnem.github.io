@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 메글링 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgg8_kyQGWFR6dJkB9Ye6YXigFRn6WNODQqxlBjo0P5eeZz7-k7v9DwU21hgYVzmYX87vw-DehUuv8X9IdDOPaU51DQFnXhwlAWtcfKvw7q1wXakmASvBQbAwGeSSr6wGR0FunF09JOOWihXVAXxlVrHPocQoRiU61_iOz2XFImmzUtiuVOPL75R4uQSEDm
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEid0MMhIw-3pnkiBYAjW7VXoZLE9mFjeRwJwPa9tO8W2JBfLz_2rfrTXlQWrxuoPYhJIHWjKcIgrhSYjZqpEhUqZGachCYkC71EW_01LEgsMxhYGaTEhA1iz6OC701e9DWeinrwiC23KeQy4mI9QGxiwpGs6bLYf98cQqKbW6Pxt2B6dDqZwiMXChfqz3Wd
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
