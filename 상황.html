@@ -1,0 +1,362 @@
+---
+data:
+- __H1__:2025-11-30 젠존제 제인 도
+- __NOW__:셀렉+색감보정(P)이보토X
+
+- __H1__:2026-03-22 코조우 연남 이네파
+- __NOW__:셀렉+색감보정(P)이보토O
+
+- __H1__:2026-03-28 rz a 원신 나비아
+- __NOW__:색감보정(P)
+
+- __H1__:2026-03-28 rz a 니케 도로시 노스텔지어 피나 전개
+- __NOW__:이보토(P)
+
+- __H1__:2026-04-01 카페 스냅 + 서울숲 사슴공원 벚꽃 스냅
+- __NOW__:이보토(P)
+
+- __H1__:2026-04-03 양시숲 사쿠라 미쿠
+- __NOW__:색감보정(P)
+
+- __H1__:2026-04-04 양시숲 마마마 아케미호무라
+- __NOW__:색감보정(P)
+
+- __H1__:2026-04-04 양시숲 카캡채 토모요
+- __NOW__:색감보정(P)
+
+- __H1__:2026-04-05 양시숲 촬영 - 1. 햇뇽
+- __NOW__:셀렉+색감보정(P)이보토X
+
+- __H1__:2026-04-05 양시숲 촬영 - 3. 챠메 c_hamae
+- __NOW__:셀렉+색감보정(P)이보토X
+
+- __H1__:2026-04-05 양시숲 촬영 - 4. 슈슈
+- __NOW__:셀렉+색감보정(P)이보토X
+
+- __H1__:2026-04-05 양시숲 촬영 - 5. 엔니 ennixq
+- __NOW__:셀렉+색감보정(P)이보토X
+
+- __H1__:2026-04-05 양시숲 촬영 - 6. 례
+- __NOW__:셀렉+색감보정(P)이보토O
+
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  {% include meta.html %}
+  <style>
+    @font-face {
+      font-family: 'Mabiyet';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+      font-weight: normal;
+      font-display: swap;
+    }
+
+    :root {
+      /* 배경 */
+      --bg-start: #1b1b1d;
+      --bg-end: #202124;
+
+      /* 기본 텍스트 */
+      --text-main: #f2f2f2;
+      --text-soft: rgba(255, 255, 255, 0.92);
+      --text-muted: rgba(255, 255, 255, 0.96);
+
+      /* 박스 / 테두리 */
+      --panel-bg: rgba(255, 255, 255, 0.04);
+      --panel-bg-strong: rgba(255, 255, 255, 0.05);
+      --border-soft: rgba(255, 255, 255, 0.28);
+      --divider: rgba(255, 255, 255, 0.25);
+
+      /* 포인트 컬러 */
+      --accent: #5d70ff;
+      --accent-glow: rgba(85, 104, 255, 0.28);
+
+      /* 그림자 */
+      --shadow-panel: 0 10px 30px rgba(0, 0, 0, 0.22);
+      --shadow-step: 0 8px 18px rgba(0, 0, 0, 0.18);
+
+      /* 브랜드 */
+      --brand: rgba(255, 255, 255, 0.95);
+    }
+
+    /* 나중에 색 반전용 */
+    body.light-mode {
+      --bg-start: #f4f5f7;
+      --bg-end: #e9ebf0;
+
+      --text-main: #1f232b;
+      --text-soft: rgba(31, 35, 43, 0.92);
+      --text-muted: rgba(31, 35, 43, 0.9);
+
+      --panel-bg: rgba(255, 255, 255, 0.7);
+      --panel-bg-strong: rgba(255, 255, 255, 0.88);
+      --border-soft: rgba(31, 35, 43, 0.18);
+      --divider: rgba(31, 35, 43, 0.18);
+
+      --accent: #4d63ff;
+      --accent-glow: rgba(77, 99, 255, 0.18);
+
+      --shadow-panel: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-step: 0 8px 18px rgba(0, 0, 0, 0.08);
+
+      --brand: rgba(31, 35, 43, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Mabiyet", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      color: var(--text-main);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .top-box {
+      border: 2px solid var(--border-soft);
+      border-radius: 22px;
+      padding: 26px 24px 20px;
+      text-align: center;
+      background: var(--panel-bg);
+      box-shadow: var(--shadow-panel);
+    }
+
+    .page > .top-box + .top-box {
+      margin-top: 1rem;
+    }
+
+    .top-box h1 {
+      margin: 0 0 18px;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .top-box p {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      letter-spacing: -0.02em;
+    }
+
+    .flow-wrap {
+      margin: 54px 0 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      min-width: 140px;
+      height: 82px;
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border-soft);
+      border-radius: 999px;
+      background: var(--panel-bg-strong);
+      color: var(--text-main);
+      font-size: 1.05rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-step);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      font-size: 2.3rem;
+      color: var(--accent);
+      font-weight: 900;
+      line-height: 1;
+      transform: translateY(-2px);
+      text-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .divider {
+      border: 0;
+      border-top: 2px solid var(--divider);
+      margin: 28px auto 60px;
+      width: 88%;
+    }
+
+    .section {
+      margin-bottom: 58px;
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+
+    .bullet-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .brand {
+      margin-top: 40px;
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--brand);
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 28px 18px 56px;
+      }
+
+      .top-box {
+        padding: 22px 18px 18px;
+        border-radius: 18px;
+      }
+
+      .top-box h1 {
+        font-size: 1.7rem;
+      }
+
+      .top-box p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .flow-wrap {
+        gap: 14px;
+        margin-top: 42px;
+      }
+
+      .step {
+        min-width: 120px;
+        height: 72px;
+        font-size: 0.96rem;
+        padding: 0 18px;
+      }
+
+      .arrow {
+        font-size: 1.9rem;
+      }
+
+      .section-title {
+        font-size: 1.9rem;
+      }
+
+      .bullet-list li {
+        font-size: 1.06rem;
+        line-height: 1.75;
+      }
+
+      .divider {
+        width: 100%;
+      }
+    }
+
+
+    .day-badge {
+      display: inline-block;
+      color: red;
+      margin-left: 0.55rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    {% for p in page.data %}
+      {%- if p contains "__H1__:" -%}
+        {%- assign h1_text = p | remove: "__H1__:" | strip -%}
+        <section class="top-box">
+          <h1>{{ h1_text }}<span class="day-badge" data-date="{{ h1_text | slice: 0, 10 }}"></span></h1>
+      {%- endif -%}
+
+      {%- if p contains "__NOW__:" -%}
+        {%- assign now_text = p | remove: "__NOW__:" | strip -%}
+
+        {%- if now_text contains "셀렉+색감보정(P)이보토X" -%}
+          <p><span style="color:green">셀렉+색감보정(P) → </span>셀렉+보정(C)</p>
+        {%- elsif now_text contains "셀렉+색감보정(P)이보토O" -%}
+          <p><span style="color:green">셀렉+색감보정+이보토(P) → </span>셀렉+보정(C)</p>
+        {%- elsif now_text contains "색감보정(P)" -%}
+          <p><span style="color:green">색감보정(P) → </span>셀렉(C) → 이보토(P) → 보정(C)</p>
+        {%- elsif now_text contains "셀렉(C)" -%}
+          <p><span style="color:green">색감보정(P) → 셀렉(C) → </span>이보토(P) → 보정(C)</p>
+        {%- elsif now_text contains "이보토(P)" -%}
+          <p><span style="color:green">색감보정(P) → 셀렉(C) → 이보토(P) → </span>보정(C)</p>
+        {%- elsif now_text contains "보정(C)" -%}
+          <p><span style="color:green">색감보정(P) → 셀렉(C) → 이보토(P) → 보정(C)</span></p>
+        {%- else -%}
+          <p>{{ now_text }}</p>
+        {%- endif -%}
+
+        </section>
+      {%- endif -%}
+    {% endfor %}
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const badges = document.querySelectorAll(".day-badge");
+  
+      badges.forEach(function (badge) {
+        const dateStr = badge.dataset.date; // 예: 2026-03-28
+        if (!dateStr) return;
+  
+        const target = new Date(dateStr + "T00:00:00");
+        const now = new Date();
+  
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffMs = today.getTime() - target.getTime();
+        const diffDays = Math.floor(diffMs / 86400000);
+  
+        if (diffDays >= 0) {
+          badge.textContent = `+${diffDays}일`;
+        } else {
+          badge.textContent = `${diffDays}일`;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
