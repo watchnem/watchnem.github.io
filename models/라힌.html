@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 라힌 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgg5K-6Fngn2Wu8p1MNyEca0DGc9gDacJUdzrECxTcv4Z-gIf-trwI3neuCfigYVQKcmIQGAwJNEhGcnet0onsJ-Daq21SG0jHntKBuq-dXOqIPPC7sdJwcDetFRKeRfzvH9JtijWCGDLGTNMVjQeD-fChcRjjFxKxMG_jTDVv7t8RxMOdntDIZTkZgA2GI
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgg5K-6Fngn2Wu8p1MNyEca0DGc9gDacJUdzrECxTcv4Z-gIf-trwI3neuCfigYVQKcmIQGAwJNEhGcnet0onsJ-Daq21SG0jHntKBuq-dXOqIPPC7sdJwcDetFRKeRfzvH9JtijWCGDLGTNMVjQeD-fChcRjjFxKxMG_jTDVv7t8RxMOdntDIZTkZgA2GI
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
