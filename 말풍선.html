@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자동 크기 조절 말풍선</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    .post {
+      width: min(720px, 100%);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ddd, #999);
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .avatar::after {
+      content: "+";
+      position: absolute;
+      right: -4px;
+      bottom: -2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .nickname {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .bubble {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      padding: 16px 22px;
+      line-height: 1.45;
+      font-size: 18px;
+    }
+
+    .bubble-border {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .bubble-border rect {
+      fill: none;
+      stroke: #9a9a9a;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 4;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .bubble-text {
+      position: relative;
+      z-index: 1;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .original {
+      color: #999;
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 20px;
+      }
+
+      .bubble {
+        font-size: 16px;
+        padding: 14px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="post">
+    <div class="avatar"></div>
+
+    <div class="content">
+      <div class="nickname">12o_.7</div>
+
+      <div class="bubble">
+        <svg
+          class="bubble-border"
+          aria-hidden="true"
+          preserveAspectRatio="none"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="calc(100% - 2px)"
+            height="calc(100% - 2px)"
+            rx="24"
+            ry="24"
+          />
+        </svg>
+
+        <div class="bubble-text">
+          밤 사진 촬영을 전문으로 하는 사진작가가 있고 밤 사진을 찍어보고 자신을 도전하고 싶어하는 분이 있나요?
+          <span class="original">원문 보기</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

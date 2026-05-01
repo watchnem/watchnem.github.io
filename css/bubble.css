@@ -1,0 +1,48 @@
+.bubble {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding: 16px 22px;
+  line-height: 1.45;
+  font-size: 18px;
+  color: var(--main);
+}
+
+.bubble__border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.bubble__border rect {
+  fill: none;
+  stroke: var(--main);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.bubble__text {
+  position: relative;
+  z-index: 1;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.bubble__original {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--main);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .bubble {
+    font-size: 16px;
+    padding: 14px 18px;
+  }
+}

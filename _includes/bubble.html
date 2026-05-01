@@ -1,0 +1,23 @@
+<div class="bubble">
+    <svg
+        class="bubble__border"
+        aria-hidden="true"
+        preserveAspectRatio="none"
+    >
+        <rect
+            x="1"
+            y="1"
+            width="calc(100% - 2px)"
+            height="calc(100% - 2px)"
+            rx="24"
+            ry="24"
+        ></rect>
+    </svg>
+  
+    <div class="bubble__text">
+        {{ include.text }}
+        {% if include.original %}
+            <span class="bubble__original">{{ include.original }}</span>
+        {% endif %}
+    </div>
+</div>
