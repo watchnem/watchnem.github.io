@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 푸딩 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEib-JGpX4pHvw6_TwjFaEZQEoWeR2DV46f-BOLXW7tly7MqULNB_vyQDyDWh-Q1XYeVXhpNHkXHTOZTnHtgucIsVzREc38WGseVB9yNk3jyeo3aDdtD4oZl95wYPXfA42N956LFMMAsGTaucHw2-_I54GajDycGF9tzNDvD88o5jGgiQhcTPXr3Zsb3ByAJ
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEib-JGpX4pHvw6_TwjFaEZQEoWeR2DV46f-BOLXW7tly7MqULNB_vyQDyDWh-Q1XYeVXhpNHkXHTOZTnHtgucIsVzREc38WGseVB9yNk3jyeo3aDdtD4oZl95wYPXfA42N956LFMMAsGTaucHw2-_I54GajDycGF9tzNDvD88o5jGgiQhcTPXr3Zsb3ByAJ
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

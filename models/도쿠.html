@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 도쿠 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjyJUrqwiyu5xqefjiG-RcFx2vU5ImgVGgbeVo3ct15Osox9kRSXikN0D3-uCZxHQox5jbrJrqRJ7sI5S-CJ-zhQJzJ0-cjUS1XJvyxDm-O5cF440yXVca1dkAHKqI9lJ6nJiXEo9C1EUdd5eI_sYi3uZcfweD6clQhgyh_0NgqWe0l0gKjOKtqDhHU_e5i
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjyJUrqwiyu5xqefjiG-RcFx2vU5ImgVGgbeVo3ct15Osox9kRSXikN0D3-uCZxHQox5jbrJrqRJ7sI5S-CJ-zhQJzJ0-cjUS1XJvyxDm-O5cF440yXVca1dkAHKqI9lJ6nJiXEo9C1EUdd5eI_sYi3uZcfweD6clQhgyh_0NgqWe0l0gKjOKtqDhHU_e5i
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
