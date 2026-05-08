@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 김로아 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgWDjV0St_j-hGLqJRKddSmbUKC96bXCLKVuyJiczn08Sr3Q-r0QT3QCy3VP97g1vC-EFn7-5bk_4nxzrCAGgss377sMuR1ToLDAWRu5l1P8tqFrGPynVPdXe-WwU-xQCeF0rp2bTg-Mjk_bL-Nw22a04dthY43s3uSG4MB1UzJDnTpuSavZ3yOPUPBRZx2
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgWDjV0St_j-hGLqJRKddSmbUKC96bXCLKVuyJiczn08Sr3Q-r0QT3QCy3VP97g1vC-EFn7-5bk_4nxzrCAGgss377sMuR1ToLDAWRu5l1P8tqFrGPynVPdXe-WwU-xQCeF0rp2bTg-Mjk_bL-Nw22a04dthY43s3uSG4MB1UzJDnTpuSavZ3yOPUPBRZx2
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
