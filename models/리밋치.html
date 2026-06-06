@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 리밋치 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgNV0peitQGZLeFKHjjH6VAkmqJw6pHsHhBekZMmyEhMKvVoKwx3SkCHPUzxMoPBAAdY_x6BA72XxByADSEo6EpNfMZKECHcqbqSGCl3rzis_gQqu7w4aqudK1s0aY7ht5TMpPkluZe3eq2Uw0519pd2jFLaSZyypw5G_tfMxN99nGASUsUc63dYIFUraCd
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgNV0peitQGZLeFKHjjH6VAkmqJw6pHsHhBekZMmyEhMKvVoKwx3SkCHPUzxMoPBAAdY_x6BA72XxByADSEo6EpNfMZKECHcqbqSGCl3rzis_gQqu7w4aqudK1s0aY7ht5TMpPkluZe3eq2Uw0519pd2jFLaSZyypw5G_tfMxN99nGASUsUc63dYIFUraCd
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

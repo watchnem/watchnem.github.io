@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 탱여 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhKwXKwb1mL55ROD8jVOXLv9qFxugELxgGxiEFLINRsuWgiIw01FXDIn0TsqgYFC89fXJgE8_KGSNxgLLBAcYEqEu8TKufnUfg6SyjROCHemiIUuiS1jyHXcKTFh9kp3QMpMOoWE9xrFTrfkIZMoRVb2Cdq8VrccpFvKXPly0JZVI_DLaNC4-g22tuDaR9h
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhKwXKwb1mL55ROD8jVOXLv9qFxugELxgGxiEFLINRsuWgiIw01FXDIn0TsqgYFC89fXJgE8_KGSNxgLLBAcYEqEu8TKufnUfg6SyjROCHemiIUuiS1jyHXcKTFh9kp3QMpMOoWE9xrFTrfkIZMoRVb2Cdq8VrccpFvKXPly0JZVI_DLaNC4-g22tuDaR9h
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

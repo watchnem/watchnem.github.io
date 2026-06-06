@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - honey bee 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhELWH56JModsYmUOSdRcWlTE1FbcD9sA7Vtc2rePd1b9ctazKybKUhtl9MZpfRlbyKVABdLp33ifia7YHwFUFc8NiQNBfopKrzk-mrnhNbt9ZBH3758qEjoHYxn3zWivFfB7_-C20Y8-Cy0O5VTx-UJ4TJpty8_WqkzxQaNkRbg-GMLspfmOGMsWzGXlqb
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhELWH56JModsYmUOSdRcWlTE1FbcD9sA7Vtc2rePd1b9ctazKybKUhtl9MZpfRlbyKVABdLp33ifia7YHwFUFc8NiQNBfopKrzk-mrnhNbt9ZBH3758qEjoHYxn3zWivFfB7_-C20Y8-Cy0O5VTx-UJ4TJpty8_WqkzxQaNkRbg-GMLspfmOGMsWzGXlqb
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
