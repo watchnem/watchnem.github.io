@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 빙빙 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEh-4o1Q6G2-zrLoD6c4ZObkO9xyW8-RjiAgv9SCq2UwIk5ji2k-Ohp24K3LQPgctza1dzzslUjrS1kB084CoGw5t11yqCBmA_Mz-UHZP2PUCTgTWTMrpJvB7qvAfHa_ABSP2BiwuRZ372lZ-BIDL1S9S_adg31LvrGsGp9kvVAqK2BLo94kksht5p5nuhuT
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEh-4o1Q6G2-zrLoD6c4ZObkO9xyW8-RjiAgv9SCq2UwIk5ji2k-Ohp24K3LQPgctza1dzzslUjrS1kB084CoGw5t11yqCBmA_Mz-UHZP2PUCTgTWTMrpJvB7qvAfHa_ABSP2BiwuRZ372lZ-BIDL1S9S_adg31LvrGsGp9kvVAqK2BLo94kksht5p5nuhuT
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

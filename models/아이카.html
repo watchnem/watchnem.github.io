@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 아이카 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhmMn4K9GtFYwmZKWPJH7HdsTW-jltYTs2aKp2rKwH9Mijbqy7tIkkzGuglTy4Uag9UkPcHhuhLGoyDaxGtQ5YhnAeCmNyl_KcDogLgLh8IfDJunwT8qGEtEqvHJZNZFm-NiXRbJs_EFGNoihFMSTCNAwFvbIkUdder0HSdOMwPFEUMrTvFKEC3EUDJxZSR
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhmMn4K9GtFYwmZKWPJH7HdsTW-jltYTs2aKp2rKwH9Mijbqy7tIkkzGuglTy4Uag9UkPcHhuhLGoyDaxGtQ5YhnAeCmNyl_KcDogLgLh8IfDJunwT8qGEtEqvHJZNZFm-NiXRbJs_EFGNoihFMSTCNAwFvbIkUdder0HSdOMwPFEUMrTvFKEC3EUDJxZSR
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 파랑치타 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEi-RDqkqjP64wtEp42jTqZTa58keeD5-W-HPSQA5rdywAOSz09KIPfcO9ouKHqhBfSmWhYcy_ccp5u7x-kPhZ916SvdLEZu5Yt6YK6IAcypWjTfEgdLXIWvC9RZ5oxCRWqD5tu7D_Eb56R3g1A8Shs6BicX7mSZZ7Pul1piIJcataejhFTDr8NP-j1dcBJA
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEi-RDqkqjP64wtEp42jTqZTa58keeD5-W-HPSQA5rdywAOSz09KIPfcO9ouKHqhBfSmWhYcy_ccp5u7x-kPhZ916SvdLEZu5Yt6YK6IAcypWjTfEgdLXIWvC9RZ5oxCRWqD5tu7D_Eb56R3g1A8Shs6BicX7mSZZ7Pul1piIJcataejhFTDr8NP-j1dcBJA
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
