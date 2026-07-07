@@ -1,0 +1,83 @@
+.door-loader {
+  --delay: .2s;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.door-loader__line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: #333;
+  animation: lineUp .4s cubic-bezier(.93, 0, .1, 1.01) calc(var(--d, 0s) + var(--delay)) both;
+}
+
+.door-loader__panels {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 141%;
+  height: 141%;
+  transform: translate(-50%, -50%);
+}
+
+.door-loader__panels::before,
+.door-loader__panels::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #333;
+}
+
+.door-loader__panels::before {
+  left: -1px;
+  animation:
+    leftRound .45s ease-out calc(var(--d, 0s) + var(--delay) + .4s) both,
+    leftOpen .9s ease-in-out calc(var(--d, 0s) + var(--delay) + .5s) forwards;
+}
+
+.door-loader__panels::after {
+  right: -1px;
+  animation:
+    rightRound .45s ease-out calc(var(--d, 0s) + var(--delay) + .4s) both,
+    rightOpen .9s ease-in-out calc(var(--d, 0s) + var(--delay) + .5s) forwards;
+}
+
+@keyframes leftOpen {
+  from { transform: translateX(0); }
+  to { transform: translateX(-101%); }
+}
+
+@keyframes rightOpen {
+  from { transform: translateX(0); }
+  to { transform: translateX(101%); }
+}
+
+@keyframes leftRound {
+  from { border-bottom-right-radius: 0%; }
+  to { border-bottom-right-radius: 100%; }
+}
+
+@keyframes rightRound {
+  from { border-bottom-left-radius: 0%; }
+  to { border-bottom-left-radius: 100%; }
+}
+
+@keyframes lineUp {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(-101%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door-loader {
+    display: none;
+  }
+}
