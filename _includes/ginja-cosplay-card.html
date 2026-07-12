@@ -1,0 +1,25 @@
+<article class="ginja-cosplay-card">
+  <div class="ginja-cosplay-card-image"><img src="{{ include.card.image }}" alt="{{ include.card.name }} 참고 이미지"
+      loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="ginja-cosplay-card-body">
+    <header>
+      <div>
+        <h3>{{ include.card.name }}</h3>
+        <p>{{ include.card.series }}</p>
+      </div><span class="ginja-cosplay-gender">여성</span>
+    </header>
+    <div class="ginja-cosplay-labels">{% for label in include.card.labels %}<span>{{ label }}</span>{% endfor %}{% if
+      include.card.mature %}<span class="ginja-cosplay-mature">검열 필요</span>{% endif %}</div>
+    <section>
+      <h4>촬영지</h4>
+      <div class="ginja-cosplay-chips">{% for background in include.card.backgrounds %}<span>{{ background }}</span>{%
+        endfor %}</div>
+    </section>
+    <section>
+      <h4>촬영 포인트</h4>
+      <ul>{% for feature in include.card.features %}<li>{{ feature }}</li>{% endfor %}</ul>
+    </section>
+    {% if include.card.link != '' %}<a class="ginja-cosplay-link" href="{{ include.card.link }}" target="_blank"
+      rel="noopener noreferrer">원본 일러스트 더 찾기</a>{% endif %}
+  </div>
+</article>

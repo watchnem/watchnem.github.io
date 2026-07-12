@@ -1,0 +1,4 @@
+<section class="ginja-cosplay-work" id="work-{{ include.index }}" data-work-section="work-{{ include.index }}"{% unless include.index == 1 %} hidden{% endunless %}>
+  <header><h2>{{ include.work.title }}</h2><span>{{ include.work.cards.size }}명</span></header>
+  <div class="ginja-cosplay-grid">{% for card in include.work.cards %}{% include ginja-cosplay-card.html card=card %}{% endfor %}</div>
+</section>

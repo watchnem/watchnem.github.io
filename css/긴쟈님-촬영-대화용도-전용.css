@@ -1,0 +1,352 @@
+/* 긴쟈님 촬영 대화용 페이지에서만 사용하는 스타일입니다. */
+.ginja-cosplay-card-image {
+    height: auto !important;
+    aspect-ratio: 16/9
+}
+
+.ginja-cosplay-card-image.is-portrait {
+    aspect-ratio: 4/5 !important;
+    background: #f6f8fa
+}
+
+.ginja-cosplay-card-image.is-square {
+    aspect-ratio: 1/1 !important;
+    background: #f6f8fa
+}
+
+.ginja-cosplay-card-image.is-portrait img,
+.ginja-cosplay-card-image.is-square img {
+    object-fit: contain;
+    object-position: 50% 0
+}
+
+.ginja-cosplay-card-image.is-wide img {
+    object-position: 50% 18%
+}
+
+@media(max-width:620px) {
+    .ginja-cosplay-card-image.is-portrait {
+        aspect-ratio: 3/4 !important
+    }
+}
+
+.ginja-cosplay-page {
+    --gc-bg: #0d1117;
+    --gc-panel: #161b22;
+    --gc-panel-soft: #151b23;
+    --gc-border: #30363d;
+    --gc-text: #e6edf3;
+    --gc-muted: #9198a1;
+    --gc-accent: #2f81f7;
+    --gc-shadow: 0 12px 32px rgba(1, 4, 9, .28);
+    margin: 0;
+    background: linear-gradient(180deg, #0d1117, #11161d);
+    color: var(--gc-text);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif
+}
+
+.ginja-cosplay-page * {
+    box-sizing: border-box
+}
+
+.ginja-cosplay-page a {
+    color: inherit;
+    text-decoration: none
+}
+
+.ginja-cosplay-container {
+    width: min(calc(100% - 32px), 1480px);
+    margin: auto
+}
+
+.ginja-cosplay-header {
+    padding: 44px 0 26px;
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.ginja-cosplay-header h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -.04em
+}
+
+.ginja-cosplay-header p {
+    margin: 8px 0 0;
+    color: var(--gc-muted)
+}
+
+.ginja-cosplay-eyebrow {
+    color: #58a6ff !important;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em
+}
+
+.ginja-cosplay-menu {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 12px 0;
+    background: rgba(13, 17, 23, .94);
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.ginja-cosplay-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.ginja-cosplay-menu button {
+    border: 1px solid var(--gc-border);
+    border-radius: 999px;
+    padding: 7px 11px;
+    background: var(--gc-panel);
+    color: var(--gc-text);
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: border-color .18s ease, background .18s ease
+}
+
+.ginja-cosplay-menu button:hover,
+.ginja-cosplay-menu button:focus-visible,
+.ginja-cosplay-menu button[aria-pressed="true"] {
+    border-color: var(--gc-accent);
+    background: rgba(47, 129, 247, .22);
+    outline: none
+}
+
+.ginja-cosplay-menu span {
+    margin-left: 4px;
+    color: var(--gc-muted)
+}
+
+.ginja-cosplay-main {
+    padding: 26px 0 56px
+}
+
+.ginja-cosplay-work {
+    scroll-margin-top: 126px;
+    margin: 0
+}
+
+.ginja-cosplay-work>header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px
+}
+
+.ginja-cosplay-work h2 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: -.03em
+}
+
+.ginja-cosplay-work>header span {
+    color: var(--gc-muted);
+    font-size: 14px
+}
+
+.ginja-cosplay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px
+}
+
+.ginja-cosplay-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--gc-border);
+    border-radius: 16px;
+    background: var(--gc-panel);
+    box-shadow: var(--gc-shadow);
+    transition: transform .18s ease, border-color .18s ease
+}
+
+.ginja-cosplay-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(47, 129, 247, .65)
+}
+
+.ginja-cosplay-card-image {
+    position: relative;
+    height: 190px;
+    background: var(--gc-panel-soft);
+    overflow: hidden
+}
+
+.ginja-cosplay-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.ginja-cosplay-card-image span {
+    position: absolute;
+    right: 9px;
+    bottom: 8px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(13, 17, 23, .8);
+    color: #c9d1d9;
+    font-size: 11px
+}
+
+.ginja-cosplay-card-body {
+    padding: 15px
+}
+
+.ginja-cosplay-card-body>section:nth-child(2 of section) {
+    display: none;
+}
+
+.ginja-cosplay-card-body>header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: start
+}
+
+.ginja-cosplay-card h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -.02em
+}
+
+.ginja-cosplay-card h3+p {
+    margin: 3px 0 0;
+    color: var(--gc-muted);
+    font-size: 13px
+}
+
+.ginja-cosplay-gender {
+    flex: none;
+    padding: 3px 7px;
+    border: 1px solid #1f6feb;
+    border-radius: 999px;
+    color: #79c0ff;
+    font-size: 12px;
+    display: none;
+}
+
+.ginja-cosplay-labels,
+.ginja-cosplay-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+}
+
+.ginja-cosplay-labels {
+    margin-top: 13px
+}
+
+.ginja-cosplay-labels span,
+.ginja-cosplay-chips span {
+    padding: 3px 7px;
+    border: 1px solid var(--gc-border);
+    border-radius: 999px;
+    color: #c9d1d9;
+    font-size: 12px
+}
+
+.ginja-cosplay-labels .ginja-cosplay-mature {
+    border-color: #f04438;
+    background: #b42318;
+    color: #fff;
+    font-weight: 700
+}
+
+.ginja-cosplay-card section {
+    margin-top: 15px
+}
+
+.ginja-cosplay-card h4 {
+    margin: 0 0 7px;
+    color: var(--gc-muted);
+    font-size: 12px;
+    font-weight: 700
+}
+
+.ginja-cosplay-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #c9d1d9;
+    font-size: 13px
+}
+
+.ginja-cosplay-card li+li {
+    margin-top: 3px
+}
+
+.ginja-cosplay-link {
+    /* display: inline-block; */
+    display: none;
+    margin-top: 17px;
+    color: #79c0ff;
+    font-size: 13px;
+    font-weight: 600
+}
+
+.ginja-cosplay-link:hover,
+.ginja-cosplay-link:focus-visible {
+    color: #a5d6ff;
+    text-decoration: underline;
+    outline: none
+}
+
+.ginja-cosplay-footer {
+    padding: 22px 0;
+    border-top: 1px solid var(--gc-border);
+    color: var(--gc-muted);
+    font-size: 13px
+}
+
+@media(max-width:620px) {
+    .ginja-cosplay-container {
+        width: min(calc(100% - 24px), 1480px)
+    }
+
+    .ginja-cosplay-header {
+        padding: 30px 0 20px
+    }
+
+    .ginja-cosplay-menu {
+        position: static;
+        padding: 10px 0
+    }
+
+    .ginja-cosplay-menu ul {
+        gap: 6px
+    }
+
+    .ginja-cosplay-menu button {
+        padding: 7px 9px;
+        font-size: 12px
+    }
+
+    .ginja-cosplay-main {
+        padding-top: 20px
+    }
+
+    /* .ginja-cosplay-grid {
+        grid-template-columns: 1fr;
+        gap: 12px
+    } */
+
+    .ginja-cosplay-card-image {
+        height: 220px
+    }
+
+    .ginja-cosplay-work {
+        scroll-margin-top: 12px
+    }
+}
