@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 코비비 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhfaDQxgWZ5iMzW9uNT_3MuWzJRuSBZAnZacuh2PDcfcZZ-L2ry2bkHXJbKRUT9yMk-NBkAUOMyZ8EdlivPBFT3R1OUi1VcFKF79OnMxLCKztonEMsYyGFVU5blGfhD09yN0L2-7NZJNRpSO5RZUN5WWQ0JS0WtmqpwBpIVti5LYA3vDX2NidkL3ihYjm7U
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhfaDQxgWZ5iMzW9uNT_3MuWzJRuSBZAnZacuh2PDcfcZZ-L2ry2bkHXJbKRUT9yMk-NBkAUOMyZ8EdlivPBFT3R1OUi1VcFKF79OnMxLCKztonEMsYyGFVU5blGfhD09yN0L2-7NZJNRpSO5RZUN5WWQ0JS0WtmqpwBpIVti5LYA3vDX2NidkL3ihYjm7U
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

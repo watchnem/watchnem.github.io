@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 청삼 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgs_0y6fzJebApND8pIhIOad_RbpPTV0bVzp5l5kqn77Cyj1w7vIuBJstHkZaXkIuCVUh9EW5ugifVuZr6IEqSjuXjTzdF27jR7JzKNXW6i1MCw3HywzpQpScdQq5vsV1RLbevEWnMNJ8PugfSHrWrsZ8QO4LdHajTTh-DLkqQGcYT9stCJzneEuo84q9DC
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgs_0y6fzJebApND8pIhIOad_RbpPTV0bVzp5l5kqn77Cyj1w7vIuBJstHkZaXkIuCVUh9EW5ugifVuZr6IEqSjuXjTzdF27jR7JzKNXW6i1MCw3HywzpQpScdQq5vsV1RLbevEWnMNJ8PugfSHrWrsZ8QO4LdHajTTh-DLkqQGcYT9stCJzneEuo84q9DC
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

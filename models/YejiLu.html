@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - YejiLu 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhsBnoA1tPvernYH2S32cpbYPFP8MGoXZVSUtMBB_GRtmnWHFQ6Ev6Wp3R5xPKe1WoGyTBzZp_nRHJ8jJIM3bCQ7b76vtWorAhvrwvXwQYTse5BYAiOuH1ujpWNHOcCXhi7u5JcFCksH6h2n9_9WI00l5ZLgcspcdU_uL255K_NWG5jYf_Yf8eyv1xAaqbS
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjhPArObpuhBNYIMIBX9JOGh_mcc0cl58sPhJMIj3IlKPAkC8l8EDUystCSRHYN_o6SXp0mnR9l63pyOJfWrvBspvBqifWW8xFaUuUrEpW1_277I685jokmIxc19978xAMAbMyOQ9NYYdtqDmjgo5pCEo9D3DHtZnrUU6EafYWCi7TxVioG0YssbUp79mwZ
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
