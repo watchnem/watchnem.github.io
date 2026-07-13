@@ -1,1 +1,7 @@
-<nav class="ginja-cosplay-menu" aria-label="작품 카테고리"><div class="ginja-cosplay-container"><ul>{% for work in include.works %}<li><button type="button" data-work="work-{{ forloop.index }}"{% if forloop.first %} aria-pressed="true"{% else %} aria-pressed="false"{% endif %}>{{ work.title }} <span>{{ work.cards.size }}</span></button></li>{% endfor %}</ul></div></nav>
+<nav class="ginja-cosplay-menu" aria-label="작품 카테고리">
+    <div class="ginja-cosplay-container">
+        <ul>{% for work in include.works %}<li><button type="button" data-work="work-{{ forloop.index }}" {% if
+                    forloop.first %} aria-pressed="true" {% else %} aria-pressed="false" {% endif %}>{{ work.title }}
+                    <span>{{ work.cards.size }}</span></button></li>{% endfor %}</ul>
+    </div>
+</nav>

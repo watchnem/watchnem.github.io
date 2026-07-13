@@ -9,7 +9,8 @@
       </div><span class="ginja-cosplay-gender">여성</span>
     </header>
     <div class="ginja-cosplay-labels">{% for label in include.card.labels %}<span>{{ label }}</span>{% endfor %}{% if
-      include.card.mature %}<span class="ginja-cosplay-mature">검열 필요</span>{% endif %}</div>
+      include.card.mature %}<span class="ginja-cosplay-mature">검열 필요</span>{% endif %}{% if
+        include.card.caution %}<span class="ginja-cosplay-caution">19금도 가능</span>{% endif %}</div>
     <section>
       <h4>촬영지</h4>
       <div class="ginja-cosplay-chips">{% for background in include.card.backgrounds %}<span>{{ background }}</span>{%

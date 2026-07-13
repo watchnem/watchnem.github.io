@@ -1,0 +1,30 @@
+<nav class="ginja-cosplay-menu" aria-label="작품 카테고리">
+    <div class="ginja-cosplay-container">
+        <ul>
+            {% for work in include.works %}
+                {% assign visible_count = 0 %}
+
+                {% for card in work.cards %}
+                    {% unless card.mature %}
+                        {% assign visible_count = visible_count | plus: 1 %}
+                    {% endunless %}
+                {% endfor %}
+
+                <li>
+                    <button
+                        type="button"
+                        data-work="work-{{ forloop.index }}"
+                        {% if forloop.first %}
+                            aria-pressed="true"
+                        {% else %}
+                            aria-pressed="false"
+                        {% endif %}
+                    >
+                        {{ work.title }}
+                        <span>{{ visible_count }}</span>
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

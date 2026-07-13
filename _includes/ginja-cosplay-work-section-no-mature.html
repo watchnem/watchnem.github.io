@@ -3,6 +3,6 @@
   <header>
     <h2>{{ include.work.title }}</h2><span>{{ include.work.cards.size }}명</span>
   </header>
-  <div class="ginja-cosplay-grid">{% for card in include.work.cards %}{% include ginja-cosplay-card.html card=card %}{%
+  <div class="ginja-cosplay-grid">{% for card in include.work.cards %}{% include ginja-cosplay-card-no-mature.html card=card %}{%
     endfor %}</div>
 </section>

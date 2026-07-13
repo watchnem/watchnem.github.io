@@ -265,6 +265,13 @@
     font-weight: 700
 }
 
+.ginja-cosplay-labels .ginja-cosplay-caution {
+    border-color: #8795ff;
+    background: #0a26ff;
+    color: #fff;
+    font-weight: 700
+}
+
 .ginja-cosplay-card section {
     margin-top: 15px
 }

@@ -1,6 +1,6 @@
 ---
 layout: null
-title: "긴쟈님 촬영 대화용도"
+title: "긴쟈님 촬영 대화용도(검열ver)"
 description: "여성 캐릭터 코스프레 촬영 대화 용도"
 ---
 <!doctype html>
@@ -18,13 +18,13 @@ description: "여성 캐릭터 코스프레 촬영 대화 용도"
   <header class="ginja-cosplay-header">
     <div class="ginja-cosplay-container">
       <p class="ginja-cosplay-eyebrow">촬영 대화용도</p>
-      <h1>{{ page.title }} <span style="font-size: 21px;"><a href="/긴쟈님-촬영-대화용도-검열" style="text-decoration: underline;color: #3e3eff;">검열ver 보러가기</a></span></h1>
+      <h1>{{ page.title }} <span style="font-size: 21px;"><a href="/긴쟈님-촬영-대화용도" style="text-decoration: underline;color: #3e3eff;">노검열 보러가기</a></span></h1>
       <p>여성 캐릭터 코스프레 촬영 후보를 작품별로 정리했습니다.</p>
     </div>
   </header>
-  {% include ginja-cosplay-category-menu.html works=site.data.cosplay-wishlist.works %}
+  {% include ginja-cosplay-category-menu-no-mature.html works=site.data.cosplay-wishlist.works %}
   <main class="ginja-cosplay-main ginja-cosplay-container">
-    {% for work in site.data.cosplay-wishlist.works %}{% include ginja-cosplay-work-section.html work=work
+    {% for work in site.data.cosplay-wishlist.works %}{% include ginja-cosplay-work-section-no-mature.html work=work
     index=forloop.index %}{% endfor %}
   </main>
   <script src="{{ '/js/긴쟈님-촬영-대화용도-전용.js' | relative_url }}"></script>
