@@ -1,0 +1,24 @@
+{%- assign all_personal_posts = site.posts
+  | where_exp: "post", "post.title contains include.title"
+-%}
+{%- assign personal_posts = '' | split: ',' -%}
+{%- for post in all_personal_posts -%}
+  {%- assign personal_posts = personal_posts | push: post -%}
+{%- endfor -%}
+
+{%- assign unique_filtered_posts = personal_posts | uniq -%}
+{%- assign sorted_posts = unique_filtered_posts | sort: 'index' | reverse -%}
+{%- assign visible = '' | split: '' -%}
+{%- for post in sorted_posts -%}
+  {%- unless post.categories contains '히든' -%}
+    {%- assign visible = visible | push: post -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<!-- <p class="archive_type">{{include.title}}{{include.subtitle}} ({{ visible | size }})</p> -->
+
+<div class="pre">
+  <h3 class="post-title" style="color: var(--middle);font-size: 3rem;font-weight: 800;margin-bottom: 0;">{{include.title}} ({{ visible | size }})</h1>
+</div>
+
+{% include raw_preview.html posts=visible %}

@@ -149,6 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.nav-item.ganchal')?.classList.add('active');
     } else if (current.includes("/행사장")) {
       document.querySelector('.nav-item.event')?.classList.add('active');
+    } else if (current.includes("/행사별")) {
+      document.querySelector('.nav-item.events')?.classList.add('active');
     } else if (current.includes("/models")) {
       document.querySelector('.nav-item.models')?.classList.add('active');
     } else if (current.includes("/search")) {
@@ -162,6 +164,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.nav-item.ganchal')?.classList.add('active');
       } else if (ref.includes("/행사장")) {
         document.querySelector('.nav-item.event')?.classList.add('active');
+      } else if (ref.includes("/행사별")) {
+        document.querySelector('.nav-item.events')?.classList.add('active');
       } else if (ref.includes("/models")) {
         document.querySelector('.nav-item.models')?.classList.add('active');
       } else if (ref.includes("/search")) {

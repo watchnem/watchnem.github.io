@@ -1,0 +1,289 @@
+---
+layout: default
+permalink: /행사별_raw/
+render_with_liquid: true
+
+# 썸네일 격자
+thumbnail_columns: 4
+thumbnail_rows: 4
+thumbnail_gap: 0
+
+# normal: 선택된 최신 썸네일을 index 오름차순으로 표시
+# reverse: 선택된 최신 썸네일을 index 내림차순으로 표시
+thumbnail_order: reverse
+---
+
+{%- assign thumbnail_columns = page.thumbnail_columns | default: 3 -%}
+{%- assign thumbnail_rows = page.thumbnail_rows | default: 3 -%}
+{%- assign thumbnail_gap = page.thumbnail_gap | default: 0 -%}
+{%- assign thumbnail_order = page.thumbnail_order | default: "normal" -%}
+
+{%- assign thumbnail_limit = thumbnail_columns | times: thumbnail_rows -%}
+
+{%- assign thumbnail_ratio_width = thumbnail_columns | times: 2 -%}
+{%- assign thumbnail_ratio_height = thumbnail_rows | times: 3 -%}
+
+<style>
+  .event-preview-link {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .event-preview {
+    display: grid;
+
+    grid-template-columns:
+      repeat({{ thumbnail_columns }}, minmax(0, 1fr));
+
+    grid-template-rows:
+      repeat({{ thumbnail_rows }}, minmax(0, 1fr));
+
+    width: calc(100% + 1px);
+    max-width: none;
+    margin-right: -1px;
+
+    aspect-ratio:
+      {{ thumbnail_ratio_width }} / {{ thumbnail_ratio_height }};
+
+    gap: {{ thumbnail_gap }}px;
+
+    overflow: hidden;
+    background: var(--main);
+
+    font-size: 0;
+    line-height: 0;
+    box-sizing: border-box;
+  }
+
+  .event-preview img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0;
+    min-height: 0;
+    max-width: none !important;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 0 !important;
+    outline: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    box-sizing: border-box;
+  }
+</style>
+
+{%- comment -%}
+행사 페이지 자체는 파일 경로 기준 최신 날짜순
+{%- endcomment -%}
+
+{%- assign event_pages = site.pages | sort: "path" | reverse -%}
+
+
+{%- comment -%}
+표시 가능한 행사 페이지 개수 계산
+{%- endcomment -%}
+
+{%- assign event_count = 0 -%}
+
+{% for event_page in event_pages %}
+
+  {% if event_page.path contains "행사별/"
+    and event_page.name != "index.html"
+    and event_page.name contains ".html"
+  %}
+
+    {% assign event_date = event_page.name | remove: ".html" %}
+
+    {% assign matching_posts = site.posts
+      | where_exp: "p", "p.title contains event_date"
+    %}
+
+    {% assign visible_posts = "" | split: "" %}
+
+    {% for p in matching_posts %}
+      {% unless p.categories contains "히든" %}
+        {% assign visible_posts = visible_posts | push: p %}
+      {% endunless %}
+    {% endfor %}
+
+    {% if visible_posts.size > 0 %}
+      {% assign event_count = event_count | plus: 1 %}
+    {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+
+<p class="archive_type">
+  행사별 ({{ event_count }})
+</p>
+
+
+{%- comment -%}
+행사별 썸네일 출력
+{%- endcomment -%}
+
+{%- assign rendered_index = 0 -%}
+
+{% for event_page in event_pages %}
+
+  {% if event_page.path contains "행사별/"
+    and event_page.name != "index.html"
+    and event_page.name contains ".html"
+  %}
+
+    {% assign event_date = event_page.name | remove: ".html" %}
+
+    {% assign matching_posts = site.posts
+      | where_exp: "p", "p.title contains event_date"
+    %}
+
+
+    {%- comment -%}
+    히든 게시물 제외
+    {%- endcomment -%}
+
+    {% assign visible_posts = "" | split: "" %}
+
+    {% for p in matching_posts %}
+      {% unless p.categories contains "히든" %}
+        {% assign visible_posts = visible_posts | push: p %}
+      {% endunless %}
+    {% endfor %}
+
+
+    {%- comment -%}
+    post의 index 타임스탬프를 기준으로 오름차순 정렬
+    {%- endcomment -%}
+
+    {% assign visible_posts = visible_posts | sort: "index" %}
+    {% assign post_count = visible_posts | size %}
+
+
+    {% if post_count > 0 %}
+
+      {% assign column_index = rendered_index | modulo: 2 %}
+
+      {% if column_index == 0 %}
+        <div class="row">
+      {% endif %}
+
+
+      <div class="column column-50">
+
+        <div class="preview-panel">
+
+          <a
+            href="{{ event_page.url | relative_url }}"
+            class="event-preview-link"
+          >
+
+            {%- comment -%}
+            preview가 있는 post만 추출한다.
+            visible_posts가 이미 index 오름차순으로 정렬되어 있다.
+            {%- endcomment -%}
+
+            {% assign preview_posts = "" | split: "" %}
+
+            {% for p in visible_posts %}
+              {% if p.preview %}
+                {% assign preview_posts = preview_posts | push: p %}
+              {% endif %}
+            {% endfor %}
+
+
+            {%- comment -%}
+            index가 가장 큰 최신 N개를 선택한다.
+
+            예:
+            전체 16개, 썸네일 제한 9개
+            선택 결과는 index 기준 8번째부터 16번째
+            {%- endcomment -%}
+
+            {% assign preview_count = preview_posts | size %}
+            {% assign slice_start = preview_count | minus: thumbnail_limit %}
+
+            {% if slice_start < 0 %}
+              {% assign slice_start = 0 %}
+            {% endif %}
+
+            {% assign selected_previews = preview_posts
+              | slice: slice_start, thumbnail_limit
+            %}
+
+
+            {%- comment -%}
+            normal:
+              선택된 최신 N개를 index 오름차순으로 표시
+
+            reverse:
+              선택된 최신 N개를 index 내림차순으로 표시
+            {%- endcomment -%}
+
+            {% if thumbnail_order == "reverse" %}
+              {% assign selected_previews = selected_previews | reverse %}
+            {% endif %}
+
+
+            <div class="event-preview">
+
+              {% for p in selected_previews %}
+
+                <img
+                  src="{{ p.preview }}"
+                  alt="{{ p.title | escape }}"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              {% endfor %}
+
+            </div>
+
+          </a>
+
+
+          <div class="post-title" style="margin-top: 10px;">
+
+            {% if event_page.title %}
+              {{ event_page.title }}
+            {% else %}
+              {{ event_date }}
+            {% endif %}
+
+            ({{ post_count }})
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {% if column_index == 1 %}
+        </div>
+      {% endif %}
+
+      {% assign rendered_index = rendered_index | plus: 1 %}
+
+    {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+
+{% assign remaining_column = rendered_index | modulo: 2 %}
+
+{% if remaining_column == 1 %}
+  </div>
+{% endif %}
