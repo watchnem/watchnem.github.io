@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 볼탱탱귤선생 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjlNkY0WCXvqreoPlVB1xnV9RHBs0gok20lsk-IE8QYbsbUqR0KqLJNVfRjwiZsAo5tc8vtsqt49OkCzZYldPgyFMuagdhrJEv9Ug8RxEjotO6_iT73Kk0h2pdCkRALXsm-G9qQdHmGld-QVY2y2RcuIcbzPQStsb-96pFhhYjI3AFRG8_JX7XAC04iuif_
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjlNkY0WCXvqreoPlVB1xnV9RHBs0gok20lsk-IE8QYbsbUqR0KqLJNVfRjwiZsAo5tc8vtsqt49OkCzZYldPgyFMuagdhrJEv9Ug8RxEjotO6_iT73Kk0h2pdCkRALXsm-G9qQdHmGld-QVY2y2RcuIcbzPQStsb-96pFhhYjI3AFRG8_JX7XAC04iuif_
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
