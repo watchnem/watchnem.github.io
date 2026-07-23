@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 교토 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjTKlfD2kcKLxEC9gyhEjFiD3A0XWuUhQ-G5NlDquwjek7cuMoXsbPtnbfuaKMBEdWkgwJMIYwQUNslEBovMd4PHo7UMP0wjZCKWu75bLLMcTzYDdov6HMVPq9K0rre4GwH613PIMxl99Pq72Q_wuK7OX5U01R2mFuKt0unvDBTlmCmZnUnDhADbGDvsBPi
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjTKlfD2kcKLxEC9gyhEjFiD3A0XWuUhQ-G5NlDquwjek7cuMoXsbPtnbfuaKMBEdWkgwJMIYwQUNslEBovMd4PHo7UMP0wjZCKWu75bLLMcTzYDdov6HMVPq9K0rre4GwH613PIMxl99Pq72Q_wuK7OX5U01R2mFuKt0unvDBTlmCmZnUnDhADbGDvsBPi
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
