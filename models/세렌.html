@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 세렌 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgXC7YQ31xGwK5SlgcMflZn5MARFqmpPj-stDrB4nr1unasb5f09zWtQafWUZs5Wn4lSOrOdLB1MWc9sVre6O05ou9lIc4_aza5uiNYV2_ciQmRbJMOpQFLCYDNvsy3yRbTK91HKEw-Dpv9mPg9ySknr3JL5E7O2dgBvgbWNiudCLuwWl5uvrNJCk9eWPnN
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjZSvQskgWHnmrdvRxjm3OkvlVbJhON1TVB0TBWSk8cum8iQXvaYBKz0zjuYLRCiRta5NMuE_W-BLpG7ymC-DTd05qn1cPvymQtnU8TwPZ4MklfVPUnz23w1Ab5cmcq7crh4haMVu5sM6BAZB-ZGhTuYRQtxfXxdzGNmzUyKMN8a7FK7l6w9IcHF1frV55v
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

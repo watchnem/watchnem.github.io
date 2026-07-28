@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 오짱 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgxOXZdrnxl2VbrztnX08RT2ZTxo4HliIDRmIohDptaiJuUX2gZp6vyVrDBIjT_ql3ApwAr62ygMKr9bXLPRl3km5iJ5aBIm--JYRh-vKlI1CfNMU4WCECpHGwNuzoZMZC0owI2MSFeXf3DRc8c6WM0TJ_m7c9g_SoxDcQEsKMguJ6Hm6Zm0ucBXc74l6Mx
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgxOXZdrnxl2VbrztnX08RT2ZTxo4HliIDRmIohDptaiJuUX2gZp6vyVrDBIjT_ql3ApwAr62ygMKr9bXLPRl3km5iJ5aBIm--JYRh-vKlI1CfNMU4WCECpHGwNuzoZMZC0owI2MSFeXf3DRc8c6WM0TJ_m7c9g_SoxDcQEsKMguJ6Hm6Zm0ucBXc74l6Mx
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
