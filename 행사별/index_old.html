@@ -1,60 +1,55 @@
 ---
 layout: default
-permalink: /행사별_raw/
+permalink: /행사별/
 render_with_liquid: true
 
-# 썸네일 격자
-thumbnail_columns: 4
-thumbnail_rows: 4
+# 아래 설정은 generate_event_thumbnails.py가 읽는다.
+# 1~5: 합성 썸네일의 최대 격자 크기
+thumbnail_max_grid: 5
+
+# 현재 격자에 모든 이미지가 들어가지 않을 때 한 단계 확장
+thumbnail_grid_step_up: true
+
+# 합성 이미지 내부 칸 사이 간격(px)
 thumbnail_gap: 0
 
-# normal: 선택된 최신 썸네일을 index 오름차순으로 표시
-# reverse: 선택된 최신 썸네일을 index 내림차순으로 표시
+# normal: 선택된 최신 사진을 index 오름차순 배치
+# reverse: 선택된 최신 사진을 index 내림차순 배치
 thumbnail_order: reverse
+
+# 생성되는 합성 썸네일 설정
+# 전체 비율은 항상 2:3이며, 높이는 너비의 1.5배로 자동 계산된다.
+thumbnail_output_width: 1200
+thumbnail_format: webp
+thumbnail_quality: 88
+
+# transparent, white, #ffffff 등의 값 사용 가능
+thumbnail_background: transparent
 ---
-
-{%- assign thumbnail_columns = page.thumbnail_columns | default: 3 -%}
-{%- assign thumbnail_rows = page.thumbnail_rows | default: 3 -%}
-{%- assign thumbnail_gap = page.thumbnail_gap | default: 0 -%}
-{%- assign thumbnail_order = page.thumbnail_order | default: "normal" -%}
-
-{%- assign thumbnail_limit = thumbnail_columns | times: thumbnail_rows -%}
-
-{%- assign thumbnail_ratio_width = thumbnail_columns | times: 2 -%}
-{%- assign thumbnail_ratio_height = thumbnail_rows | times: 3 -%}
 
 <style>
   .event-preview-link {
     display: block;
     width: 100%;
     overflow: hidden;
+
     font-size: 0;
     line-height: 0;
   }
 
   .event-preview {
-    display: grid;
-
-    grid-template-columns:
-      repeat({{ thumbnail_columns }}, minmax(0, 1fr));
-
-    grid-template-rows:
-      repeat({{ thumbnail_rows }}, minmax(0, 1fr));
+    display: block;
 
     width: calc(100% + 1px);
     max-width: none;
     margin-right: -1px;
 
-    aspect-ratio:
-      {{ thumbnail_ratio_width }} / {{ thumbnail_ratio_height }};
-
-    gap: {{ thumbnail_gap }}px;
-
+    aspect-ratio: 2 / 3;
     overflow: hidden;
-    background: var(--main);
 
     font-size: 0;
     line-height: 0;
+
     box-sizing: border-box;
   }
 
@@ -73,6 +68,7 @@ thumbnail_order: reverse
 
     border: 0 !important;
     outline: 0;
+
     padding: 0 !important;
     margin: 0 !important;
 
@@ -80,15 +76,17 @@ thumbnail_order: reverse
   }
 </style>
 
+
 {%- comment -%}
-행사 페이지 자체는 파일 경로 기준 최신 날짜순
+행사 페이지를 파일 경로 기준 역순으로 정렬한다.
+행사 파일명이 날짜 형식이면 최신 행사가 먼저 출력된다.
 {%- endcomment -%}
 
 {%- assign event_pages = site.pages | sort: "path" | reverse -%}
 
 
 {%- comment -%}
-표시 가능한 행사 페이지 개수 계산
+썸네일이 생성되어 있고, 히든이 아닌 게시물이 한 개 이상인 행사 수를 계산한다.
 {%- endcomment -%}
 
 {%- assign event_count = 0 -%}
@@ -98,6 +96,7 @@ thumbnail_order: reverse
   {% if event_page.path contains "행사별/"
     and event_page.name != "index.html"
     and event_page.name contains ".html"
+    and event_page.thumbnail
   %}
 
     {% assign event_date = event_page.name | remove: ".html" %}
@@ -129,7 +128,7 @@ thumbnail_order: reverse
 
 
 {%- comment -%}
-행사별 썸네일 출력
+행사 HTML front matter의 thumbnail 이미지 한 장을 출력한다.
 {%- endcomment -%}
 
 {%- assign rendered_index = 0 -%}
@@ -139,6 +138,7 @@ thumbnail_order: reverse
   {% if event_page.path contains "행사별/"
     and event_page.name != "index.html"
     and event_page.name contains ".html"
+    and event_page.thumbnail
   %}
 
     {% assign event_date = event_page.name | remove: ".html" %}
@@ -146,11 +146,6 @@ thumbnail_order: reverse
     {% assign matching_posts = site.posts
       | where_exp: "p", "p.title contains event_date"
     %}
-
-
-    {%- comment -%}
-    히든 게시물 제외
-    {%- endcomment -%}
 
     {% assign visible_posts = "" | split: "" %}
 
@@ -160,14 +155,7 @@ thumbnail_order: reverse
       {% endunless %}
     {% endfor %}
 
-
-    {%- comment -%}
-    post의 index 타임스탬프를 기준으로 오름차순 정렬
-    {%- endcomment -%}
-
-    {% assign visible_posts = visible_posts | sort: "index" %}
     {% assign post_count = visible_posts | size %}
-
 
     {% if post_count > 0 %}
 
@@ -187,72 +175,22 @@ thumbnail_order: reverse
             class="event-preview-link"
           >
 
-            {%- comment -%}
-            preview가 있는 post만 추출한다.
-            visible_posts가 이미 index 오름차순으로 정렬되어 있다.
-            {%- endcomment -%}
-
-            {% assign preview_posts = "" | split: "" %}
-
-            {% for p in visible_posts %}
-              {% if p.preview %}
-                {% assign preview_posts = preview_posts | push: p %}
-              {% endif %}
-            {% endfor %}
-
-
-            {%- comment -%}
-            index가 가장 큰 최신 N개를 선택한다.
-
-            예:
-            전체 16개, 썸네일 제한 9개
-            선택 결과는 index 기준 8번째부터 16번째
-            {%- endcomment -%}
-
-            {% assign preview_count = preview_posts | size %}
-            {% assign slice_start = preview_count | minus: thumbnail_limit %}
-
-            {% if slice_start < 0 %}
-              {% assign slice_start = 0 %}
-            {% endif %}
-
-            {% assign selected_previews = preview_posts
-              | slice: slice_start, thumbnail_limit
-            %}
-
-
-            {%- comment -%}
-            normal:
-              선택된 최신 N개를 index 오름차순으로 표시
-
-            reverse:
-              선택된 최신 N개를 index 내림차순으로 표시
-            {%- endcomment -%}
-
-            {% if thumbnail_order == "reverse" %}
-              {% assign selected_previews = selected_previews | reverse %}
-            {% endif %}
-
-
             <div class="event-preview">
-
-              {% for p in selected_previews %}
-
-                <img
-                  src="{{ p.preview }}"
-                  alt="{{ p.title | escape }}"
-                  loading="lazy"
-                  decoding="async"
-                >
-
-              {% endfor %}
-
+              <img
+                src="{{ event_page.thumbnail | relative_url }}"
+                alt="{{ event_page.title | default: event_date | escape }}"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
 
           </a>
 
 
-          <div class="post-title" style="margin-top: 10px;">
+          <div
+            class="post-title"
+            style="margin-top: 10px;"
+          >
 
             {% if event_page.title %}
               {{ event_page.title }}
@@ -281,6 +219,10 @@ thumbnail_order: reverse
 
 {% endfor %}
 
+
+{%- comment -%}
+마지막 줄에 행사 카드가 하나만 있으면 열려 있는 row를 닫는다.
+{%- endcomment -%}
 
 {% assign remaining_column = rendered_index | modulo: 2 %}
 
