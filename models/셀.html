@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 셀 님
+preview: https://watchnem.blogspot.com/
+ogthumb: https://watchnem.blogspot.com/
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
