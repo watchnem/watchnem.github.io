@@ -15,7 +15,6 @@ permalink: /:year-:month-:day-:title
 # https://github.com/midzer/urban-theme?tab=readme-ov-file
 
 permitted_categories:
-  - 로아
   - 베르뷰
   - 자림
   - 니린
@@ -192,7 +191,6 @@ permitted_categories:
   - 수달
   - 쪼리
   - 치하루
-  - 리즈
   - 요후카
   - 옴마이
   - 로이
