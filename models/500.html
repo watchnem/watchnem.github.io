@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 500 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEir7fVr7VGSaW8Zo_kN7u0-SzCi0butq79AVgGt7K8Z41wWSEVz75VbCymiqbP5bquHgcdk26n7_iYYUJcNE1P-3g1SDszPXiVgs7jxrkH4dr4d5fta2GnYxZpL1flzLxyHYGqspGdtSQW4Bnu-AG3NRQIiYHHDBoXxwG5wb5ukeZyUPqhs9tb2yxr37WR5
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEir7fVr7VGSaW8Zo_kN7u0-SzCi0butq79AVgGt7K8Z41wWSEVz75VbCymiqbP5bquHgcdk26n7_iYYUJcNE1P-3g1SDszPXiVgs7jxrkH4dr4d5fta2GnYxZpL1flzLxyHYGqspGdtSQW4Bnu-AG3NRQIiYHHDBoXxwG5wb5ukeZyUPqhs9tb2yxr37WR5
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
