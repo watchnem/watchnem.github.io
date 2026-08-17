@@ -1,0 +1,33 @@
+---
+layout: null
+title: "긴자님이 고르신 것"
+description: "26-08-18 에 고르신 목록"
+---
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ page.description }}">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/css/긴쟈님-촬영-대화용도-전용.css' | relative_url }}">
+</head>
+
+<body class="ginja-cosplay-page">
+  <header class="ginja-cosplay-header">
+    <div class="ginja-cosplay-container">
+      <p class="ginja-cosplay-eyebrow">촬영 대화용도</p>
+      <h1>{{ page.title }} <span style="font-size: 21px;"></h1>
+      <p>26-08-18 에 고르신 목록 입니다.</p>
+    </div>
+  </header>
+  {% include ginja-cosplay-category-menu.html works=site.data.ginza-selected-260818-cosplay-wishlist.works %}
+  <main class="ginja-cosplay-main ginja-cosplay-container">
+    {% for work in site.data.ginza-selected-260818-cosplay-wishlist.works %}{% include ginja-cosplay-work-section.html work=work
+    index=forloop.index %}{% endfor %}
+  </main>
+  <script src="{{ '/js/긴쟈님-촬영-대화용도-전용.js' | relative_url }}"></script>
+</body>
+
+</html>
