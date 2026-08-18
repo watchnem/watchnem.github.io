@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - evie 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgVqAPOgDwoFRaCqm2Ul9Ld4l3JtsWfMMG9Ig1IlctKZ8BdSy8MJq2NL16AIIKg52F4L6HRqNmLoXVPC9s7vXnxAM8tb0elGrIvHvMPHf_DduksVw80S33d8VglpQgjjOmjGTtCogPyMr5Jt6-DJnwftLTAmo1_UbKsIMJJf1eTYUuE9_DXm5FsQcEFUzbB
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgVqAPOgDwoFRaCqm2Ul9Ld4l3JtsWfMMG9Ig1IlctKZ8BdSy8MJq2NL16AIIKg52F4L6HRqNmLoXVPC9s7vXnxAM8tb0elGrIvHvMPHf_DduksVw80S33d8VglpQgjjOmjGTtCogPyMr5Jt6-DJnwftLTAmo1_UbKsIMJJf1eTYUuE9_DXm5FsQcEFUzbB
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
