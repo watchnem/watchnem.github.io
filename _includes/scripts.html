@@ -100,7 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // 링크 요소 생성 (/models/닉네임) — 한글 안전하게 인코딩
     const moreP = document.createElement('p');
     const a = document.createElement('a');
-    a.href = "/models/" + encodeURIComponent(nickname);
+    if (nickname != "#_ @") {
+      a.href = "/models/" + encodeURIComponent(nickname);
+    }
+    else {
+      console.log(nickname);
+      a.href = "/models/hash-at"
+    }
     a.textContent = nickname + " 님 게시물 더보기";
     a.setAttribute('data-more-link', 'true');
 
