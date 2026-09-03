@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - ZiZi 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiIqWhyAxn6VLF-bEmfToi_SsAVICeUpz_Zaz-NOUsHUyDfdbMuPGmCSWgWz7GKWhy1WPXs9igvK5cWiHg66Twc6-lkpmzO57Y-1i4WiiKakiQN-dc-qJhwZKnID8HbD_1NdE7TGwo5beydBrGTtRJrlxlo3o3xtFsYKbMgCPg41BdgyF1BGf842-lVAFzw
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiIqWhyAxn6VLF-bEmfToi_SsAVICeUpz_Zaz-NOUsHUyDfdbMuPGmCSWgWz7GKWhy1WPXs9igvK5cWiHg66Twc6-lkpmzO57Y-1i4WiiKakiQN-dc-qJhwZKnID8HbD_1NdE7TGwo5beydBrGTtRJrlxlo3o3xtFsYKbMgCPg41BdgyF1BGf842-lVAFzw
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
