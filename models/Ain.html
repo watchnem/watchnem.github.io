@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - Ain 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgVq-McrwJ1h3jf0Q4D_p7cv7S5Aab5I0fwKJUYvYZJgO-wSE7vf2brpNC5fhlwpwU4tlWzk4-TAR-xOZxMc7Yz_qKMFj14EG5mJKpomM1pp-9rmAljWrCCg5S5ngISu2ZwQ-rzqeXkC53TUZU2QrdpAis2ZzhCr_9N0WRVDmMWkfSn9slhH7ebSEfcC6OB
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgVq-McrwJ1h3jf0Q4D_p7cv7S5Aab5I0fwKJUYvYZJgO-wSE7vf2brpNC5fhlwpwU4tlWzk4-TAR-xOZxMc7Yz_qKMFj14EG5mJKpomM1pp-9rmAljWrCCg5S5ngISu2ZwQ-rzqeXkC53TUZU2QrdpAis2ZzhCr_9N0WRVDmMWkfSn9slhH7ebSEfcC6OB
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

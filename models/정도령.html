@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 정도령 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhUyV967Frr_eBxtiwf3dJ6N2orjC9Ame7OMriQw3ddLlP6_XYEA6QWNybRw7Pp6ZfRVlDsQmukdrqLbkN0NBM2JJs7gPj4XfGDCpl8Bnto4-CdUSFE0_3AXtqpoBv_MkCfIR52QHIWFuXs1ZNZWxjuIvAlDAIKtzb9sk6ZIK2FpSZNeVEm9VpXo1gkGKrQ
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhUyV967Frr_eBxtiwf3dJ6N2orjC9Ame7OMriQw3ddLlP6_XYEA6QWNybRw7Pp6ZfRVlDsQmukdrqLbkN0NBM2JJs7gPj4XfGDCpl8Bnto4-CdUSFE0_3AXtqpoBv_MkCfIR52QHIWFuXs1ZNZWxjuIvAlDAIKtzb9sk6ZIK2FpSZNeVEm9VpXo1gkGKrQ
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
