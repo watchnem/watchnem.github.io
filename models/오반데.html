@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 오반데 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEhsLGWX86Luo4lb9shSAxzfQfcqeSIstJrA7jpWsWfzQWl5cbhYBMzOdpzUO5QPBB3NDAjsMgjg1IbEh08qTRSTwmTknRc6EkXCVrMdbOwDnLJcxvspSpdl3deQp23AbpiZgpI89SIR7dKLhWj-RTXdX8YsrEl8qMS_TdojJCu690Vc4LHwHueu5TMrwYma
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEhsLGWX86Luo4lb9shSAxzfQfcqeSIstJrA7jpWsWfzQWl5cbhYBMzOdpzUO5QPBB3NDAjsMgjg1IbEh08qTRSTwmTknRc6EkXCVrMdbOwDnLJcxvspSpdl3deQp23AbpiZgpI89SIR7dKLhWj-RTXdX8YsrEl8qMS_TdojJCu690Vc4LHwHueu5TMrwYma
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
