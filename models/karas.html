@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - karas 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEgxwSuhTxhXOHdK-ekgTvhtFFBwV23y-skA16O4H62zZTkgrvPh6Qu5YOi1ghZF2ReFC-7YbwSUlsemn3EZsZOvD04WtmggZsTnHG-onKFc3yZtsNHB7VcZG50z4HJbGhDpaVWycl6WCWR509o5E7hQDxMGJ_MaLWBpFCg9hB7ciSttvbni5ck3fCBbszYN
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEgxwSuhTxhXOHdK-ekgTvhtFFBwV23y-skA16O4H62zZTkgrvPh6Qu5YOi1ghZF2ReFC-7YbwSUlsemn3EZsZOvD04WtmggZsTnHG-onKFc3yZtsNHB7VcZG50z4HJbGhDpaVWycl6WCWR509o5E7hQDxMGJ_MaLWBpFCg9hB7ciSttvbni5ck3fCBbszYN
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 흔드는 상어 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEjYZ9boAH_P8Udsk8ovEN-5tqEBZ2XeL1CzI0rO_XFdDq_y-wahVZeI0OPWEMFoiKZTaWwazHxhhFtLyI6fQDEr_xnOipO4YhJolj700L_gGUgJvsvumC_cythcN4ZgiBLwtJ1Egh1piIqDy0GDV83Mk0NjUt2KtO_-QGWploJ7W51gIze-xSYcZ7ggFV76
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEjYZ9boAH_P8Udsk8ovEN-5tqEBZ2XeL1CzI0rO_XFdDq_y-wahVZeI0OPWEMFoiKZTaWwazHxhhFtLyI6fQDEr_xnOipO4YhJolj700L_gGUgJvsvumC_cythcN4ZgiBLwtJ1Egh1piIqDy0GDV83Mk0NjUt2KtO_-QGWploJ7W51gIze-xSYcZ7ggFV76
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
