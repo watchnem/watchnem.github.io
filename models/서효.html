@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 서효 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiNsUzinLVnFF1wDm13JdUzdYRHTQPFui2Y1OuYuZNVKhs5EJ7eGrWojvtcJTdMli5rXc46Wfttfxv9piFyVuXaOU9EW_7J_EfB-toUSHSGWEAzw-4fajJPTcmX4S7wC4pm6Q287mFgQzGkDYYx9N1Bxc4EqzbZmj76Dkljq8O8SByc8GjvCWWCG_9cLtiF
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiNsUzinLVnFF1wDm13JdUzdYRHTQPFui2Y1OuYuZNVKhs5EJ7eGrWojvtcJTdMli5rXc46Wfttfxv9piFyVuXaOU9EW_7J_EfB-toUSHSGWEAzw-4fajJPTcmX4S7wC4pm6Q287mFgQzGkDYYx9N1Bxc4EqzbZmj76Dkljq8O8SByc8GjvCWWCG_9cLtiF
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
