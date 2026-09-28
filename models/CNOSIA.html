@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - CNOSIA 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiOG2V_Ydsemny6zt17ghwyphSKiZx6rsznI3eGzg7sc_ThuS2RZJxyRSo2lDZdInCErwEYRVmtWjGRoZCxyqZg_JR6xrNOK2_rOTZQtK371LZRidhstnOl4TDfx7N9jzELSH6KnRr392klHTP31EzWlaJDj0lRRgWU29p2FBF2eJ_AX1HSr-zTzJMRtx4u
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiOG2V_Ydsemny6zt17ghwyphSKiZx6rsznI3eGzg7sc_ThuS2RZJxyRSo2lDZdInCErwEYRVmtWjGRoZCxyqZg_JR6xrNOK2_rOTZQtK371LZRidhstnOl4TDfx7N9jzELSH6KnRr392klHTP31EzWlaJDj0lRRgWU29p2FBF2eJ_AX1HSr-zTzJMRtx4u
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
