@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 천칠 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqaVSiRerxIHYApNwatJKLPJbpLk6z9JZh8V0vdSdGjYHuxZwXRIaii6hu3_aEysAG1xT26KXrCP2F-hALk8mBEmwxIFywjGYjPMOJuw5nCIU4xe3SqwvXE48NUiI1x5VTJzaghvzqFt0qcAnt3yVJcIk2h6tDjAERat17ek_lAecRxAzlNvZaPPiagptr/s1600/6_20261004_140711531.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqaVSiRerxIHYApNwatJKLPJbpLk6z9JZh8V0vdSdGjYHuxZwXRIaii6hu3_aEysAG1xT26KXrCP2F-hALk8mBEmwxIFywjGYjPMOJuw5nCIU4xe3SqwvXE48NUiI1x5VTJzaghvzqFt0qcAnt3yVJcIk2h6tDjAERat17ek_lAecRxAzlNvZaPPiagptr/s1600/6_20261004_140711531.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

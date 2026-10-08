@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 소설화 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHQKd_PH9IZH3aj5Bok3UhZTUeFVSB2OfqMCWgj43ocF7axpya1UV2V1PCdZ761yll0M9oRGNSklfj-8HcQBfJpbAAENjwaUPQjmsu-k7RW4lvTMitj-nJqC0d1mfAg_PMaHuFoy-gW9bc0L1c92mIzo64S4uqGDVansbRjDzCJjZGbRSU2iOAo7bkMWiF/s1600/DSCF2433.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHQKd_PH9IZH3aj5Bok3UhZTUeFVSB2OfqMCWgj43ocF7axpya1UV2V1PCdZ761yll0M9oRGNSklfj-8HcQBfJpbAAENjwaUPQjmsu-k7RW4lvTMitj-nJqC0d1mfAg_PMaHuFoy-gW9bc0L1c92mIzo64S4uqGDVansbRjDzCJjZGbRSU2iOAo7bkMWiF/s1600/DSCF2433.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

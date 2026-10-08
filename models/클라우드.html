@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 클라우드 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtDxp7HcdWLajV90sdgprAHMzqYmXG0zey8UZpLU1392xXvioGE4jMOaYfEIFy-SonI-FLWn_wnm0DnTrDGRpuXj-1FQqbyfih7YMTPXzqwlx2YXnzPhQWP7dIkPWEi0sIJ9MiZGYu9qIEpsu2MD3V2ZsOXGhNTOieDAl0I1m9kageY9XepP62z_6j-l1b/s1600/1000039080.png
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtDxp7HcdWLajV90sdgprAHMzqYmXG0zey8UZpLU1392xXvioGE4jMOaYfEIFy-SonI-FLWn_wnm0DnTrDGRpuXj-1FQqbyfih7YMTPXzqwlx2YXnzPhQWP7dIkPWEi0sIJ9MiZGYu9qIEpsu2MD3V2ZsOXGhNTOieDAl0I1m9kageY9XepP62z_6j-l1b/s1600/1000039080.png
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

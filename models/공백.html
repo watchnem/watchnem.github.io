@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 공백 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggzpeQAbvxAVumK0VGq0aQMkAVUZVcSlcMuiQtBnV_0iutKJdYbMc_wAYwPDEXSe5fpv7xJcXsoh0QNk6KYfptJ_lqqrRk5EvC9bdy1XFO_xiMFuyMmDTuBM4_TF9nsOFg3KywCh8z-h69S-AWN6vac0eUutaj2mesfeAxhO9vIofr5Z_nmOevnOSsGsCx/s1600/1000021565.jpeg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggzpeQAbvxAVumK0VGq0aQMkAVUZVcSlcMuiQtBnV_0iutKJdYbMc_wAYwPDEXSe5fpv7xJcXsoh0QNk6KYfptJ_lqqrRk5EvC9bdy1XFO_xiMFuyMmDTuBM4_TF9nsOFg3KywCh8z-h69S-AWN6vac0eUutaj2mesfeAxhO9vIofr5Z_nmOevnOSsGsCx/s1600/1000021565.jpeg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
