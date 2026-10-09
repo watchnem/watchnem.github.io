@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 량이 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGm1KtiiDltlg0whYmlbRyHnDaV7Uvw19HnVfZGh1QQSiJLD1GZRjXZ1gR1rHpIavguDoAOh9pQbftuUYZCDhQnr8qhd0bT7AkYrpYqlAehtPVqCdxvS3OCI_k3MKPJ4ArWFdwGcX9x_bs1niro2Gk5WfncAHjVqiuBZyQIDhi7T0-sajyrKFwcB0UDjMS/s1600/_18518.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGm1KtiiDltlg0whYmlbRyHnDaV7Uvw19HnVfZGh1QQSiJLD1GZRjXZ1gR1rHpIavguDoAOh9pQbftuUYZCDhQnr8qhd0bT7AkYrpYqlAehtPVqCdxvS3OCI_k3MKPJ4ArWFdwGcX9x_bs1niro2Gk5WfncAHjVqiuBZyQIDhi7T0-sajyrKFwcB0UDjMS/s1600/_18518.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
