@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 커서 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKyGar7khKjtFs_cf6zfez6_ULmKMqTVucz3BlMUTmAVAzGjgAA62bth5xENFzRWggyI0sj-bYAFVlTWXr3h49AuCbqvqilNdzL1-KtDTQKbIaOSHVpWCp8b_1qx2KJzz4XLk4F0y0g8BTomK4skUfSka0dpx_Pfmq5ZqYHIUweJE33zOR6mI48BdYdayG/s1600/261004-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%87%E1%85%B5-watch_nn-1.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKyGar7khKjtFs_cf6zfez6_ULmKMqTVucz3BlMUTmAVAzGjgAA62bth5xENFzRWggyI0sj-bYAFVlTWXr3h49AuCbqvqilNdzL1-KtDTQKbIaOSHVpWCp8b_1qx2KJzz4XLk4F0y0g8BTomK4skUfSka0dpx_Pfmq5ZqYHIUweJE33zOR6mI48BdYdayG/s1600/261004-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%87%E1%85%B5-watch_nn-1.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

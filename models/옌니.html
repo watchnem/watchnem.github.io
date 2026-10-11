@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 옌니 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkupgy6LvTmNXwSYuH-ZvV3Ell1zRz2kCotv7oVFRH3bPQONbTYL4I8FQmLsl_x-QnKvUxFh-qwWkUoXByxZToYEaQZsKGDirL7WvxLFJ2yy0hiPIHUfgOLvX0301FOkVPtw4rz1xImUaWlAmA3S6Vps5o7v_LaisjsWXK4lY9yM0ASdr2P7lq4ZTFORoo/s1600/IMG_1082.jpeg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkupgy6LvTmNXwSYuH-ZvV3Ell1zRz2kCotv7oVFRH3bPQONbTYL4I8FQmLsl_x-QnKvUxFh-qwWkUoXByxZToYEaQZsKGDirL7WvxLFJ2yy0hiPIHUfgOLvX0301FOkVPtw4rz1xImUaWlAmA3S6Vps5o7v_LaisjsWXK4lY9yM0ASdr2P7lq4ZTFORoo/s1600/IMG_1082.jpeg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
