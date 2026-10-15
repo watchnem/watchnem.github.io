@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 하루 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4lq-SLtrhwEVg1SSQEGJsxHp03T_hfmwO74qaOiIZ5sWgnJYrdCNzXEaYwOXNpnfbscEFGlwU3ABpQ6sAJ4eAgcrSLifEgU6tflnGDvD4nE_3Dz8TIxQY3Ul598Dn0MeYZB2eY_dDudj-Io_6uJeJC8oo3ZxrcMfHCg4OZqUDFpDWNorYawcdTWiGB24_/s1600/4_MEITU_20261012_230205984.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiR70rV_oBSb4opi6LSs_k_m0BlBZB48qruxE2vwNr4FeBGavl8epzL9nf4jPHzQAskClR7yZTJCYDzJQFZMgR61ELf217FGy4hjm9cwgfzYS2IelToWnvp36yEyzmqjNWqiAuXK40v8BqgTYRCMn1xkAUbfkz1jbuDQ-NE5cDnHrISugoV4HQXR2WHYzhL/s1600/7_MEITU_20261013_004648884.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

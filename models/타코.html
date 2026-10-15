@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 타코 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwhjzjPofjmX_4eM33MnkQRA-Azbn0O3z5AwHufASxzeUoswYJFPq6nYPxkJ1vTa8nNQ8xLU8iijS3hRfQBxZ9dtzEcB6UnzAifGDEoO3V3XAWc7PCHsmN2vSuhsw9sKTJJ0tPMmh3OiHo54u-fH0pNVwi6yxQNVjzoMj6I3j2GWzxX9zRR3xgSCpup1HH/s1600/1_20261013_220357683.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwhjzjPofjmX_4eM33MnkQRA-Azbn0O3z5AwHufASxzeUoswYJFPq6nYPxkJ1vTa8nNQ8xLU8iijS3hRfQBxZ9dtzEcB6UnzAifGDEoO3V3XAWc7PCHsmN2vSuhsw9sKTJJ0tPMmh3OiHo54u-fH0pNVwi6yxQNVjzoMj6I3j2GWzxX9zRR3xgSCpup1HH/s1600/1_20261013_220357683.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 삐냥 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2HPnKpvsjWlFUrugOKgSDx5Ao_9Oj_-uPKD2JsikS4tBITYMksWTFGKgLwJ9U8jJ5tU7_4VAJEtp6HCEn8VaqdTS34Cu-o2z3aE1ak8fQcwSEm9nCd7aCsNOjPFAgZ42KBrEtXOTTe1CwhO4O6Yc3RRvxh5pm4LkPCh-4NYajkt0lFIFHbsN0Th8QGGXw/s1600/1_%EB%8B%A8%EC%B2%B4%EC%83%B7%20%282%29.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2HPnKpvsjWlFUrugOKgSDx5Ao_9Oj_-uPKD2JsikS4tBITYMksWTFGKgLwJ9U8jJ5tU7_4VAJEtp6HCEn8VaqdTS34Cu-o2z3aE1ak8fQcwSEm9nCd7aCsNOjPFAgZ42KBrEtXOTTe1CwhO4O6Yc3RRvxh5pm4LkPCh-4NYajkt0lFIFHbsN0Th8QGGXw/s1600/1_%EB%8B%A8%EC%B2%B4%EC%83%B7%20%282%29.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
