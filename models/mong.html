@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - mong 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-1sf9AgVvySKo2kNwyzFbVDO1LO-yh4yIlIgDie6MxMBqBR9LcxUU1FUM8hz7Ji0p5PMLGfn2LF5vThLtyGLsS6bu4grylHevXhTLcM9b4_eHOEI-WNHQmvH565l14kLHW-kn4hDnInAz0C74EbxulOTm2aV8oHEuXu37C8lAncgFBFQcdZfPGQtesRdl/s1600/IMG_9105.jpeg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCaHdYGxbdKVXREO90hJozrhnI1KaUumGr_92qK2C0m3KhKDkINrFkyzyTFpagOfkscNCh8bo9ecjizL3uKUir8vYMzZ6AZ_8V9wQ8iDKIR_i-DbBOQKXpRp5SASLaqCSEr1WH-jUH6rWAP9JQ5IZuHM4Pz5IPmw8L8Jpz44uy8H6zim6KUfezQvtLQZU-/s1600/IMG_9093.jpeg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

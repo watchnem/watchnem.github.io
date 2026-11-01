@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 나츠 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUFlJayCTNQSYMK-KIURKp5xGD43ldawRLKuBdLcgM-PP6tIqtz-R9dhTnE4awbE4Ry3VERZqMRJ8t3_7-5VaoCD1C9GJp8uMsX47_qF8zFC5DCt8jaR_997Kp_HMqIj1JmriK4V8OzCxd6L2CAMSJJvcagQJIP3XkdoofMxN0jc0eKInSt-PmG8fihUrh/s1600/20261012_191933606_image_repair_1791800407092.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUFlJayCTNQSYMK-KIURKp5xGD43ldawRLKuBdLcgM-PP6tIqtz-R9dhTnE4awbE4Ry3VERZqMRJ8t3_7-5VaoCD1C9GJp8uMsX47_qF8zFC5DCt8jaR_997Kp_HMqIj1JmriK4V8OzCxd6L2CAMSJJvcagQJIP3XkdoofMxN0jc0eKInSt-PmG8fihUrh/s1600/20261012_191933606_image_repair_1791800407092.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
