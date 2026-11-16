@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 사마 Inactive 님
+preview: https://blogger.googleusercontent.com/img/a/AVvXsEiY9xA0zKCk0LbEDyBV8L3dN0qtFBK7dlQ9zbB9_TqM-mJ_izunpPG5YTjvx0DXv4l_G-_6mABQsz0azOQ7lHOS1K2q00UWfWWTbpoef31oKeNSf3buCNdHXprqLjczcnNXZGTE0O_CABH-fmKa-GPUAIADhZjwGqY-tfI9fjcvUjFNQOnQNXTYkXQMW8v2
+ogthumb: https://blogger.googleusercontent.com/img/a/AVvXsEiY9xA0zKCk0LbEDyBV8L3dN0qtFBK7dlQ9zbB9_TqM-mJ_izunpPG5YTjvx0DXv4l_G-_6mABQsz0azOQ7lHOS1K2q00UWfWWTbpoef31oKeNSf3buCNdHXprqLjczcnNXZGTE0O_CABH-fmKa-GPUAIADhZjwGqY-tfI9fjcvUjFNQOnQNXTYkXQMW8v2
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

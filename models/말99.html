@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 말99 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUrai65MroIbJ7WTxe6z6B6I4aus4XoghViY-mM-w141-sj8Sa_mIJnNHcnzEOItq0fYyQzSLqMFupM2oGt6UU2qMRBcesmJDbDqBXRgt6o7PDT25lXiyirjL-AZnD8Rpc9C4-wmDKctV6Brth9h3G6uI0F0_w7HhKkG17BYULr_4G1nNObS_8rh85BfS4/s1600/IMG_1919.JPG
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYKZ_SOn39Q48wd7KmxUSbi1clRoBSmhdQbrh48ASq0wHCjxVeVn7ioKBPg6M7RVDBt32UxjPStf-9KidZQ03JUcHcmYdxtPQB5KNEWIWpr7GYIcd97kG5jOlk96F5czYlqyPMYHuH05x3Lr4Jub8CDtQpbL7zJdjgYBKQwQ5Qpfq4znc3cQZIJ-9xZ_i-/s1600/IMG_1921.JPG
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

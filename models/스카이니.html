@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 스카이니 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcvfkBqHu2J425nIc3lp5T-nx38EJx_GevJMHwgZzd-TLUo8YBRXNbZ0JRKW_W4qXm54KLXrOo9fSSV0KAeZW9mrLm1_pEMAcmRVlISrUelFJENDiczeQ29lTqeLyRoj8Io7GFut7I-961g1sUnyyy77X9nMaqEhJID164VHbOLOzxe0c9wL2fLBY3sXAJ/s1600/DSCF4113.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcvfkBqHu2J425nIc3lp5T-nx38EJx_GevJMHwgZzd-TLUo8YBRXNbZ0JRKW_W4qXm54KLXrOo9fSSV0KAeZW9mrLm1_pEMAcmRVlISrUelFJENDiczeQ29lTqeLyRoj8Io7GFut7I-961g1sUnyyy77X9nMaqEhJID164VHbOLOzxe0c9wL2fLBY3sXAJ/s1600/DSCF4113.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

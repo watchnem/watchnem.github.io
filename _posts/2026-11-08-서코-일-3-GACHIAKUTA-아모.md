@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "2026-11-08 서코 일 - GACHIAKUTA 아모"
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqEzeMMO407GLL-yRmav49QuKjWDTKgCPyZ2-zQJp422Db0h2NQUF1LZ8CZlBqjmAkwAqvL5aL_M3wHToBCD3MbRr9xDoJl3nTfqGDlzc3Gzh51n7y8kGm17ZYbnd941I8EZjsdZUqBzS3yLixkSwtTvlhzs7QTnfhTRx9e_fw9nOcu8nZYUCf93MYoIYj/s1600/IMG_0609.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqEzeMMO407GLL-yRmav49QuKjWDTKgCPyZ2-zQJp422Db0h2NQUF1LZ8CZlBqjmAkwAqvL5aL_M3wHToBCD3MbRr9xDoJl3nTfqGDlzc3Gzh51n7y8kGm17ZYbnd941I8EZjsdZUqBzS3yLixkSwtTvlhzs7QTnfhTRx9e_fw9nOcu8nZYUCf93MYoIYj/s1600/IMG_0609.jpg
+index: 1794060300
+categories: [행사장, 코스프레, 서코, 킨텍스, 엘리, enoniko26]
+---
+
+<div class="pre">
+    <p>엘리(@enoniko26)</p>
+    <p>
+        <a href="https://x.com/enoniko26" target="_blank">
+            Twitter
+        </a>
+    </p>
+</div>
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRHbaLYyX_ZNxr81E2VIL5tjU15ROc44E0_S2FzN6dkFOlJN5MJwIialO3d3WoOZxOYtcLONibaZPk1fX0K6eTF25XzTrUWCYQL5gu1FBbriTPkhHIB7HZ4I7I_jSUE1-ew3iEGZY7NtTfz7lnBOO50dm4lRfSxVt41xt1tqOW9GvomJ0yTJLXYv4Yxmkx/s1600/DSCF2508.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIsPIAIICjaDokk9L5Dg1xH-J9ZcCJdfWtxWPo2xhVsPBhjrlypzkp8C9wJWwN87BcYul4my_y3SfUwumuGpUCPywD_nxWFGl29MJPZNXjePFWwJ8orzjaAOlvAXUzwnhIKhncgXKojevIIwFiYputYFkFsNLfk8V8_PvI3P_CtrKvLuMWjQKAgsoQSiNU/s1600/IMG_0606.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3zeAy6pZmbbcvJMJa2eatRuoZZW0ryBXPd6Jg4dGig10gV2ZWr32PfwClW3ADAjy6Um8RIhnU2OpKL8hxPTEvajpedXK8zKcc2_lwI5HZ5303WccJuS_BiB1Fr5bEuSeh5XD4eg0gwPwYQk-3ravEr6xdT0r569MjPNv7xgJwfOWmFWBDSz5QnzXXhXDq/s1600/IMG_0608.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqEzeMMO407GLL-yRmav49QuKjWDTKgCPyZ2-zQJp422Db0h2NQUF1LZ8CZlBqjmAkwAqvL5aL_M3wHToBCD3MbRr9xDoJl3nTfqGDlzc3Gzh51n7y8kGm17ZYbnd941I8EZjsdZUqBzS3yLixkSwtTvlhzs7QTnfhTRx9e_fw9nOcu8nZYUCf93MYoIYj/s1600/IMG_0609.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFY7tKtbbTxPEHbqcCULIVGgAcKRNo_gH_CnzIUe1ODejRpS016BTAb61vFkIMQ9Sho1n-hbzjYClZQ4nv98HIiqgOFHnDGrkBTRqqrJ-Oe_CNpXv9PyM1W07HimameL2-rFifEzcF5dbbVj6vi6MLcbK0x985ClKDAoObnCN3YQ6H6X3h2tp0tTHFEPRs/s1600/IMG_0610.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnmY_oh0XRdx7CIU0O-3BIjHLlg12yjq59EcMUBD7gDuOHHpfiluhGTx_T75lV2kggQg8YgEluZ2_jNKLZaB_2CVOjWAvdcNiq24bkqbKX1xL-aZZX2kjl3blByqZamLTsoZVE7gXJqYomt31aty2yhHNanb7UuAbY8sdJv-kof_xje89inpjus6Kzpj_D/s1600/IMG_0611.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrI4OhMDucN6XWP0_eFN05zfrUiBxlp_oGV-owpchENvPmdEPPbciPkqIO7oOlB44r83uOna60Lz0Uh68JjO-SwK8yuFqHiRd_Z1vk5yXwbL5cRle70_NmMRbxP4MoETcgxWjrH-trkXxesVT6iB9Rgn_oxQ93alQ2NpE_5r8MigJ1mhwEj8o2arIbY6E4/s1600/IMG_0612.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ2k2NjOgUtJfkCc481nvpZ4pXqBknN7ZiNjgwMybIeLIRF_4FSA0ekuvSOxO6jEpnfqGmdqe0CZx7EVU9PbZqVuYDnZ86bC5g4JPgs7k5alPD_t5YSYVyE2lsUHyQRINbFcvtFPwAbB2k1aBAW-KlJvJroQgt0MJxxz2ayUE8EZiWqpEYe9hcBBxNjMl9/s1600/IMG_0615.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFenKYxwmlgkugrM_lA2Akeja7S4iJMLz0YXMPc3nJTO1Wh8JbMgPa9Itw0rHdhM28bNX-Q___akEjfoTQe6l8dyZcjrokn_7SVo6jVyHByU058bFgj2TbTg6XLL_5kf-LPR4gS8Ue9TsaXPnn0FHUMdM12VnIJPySuc3l5VezCcOxomUxKdxMWkPtdPeL/s1600/IMG_0616.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLrn4iE1cMdEqlPwcx4S4Ag155uNhjuRuf5QdUZWxp_msQqP42yA0B-6Vbltyv8WtUuMOjrzsUJOqPFW9E8tGus0ew53i7xTnA_t7m_Ng7INPl_APjDLLPXNuZXU1vE8OgJwd2pAaLKxK1evs6lYiQ9vZsAbCTFGPR5rOz1nK-0rsBX8xovusCAk_ikI_K/s1600/IMG_0617.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyVQFNxISzVRKSebYT7S00uiYCanzxNCwAODkIvzHAQVxotXEvTUw_5XLh_E2J5c3DVOnqq6X9Rq1zzRWxr4bfpBUbR1EVsn3ivPAdGcTwvNcPIBfECEbiQ7uDr9zoqX-NeNkNFOJ38mrxh2Mc8VnvGoP5U0yfWQlR7Y11SuuojRAJVuVGgIf1o0IgD8a6/s1600/IMG_0618.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwDhLrvL4ftB2MdT_TgGyIi6xbjQ72e0CctzcYrzakQIajMjuGjXQqBGPx_EAapmh4Poq4Wm-TAztJNeU_vvjdHk4aqrAjErFT8F2DzgTkUa0xoPZa1VKuSytWpMA0Rfu2qYwQloChXTOA8HdGIjVN2wvRj6DCnsf0_zoinQBW0oIbytA-iUU6F6FBKiP5/s1600/IMG_0623.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3VcOYjAxroH77_6GmCKBo3yR9hLfWdb3YKc5WMXxob05_IHj75ZYMrV52wntVDarwpP1ZBy6ZZcIMGdotFqj44PQhM6YmPkXC4aUYzIeoLayARG0NGzXYPwn55th7vYYIt5RliqyUZriJhDYp_SvAawMr3kcLWNYczDkgSN_H7omSXSY1m0pc7AavTCTk/s1600/IMG_0624.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8OfgjmcjLJCbJORbFm565ZkNoQKbpLSw4VMu2ElJyRmmQQyArEJ_Ubs4hzM3QaQ81MFXwSVT963m9ADIOuNSJRx1s_sULQgUP4mgJEs4UsbK5TCFlMB9iq_I-nQh4UYenVfM98zjcFMVqXLx9DQ_087py8EC1G3kLtFNu-QK-jhIuFH8hMT2BTTCvt6so/s1600/IMG_0625.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiApooiTHITd0pRm5BQ9gHQ7R9IX6HG-psnDdPDsHwQ_DqBSYKO__8AtNvWfHB5ctVrEAzIwbaxpeOYJu4KRQ0OK639nN7MzNGfTOWsZtDcrkE95ahGg9fRvOLzlY2aMFIP0SIvpvZKyjGh-nzgTF9MfDEg0yA3IQc05jAH9NeMQ9R9fmIuFZ1HHqhBL4Q4/s1600/IMG_0626.jpg=s16000)
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHoltHmUWlVcvBqp2WoK-t_p5CK5VRI66nwu7BvHpws6-c5UB1YEbMhTuPdqJLClGEQMEZDL6e1mmzgJdPaufE-RbH6bMHNJSQmPNAHalLqAUCxLaeVxKry2in2iAFP8xQwlJiDRv-PAjyHGSxNewu0TEpiVefDzlakHlQQ21RiosSsdA3Vpq6Kmh1IJpU/s1600/IMG_0627.jpg=s16000)
