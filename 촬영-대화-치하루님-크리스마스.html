@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="robots" content="noindex, nofollow">
+  <title>촬영-대화-치하루님-크리스마스</title>
+  <!-- 독립 실행: 외부 CSS, JavaScript, 라이브러리 참조 없음 -->
+  <style>
+    :root { color-scheme: dark; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background:#0b0c0e; -webkit-tap-highlight-color:transparent; }
+    body { margin:0; min-width:280px; background:#0b0c0e; color:#f6f6f7;
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+    button { font:inherit; }
+    button:focus-visible { outline:2px solid #fa855b; outline-offset:3px; }
+    #csg-app { --accent:#f46c41; --ease:cubic-bezier(.22,1,.36,1);
+      width:min(100%,760px); min-height:100svh; margin:0 auto;
+      padding:max(0px,env(safe-area-inset-top)) 0 max(20px,env(safe-area-inset-bottom)); isolation:isolate; }
+    #csg-app .head { padding:35px 20px 23px; }
+    #csg-app h1 { font-size:clamp(26px,6.8vw,38px); font-weight:780; letter-spacing:-.055em;
+      line-height:1.3; margin:0; overflow-wrap:anywhere; }
+    #csg-app .head-rule { width:43px; height:3px; margin-top:21px; border-radius:12px; background:var(--accent); }
+    #csg-app .tabs-shell { position:sticky; top:0; z-index:12; padding:12px 14px;
+      background:rgba(11,12,14,.93); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
+      border-top:1px solid rgba(255,255,255,.045); border-bottom:1px solid rgba(255,255,255,.09); }
+    #csg-app .tab-scroll { position:relative; border:1px solid rgba(255,255,255,.07);
+      border-radius:16px; background:#191b20; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+    #csg-app .tab-scroll::-webkit-scrollbar { display:none; }
+    #csg-app .tab-row { position:relative; display:flex; width:max-content; min-width:100%;
+      padding:5px; gap:3px; }
+    #csg-app .tab-indicator { position:absolute; left:0; top:5px; bottom:5px; width:0;
+      border-radius:11px; background:var(--accent); pointer-events:none; z-index:0;
+      box-shadow:0 4px 14px rgba(244,108,65,.22);
+      transition:transform .56s var(--ease),width .56s var(--ease); }
+    #csg-app .tab { position:relative; z-index:1; flex:1 0 auto; border:0; min-height:44px;
+      border-radius:11px; padding:10px clamp(13px,3.2vw,22px); background:transparent;
+      color:#a5a7ae; font-size:clamp(12px,3.3vw,15px); font-weight:690;
+      letter-spacing:-.035em; white-space:nowrap; cursor:pointer; transition:color .35s ease; }
+    #csg-app .tab[aria-selected="true"] { color:#fff; }
+    #csg-app .content { padding:0 15px 58px; }
+    #csg-app .gallery-stage { position:relative; overflow:hidden; min-height:200px;
+      transition:height .53s var(--ease); }
+    #csg-app .gallery-panel { width:100%; opacity:1; transform:translate3d(0,0,0);
+      transition:transform .52s var(--ease),opacity .42s ease; }
+    #csg-app .gallery-panel.from-right { transform:translate3d(44px,0,0); opacity:0; }
+    #csg-app .gallery-panel.from-left { transform:translate3d(-44px,0,0); opacity:0; }
+    #csg-app .gallery-panel.out-left { transform:translate3d(-31px,0,0); opacity:0; }
+    #csg-app .gallery-panel.out-right { transform:translate3d(31px,0,0); opacity:0; }
+    #csg-app .section-head { padding:31px 4px 19px; }
+    #csg-app .section-kicker { font-size:11px; font-weight:850; letter-spacing:.18em; color:var(--accent); }
+    #csg-app .section-title-row { display:flex; flex-wrap:wrap; align-items:baseline;
+      justify-content:space-between; gap:8px 14px; margin-top:11px; }
+    #csg-app h2 { font-size:clamp(23px,6vw,31px); letter-spacing:-.055em;
+      line-height:1.25; font-weight:770; margin:0; overflow-wrap:anywhere; }
+    #csg-app .count { color:#9da0a6; font-size:12px; font-weight:630; white-space:nowrap; }
+    #csg-app .section-divider { margin-top:20px; height:1px;
+      background:linear-gradient(90deg,rgba(255,255,255,.22),rgba(255,255,255,.03)); }
+    /* 장소별 메모: 제목 아래 + 사진 위. 줄바꿈 유지, HTML 삽입 없음. */
+    #csg-app .studio-description { margin:0 4px 23px; padding:17px 18px;
+      color:#e3e4e8; background:#17191e; border:1px solid rgba(255,255,255,.085);
+      border-radius:14px; font-size:clamp(14px,3.6vw,16px); line-height:1.85;
+      white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; }
+    #csg-app .studio-description a { color:#ffa482; text-decoration:underline;
+      text-underline-offset:3px; text-decoration-thickness:1px; }
+    /* 핵심: 1열 + 높이 제한/크롭 없음. 아주 긴 텍스트 이미지도 전체가 읽힙니다. */
+    #csg-app .photo-list { display:flex; flex-direction:column; align-items:stretch; gap:15px; }
+    #csg-app .photo { display:block; width:100%; margin:0; overflow:hidden;
+      border:1px solid rgba(255,255,255,.08); border-radius:14px; background:#191b20; }
+    #csg-app .photo img { display:block; width:100%; height:auto; max-height:none;
+      object-fit:contain; border:0; vertical-align:middle; }
+    #csg-app .photo.broken { min-height:95px; display:grid; place-items:center; }
+    #csg-app .photo.broken::after { content:"사진을 불러오지 못했습니다"; color:#aaaeb5; font-size:12px; }
+    #csg-app .photo.broken img { display:none; }
+    #csg-app .empty { padding:34px 20px; min-height:210px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:10px; border:1px dashed rgba(255,255,255,.18); border-radius:17px;
+      background:#141519; text-align:center; }
+    #csg-app .empty-title { font-size:15px; font-weight:700; }
+    #csg-app .empty-info { color:#9a9da4; font-size:12px; line-height:1.7; }
+    #csg-app .empty-path { color:#fa9c7d; font-size:11px; line-height:1.7; overflow-wrap:anywhere; }
+    #csg-app .page-end { width:30px; height:3px; margin:24px auto 0; border-radius:12px; background:#393b3f; }
+    @media (min-width:600px) {
+      #csg-app .head { padding:47px 28px 31px; }
+      #csg-app .content { padding:0 24px 72px; }
+      #csg-app .photo-list { gap:20px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      #csg-app *, #csg-app *::before, #csg-app *::after { transition:none!important; animation:none!important; }
+    }
+  </style>
+</head>
+<body>
+<main id="csg-app">
+  <header class="head">
+    <h1>촬영-대화-치하루님-크리스마스</h1>
+    <div class="head-rule" aria-hidden="true"></div>
+  </header>
+  <nav class="tabs-shell" aria-label="촬영 장소 선택">
+    <div class="tab-scroll" id="csg-tab-scroll">
+      <div class="tab-row" id="csg-tabs" role="tablist" aria-label="사진 섹션">
+        <div class="tab-indicator" id="csg-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+  </nav>
+  <div class="content">
+    <div class="gallery-stage" id="csg-stage" aria-live="polite"></div>
+    <div class="page-end" aria-hidden="true"></div>
+  </div>
+</main>
+<script>
+(() => {
+  'use strict';
+  const sections = [{"name":"플랑 2호점","folder":"img/촬영-대화-치하루님-크리스마스/플랑 2호점","description":"스케쥴 링크 : \u003ca href=\"https://www.studio-plan.com/schedule2\"\u003e스케쥴 링크\u003c/a\u003e","photos":[{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/0.jpg","name":"0.jpg","width":287,"height":682},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/1.%20%EC%A7%80%EB%8F%84.jpg","name":"1. 지도.jpg","width":1200,"height":1628},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/2.jpg","name":"2.jpg","width":1200,"height":800},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/3.jpg","name":"3.jpg","width":1200,"height":802},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/4.jpg","name":"4.jpg","width":1200,"height":800},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/5.jpg","name":"5.jpg","width":1200,"height":802},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/6.jpg","name":"6.jpg","width":1200,"height":800},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%202%ED%98%B8%EC%A0%90/7.jpg","name":"7.jpg","width":624,"height":401}]},{"name":"코샤 B","folder":"img/촬영-대화-치하루님-크리스마스/코샤 B","description":"스케쥴 링크 : \u003ca href=\"https://sites.google.com/view/kosyastudio/%EC%8A%A4%EC%BC%80%EC%A5%B4?authuser=0\"\u003e스케쥴 링크\u003c/a\u003e","photos":[{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%BD%94%EC%83%A4%20B/0.jpg","name":"0.jpg","width":766,"height":245},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%BD%94%EC%83%A4%20B/1.png","name":"1.png","width":1280,"height":960},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%BD%94%EC%83%A4%20B/2.jpg","name":"2.jpg","width":297,"height":286}]},{"name":"루나스 A","folder":"img/촬영-대화-치하루님-크리스마스/루나스 A","description":"스케쥴 링크 : \u003ca href=\"https://www.studio-lunas.com/schedule3\"\u003e스케쥴 링크\u003c/a\u003e","photos":[{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/0.jpg","name":"0.jpg","width":371,"height":782},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/1.%20%EC%A7%80%EB%8F%84.jpg","name":"1. 지도.jpg","width":841,"height":573},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/2.jpg","name":"2.jpg","width":600,"height":400},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/3.jpg","name":"3.jpg","width":600,"height":399},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/4.jpg","name":"4.jpg","width":600,"height":399},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/5.jpg","name":"5.jpg","width":600,"height":400},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%A3%A8%EB%82%98%EC%8A%A4%20A/6.jpg","name":"6.jpg","width":617,"height":394}]},{"name":"플랑 1호점","folder":"img/촬영-대화-치하루님-크리스마스/플랑 1호점","description":"스케쥴 링크 : \u003ca href=\"https://www.studio-lunas.com/schedule3\"\u003e스케쥴 링크\u003c/a\u003e","photos":[{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/0.jpg","name":"0.jpg","width":284,"height":744},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/1.%20%EC%A7%80%EB%8F%84.jpg","name":"1. 지도.jpg","width":1432,"height":1484},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/2.jpg","name":"2.jpg","width":1390,"height":932},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/3.jpg","name":"3.jpg","width":1390,"height":932},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/4.jpg","name":"4.jpg","width":1400,"height":936},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/5.jpg","name":"5.jpg","width":1400,"height":936},{"src":"img/%EC%B4%AC%EC%98%81-%EB%8C%80%ED%99%94-%EC%B9%98%ED%95%98%EB%A3%A8%EB%8B%98-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%94%8C%EB%9E%91%201%ED%98%B8%EC%A0%90/6.jpg","name":"6.jpg","width":638,"height":506}]}];
+  const stage = document.getElementById('csg-stage');
+  const tabBar = document.getElementById('csg-tabs');
+  const tabScroll = document.getElementById('csg-tab-scroll');
+  const indicator = document.getElementById('csg-indicator');
+  const tabs = [];
+  let current = 0;
+  let panel = null;
+  let finalizeAnimation = null;
+  const pad = n => String(n).padStart(2,'0');
+
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+  // 설명 속 <br>, <br/>, <br />만 실제 줄바꿈으로 처리합니다.
+  function appendTextWithBreaks(container, value) {
+    const pieces = value.split(/<br\s*\/?>/gi);
+    pieces.forEach((piece, index) => {
+      if (index > 0) container.appendChild(document.createElement('br'));
+      if (piece) container.appendChild(document.createTextNode(piece));
+    });
+  }
+  // 설명에서는 웹 링크(a href)와 줄바꿈(br)만 처리하고, 나머지 HTML은 텍스트로 표시합니다.
+  function appendDescription(container, value) {
+    const anchorPattern = /<a\s+href\s*=\s*(["'])(.*?)\1\s*>([\s\S]*?)<\/a>/gi;
+    let lastIndex = 0;
+    for (const match of value.matchAll(anchorPattern)) {
+      appendTextWithBreaks(container, value.slice(lastIndex, match.index));
+      try {
+        const url = new URL(match[2], document.baseURI);
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') throw new Error('Unsupported URL');
+        const link = document.createElement('a');
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        appendTextWithBreaks(link, match[3]);
+        container.appendChild(link);
+      } catch (_) {
+        appendTextWithBreaks(container, match[0]);
+      }
+      lastIndex = match.index + match[0].length;
+    }
+    appendTextWithBreaks(container, value.slice(lastIndex));
+  }
+
+  // Jekyll의 /페이지이름/ 주소에서도 img/ 사진을 찾습니다.
+  // HTML 직접 열기(파일명.html), GitHub Pages 하위 경로에서도 동작하도록
+  // 상대 경로 후보를 순서대로 확인합니다.
+  function imageUrlCandidates(src) {
+    const prefixes = location.pathname.endsWith('/')
+      ? ['../', '', '../../', '../../../', '../../../../']
+      : ['', '../', '../../', '../../../', '../../../../'];
+    return [...new Set(prefixes.map(prefix => new URL(prefix + src, document.baseURI).href))];
+  }
+
+  function buildPanel(index) {
+    const item = sections[index];
+    const root = el('section', 'gallery-panel');
+    root.id = 'csg-panel-' + index;
+    root.setAttribute('role','tabpanel');
+    root.setAttribute('aria-labelledby','csg-tab-' + index);
+
+    const header = el('div', 'section-head');
+    header.appendChild(el('div','section-kicker','LOCATION  ' + pad(index+1) + ' / ' + pad(sections.length)));
+    const titleRow = el('div','section-title-row');
+    titleRow.append(el('h2','',item.name), el('span','count',item.photos.length + '장'));
+    header.append(titleRow, el('div','section-divider'));
+    root.appendChild(header);
+    if (item.description && item.description.trim()) {
+      const description = el('div','studio-description');
+      appendDescription(description, item.description);
+      root.appendChild(description);
+    }
+
+    if (!item.photos.length) {
+      const empty = el('div','empty');
+      empty.append(el('div','empty-title','아직 등록된 사진이 없습니다'),
+                   el('div','empty-info','이 폴더에 사진을 넣고 Python을 다시 실행하세요.'),
+                   el('div','empty-path',item.folder));
+      root.appendChild(empty);
+    } else {
+      const list = el('div','photo-list');
+      item.photos.forEach((photo, i) => {
+        const figure = el('figure','photo');
+        const image = document.createElement('img');
+        image.alt = item.name + ' · ' + photo.name;
+        if (photo.width && photo.height) {
+          // 스크롤하기 전에도 세로로 긴 사진의 공간을 정확하게 확보합니다.
+          image.width = photo.width;
+          image.height = photo.height;
+        }
+        image.loading = i < 2 ? 'eager' : 'lazy';
+        image.decoding = 'async';
+        if (i === 0) image.fetchPriority = 'high';
+        // 예: /페이지이름/ 에서 상대 img/ 주소는 잘못된 폴더를 가리킬 수 있습니다.
+        // 먼저 한 단계 위의 img/ 경로를 사용하고, 없으면 다른 배포 경로를 확인합니다.
+        const candidates = imageUrlCandidates(photo.src);
+        let attempt = 0;
+        image.addEventListener('error', () => {
+          attempt += 1;
+          if (attempt < candidates.length) image.src = candidates[attempt];
+          else figure.classList.add('broken');
+        });
+        image.src = candidates[0];
+        figure.appendChild(image);
+        list.appendChild(figure);
+      });
+      root.appendChild(list);
+    }
+    return root;
+  }
+
+  function positionIndicator(index, animated = true) {
+    const tab = tabs[index];
+    if (!tab) return;
+    if (!animated) indicator.style.transition = 'none';
+    indicator.style.width = tab.offsetWidth + 'px';
+    indicator.style.transform = 'translate3d(' + tab.offsetLeft + 'px,0,0)';
+    if (!animated) requestAnimationFrame(() => {indicator.style.transition='';});
+    tabScroll.scrollTo({left:tab.offsetLeft+tab.offsetWidth/2-tabScroll.clientWidth/2,
+                        behavior:animated ? 'smooth' : 'instant'});
+  }
+  function switchSection(next, animate = true) {
+    if (next < 0 || next >= sections.length || next === current) return;
+    if (finalizeAnimation) finalizeAnimation();
+    const dir = next > current ? 1 : -1;
+    const oldPanel = panel;
+    current = next;
+    tabs.forEach((tab,i) => {
+      tab.setAttribute('aria-selected',String(i===current));
+      tab.tabIndex = (i===current) ? 0 : -1;
+    });
+    positionIndicator(current);
+    const nextPanel = buildPanel(current);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!oldPanel || !animate || reduced) {
+      stage.replaceChildren(nextPanel); panel = nextPanel; stage.style.height='auto';
+    } else {
+      stage.style.height = oldPanel.getBoundingClientRect().height + 'px';
+      oldPanel.style.position='absolute';
+      oldPanel.style.inset='0 0 auto';
+      oldPanel.style.pointerEvents='none';
+      nextPanel.classList.add(dir>0?'from-right':'from-left');
+      stage.appendChild(nextPanel);
+      panel=nextPanel;
+      const nextHeight=nextPanel.scrollHeight;
+      let done=false;
+      let timeout;
+      const cleanup=() => {
+        if (done) return;
+        done=true;
+        clearTimeout(timeout);
+        oldPanel.remove();
+        nextPanel.classList.remove('from-right','from-left');
+        stage.style.height='auto';
+        if (finalizeAnimation===cleanup) finalizeAnimation=null;
+      };
+      finalizeAnimation=cleanup;
+      nextPanel.getBoundingClientRect();
+      requestAnimationFrame(() => {
+        if (done) return;
+        stage.style.height=nextHeight+'px';
+        nextPanel.classList.remove('from-right','from-left');
+        oldPanel.classList.add(dir>0?'out-left':'out-right');
+      });
+      timeout=setTimeout(cleanup,570);
+    }
+    // 긴 사진을 아래쪽까지 읽다가 다른 탭으로 바꾼 경우 사진 첫머리로 복귀.
+    const shell=document.querySelector('.tabs-shell');
+    const shellTop=shell.getBoundingClientRect().top+window.scrollY;
+    if (window.scrollY > shellTop + shell.offsetHeight + 100) {
+      window.scrollTo({top:Math.max(0,shellTop),behavior:'smooth'});
+    }
+  }
+  sections.forEach((item,index) => {
+    const tab = el('button','tab',item.name);
+    tab.type='button';
+    tab.id='csg-tab-'+index;
+    tab.setAttribute('role','tab');
+    tab.setAttribute('aria-controls','csg-panel-'+index);
+    tab.setAttribute('aria-selected',String(index===0));
+    tab.tabIndex=index===0?0:-1;
+    tab.addEventListener('click',() => switchSection(index));
+    tab.addEventListener('keydown',event => {
+      let next=index;
+      if (event.key==='ArrowRight') next=(index+1)%sections.length;
+      else if (event.key==='ArrowLeft') next=(index-1+sections.length)%sections.length;
+      else if (event.key==='Home') next=0;
+      else if (event.key==='End') next=sections.length-1;
+      else return;
+      event.preventDefault();
+      switchSection(next);
+      tabs[next].focus();
+    });
+    tabBar.appendChild(tab);
+    tabs.push(tab);
+  });
+  panel = buildPanel(0);
+  stage.appendChild(panel);
+  requestAnimationFrame(() => positionIndicator(0,false));
+  window.addEventListener('resize',() => positionIndicator(current,false),{passive:true});
+})();
+</script>
+</body>
+</html>
