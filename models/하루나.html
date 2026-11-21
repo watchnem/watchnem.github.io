@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 하루나 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_GoIw9giIwEroTHXtAIt3afb2LCyVmNs1HVBI4HWK46xYzZNTAoGahW3VG09SI4TXiwYWMGvcg7lixnThKcdQNMGbS-k3-jRtx0C04dVU-GGLazavEJUp0O0fIdTYkSPIChCrWp_exjA9_L_99TLsoFighQ2f5icEX9nqkSVTzMgyymeDg21wmC6SzWC8/s1600/%EC%84%B8%EC%9D%B4%EC%95%84_%EC%99%80%EC%B9%98_%EB%B3%B4%EC%A0%95%EC%99%84.jpg
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_GoIw9giIwEroTHXtAIt3afb2LCyVmNs1HVBI4HWK46xYzZNTAoGahW3VG09SI4TXiwYWMGvcg7lixnThKcdQNMGbS-k3-jRtx0C04dVU-GGLazavEJUp0O0fIdTYkSPIChCrWp_exjA9_L_99TLsoFighQ2f5icEX9nqkSVTzMgyymeDg21wmC6SzWC8/s1600/%EC%84%B8%EC%9D%B4%EC%95%84_%EC%99%80%EC%B9%98_%EB%B3%B4%EC%A0%95%EC%99%84.jpg
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}

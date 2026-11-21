@@ -1,0 +1,11 @@
+---
+layout: default
+title: 모델별 - 멍지 님
+preview: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD5lSrHTiAklTag0G2r5bPQI0vCCpt8zkV7FM6YTYgZIObMHiOZewdUdCpI-9jaS2hlT6Jt7y9zDK4w__LZssNoQp1D8mfNlEtqUpCYguqgUcGn9AaJdugV3z9uCvM_ODLEd7PElI4fa_oQxmCTyiiXUKcLXlXt4wvAZbz5WN5qtMq0p-bdHJNgSXJ1g7u/s1600/IMG_4499.JPG
+ogthumb: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD5lSrHTiAklTag0G2r5bPQI0vCCpt8zkV7FM6YTYgZIObMHiOZewdUdCpI-9jaS2hlT6Jt7y9zDK4w__LZssNoQp1D8mfNlEtqUpCYguqgUcGn9AaJdugV3z9uCvM_ODLEd7PElI4fa_oQxmCTyiiXUKcLXlXt4wvAZbz5WN5qtMq0p-bdHJNgSXJ1g7u/s1600/IMG_4499.JPG
+blur : false
+---
+
+{% assign parts = page.path | split:"/" %}
+{% assign name = parts | last | split:"." | first %}
+{% include model_view.html title=name subtitle=" 님" %}
